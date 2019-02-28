@@ -1,3 +1,11 @@
 node_modules
 release
 /platforms/android
+.DS_Store
+.npm
+.vscode
+/dist/
+/temp/
+*.log
+.idea
+npm-debug.log*

@@ -28,7 +28,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "amfe-flexible": "^2.2.1",
     "phantom-limb": "0.0.1",
     "postcss": "^7.0.14",
     "postcss-weex": "^1.0.5",

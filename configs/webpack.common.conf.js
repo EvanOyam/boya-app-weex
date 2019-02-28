@@ -239,12 +239,9 @@ const weexConfig = {
         use: [
           {
             loader: 'weex-loader',
-            options: Object.assign(vueLoaderConfig({ useVue: false }), {
-              postcss: [
-                weexCSS({ env: 'web' }),
-                prefixer({ browsers: ['last 20 versions'] })
-              ]
-            })
+            options: {
+              postcss: [weexCSS({ env: 'weex' })]
+            }
           }
         ],
         exclude: config.excludeModuleReg

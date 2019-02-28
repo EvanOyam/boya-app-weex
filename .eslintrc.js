@@ -27,6 +27,7 @@ module.exports = {
     'vue/no-parsing-error':  [2, {
       "x-invalid-end-tag": false
     }],
+    "space-before-function-paren": 0,
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
