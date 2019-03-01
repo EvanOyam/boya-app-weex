@@ -18,51 +18,27 @@
     </div>
     <image class="welcome-logo"
            :src="logoSrc"></image>
-    <wxc-result type="errorPage"
-                :show="show"
-                padding-top="232"
-                :custom-set="customSet"
-                @wxcResultButtonClicked="goBack"></wxc-result>
   </div>
 </template>
 <script>
 import { getImg } from '../mixins/index.js'
-import { WxcButton, WxcResult } from 'weex-ui'
+import { WxcButton } from 'weex-ui'
 export default {
   name: 'Welcome',
   components: {
-    WxcButton,
-    WxcResult
+    WxcButton
   },
   data() {
     return {
-      logoSrc: getImg('logo2.png'),
-      show: false,
-      customSet: {
-        errorPage: {
-          button: '返回',
-          content: 'Github更新后不许在iframe中内嵌，请手动打开',
-          desc: 'https://github.com/EvanOyam/boya-app-weex'
-        }
-      }
+      logoSrc: getImg('logo2.png')
     }
   },
   methods: {
     enterSystem() {
-      console.log('enterSystem')
+      this.$router.push('/home')
     },
-    // gotoGithub() {
-    //   var navigator = weex.requireModule('navigator')
-    //   navigator.push({
-    //     url: 'https://github.com/EvanOyam/boya-app-weex',
-    //     animated: 'true'
-    //   })
-    // },
     gotoGithub(e) {
-      this.show = true
-    },
-    goBack() {
-      this.show = false
+      this.$router.push('/result')
     }
   }
 }
