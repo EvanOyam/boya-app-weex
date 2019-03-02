@@ -29,16 +29,6 @@ export default {
   methods: {
     goBack() {
       this.$router.go(-1)
-      // var navigator = weex.requireModule('navigator')
-      // navigator.push(
-      //   {
-      //     url: 'http://192.168.31.159:8081/web/preview.html?page=index.js&wsport=8082',
-      //     animated: 'true'
-      //   },
-      //   event => {
-      //     console.log('callback: ', event)
-      //   }
-      // )
     }
   }
 }

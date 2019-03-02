@@ -167,7 +167,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(15)
+var listToStyles = __webpack_require__(16)
 
 /*
 type StyleObject = {
@@ -8929,14 +8929,19 @@ var _weexVueRender = __webpack_require__(9);
 
 var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 
+var _getImg = __webpack_require__(10);
+
+var _getImg2 = _interopRequireDefault(_getImg);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+_vue2.default.prototype.$getImg = _getImg2.default;
 /* global Vue */
 
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(10),
+var _require = __webpack_require__(11),
     router = _require.router;
 
 var App = __webpack_require__(47);
@@ -20149,17 +20154,50 @@ console.log('START WEEX VUE RENDER: 1.0.36, Build 2018-12-29 17:52.');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+// e.g. 图片文件名是 test.jpg, 转换得到的图片地址为
+// - H5      : images/test.jpg        images和所在html路径同级
+// - Android : local:///test          local代表项目各dpi目录,一般放在hdpi里一张即可
+// - iOS     : local///test.jpg       local代表从项目中全局扫描 test.jpg可放至项目中任何目录
+var getImg = function getImg(imgName) {
+  // 获取图片在三端上不同的路径
+  var platform = weex.config.env.platform;
+  var imgPath = '';
+  if (platform === 'Web') {
+    imgPath = 'src/images/' + imgName;
+  } else if (platform === 'android') {
+    // android不需要后缀
+    imgName = imgName.substr(0, imgName.lastIndexOf('.'));
+    imgPath = 'local:///' + imgName;
+  } else {
+    imgPath = 'local:///' + imgName; // imgPath = `../images/${imgName}`
+  }
+  return imgPath;
+};
+
+// 导出接口
+exports.default = getImg;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.router = undefined;
 
 var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(11);
+var _vueRouter = __webpack_require__(12);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Welcome = __webpack_require__(12);
+var _Welcome = __webpack_require__(13);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
@@ -20167,9 +20205,9 @@ var _Result = __webpack_require__(26);
 
 var _Result2 = _interopRequireDefault(_Result);
 
-var _Home = __webpack_require__(42);
+var _AdPage = __webpack_require__(42);
 
-var _Home2 = _interopRequireDefault(_Home);
+var _AdPage2 = _interopRequireDefault(_AdPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20189,14 +20227,14 @@ var router = exports.router = new _vueRouter2.default({
     name: 'Result',
     component: _Result2.default
   }, {
-    path: '/home',
-    name: 'Home',
-    component: _Home2.default
+    path: '/adpage',
+    name: 'AdPage',
+    component: _AdPage2.default
   }]
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22822,17 +22860,17 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(13)
+  __webpack_require__(14)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(16),
+  __webpack_require__(17),
   /* template */
   __webpack_require__(25),
   /* styles */
@@ -22842,7 +22880,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Welcome.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -22866,13 +22904,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(14);
+var content = __webpack_require__(15);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22892,7 +22930,7 @@ if(false) {
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -22906,7 +22944,7 @@ exports.push([module.i, "\n.welcome-wrapper[data-v-636c3824] {\r\n  position: ab
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /**
@@ -22939,7 +22977,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22949,11 +22987,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(17);
+var _wxcButton = __webpack_require__(18);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
-
-var _index = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22964,13 +23000,13 @@ exports.default = {
   },
   data: function data() {
     return {
-      logoSrc: (0, _index.getImg)('logo2.png')
+      logoSrc: this.$getImg('logo2.png')
     };
   },
 
   methods: {
     enterSystem: function enterSystem() {
-      this.$router.push('/home');
+      this.$router.push('/adpage');
     },
     gotoGithub: function gotoGithub(e) {
       this.$router.push('/result');
@@ -23000,7 +23036,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23010,7 +23046,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(18);
+var _index = __webpack_require__(19);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -23022,19 +23058,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(19)
+  __webpack_require__(20)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(21),
+  __webpack_require__(22),
   /* template */
-  __webpack_require__(23),
+  __webpack_require__(24),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23042,7 +23078,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -23066,13 +23102,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(20);
+var content = __webpack_require__(21);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23092,7 +23128,7 @@ if(false) {
 }
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23106,7 +23142,7 @@ exports.push([module.i, "\n.wxc-btn[data-v-6994ede6] {\n  width: 9.36rem;\n  hei
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23130,7 +23166,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _type = __webpack_require__(22);
+var _type = __webpack_require__(23);
 
 exports.default = {
   props: {
@@ -23195,7 +23231,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23277,7 +23313,7 @@ var TEXT_FONTSIZE_STYLE_MAP = exports.TEXT_FONTSIZE_STYLE_MAP = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -23312,41 +23348,6 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-6994ede6", module.exports)
   }
 }
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// e.g. 图片文件名是 test.jpg, 转换得到的图片地址为
-// - H5      : images/test.jpg        images和所在html路径同级
-// - Android : local:///test          local代表项目各dpi目录,一般放在hdpi里一张即可
-// - iOS     : local///test.jpg       local代表从项目中全局扫描 test.jpg可放至项目中任何目录
-var getImg = exports.getImg = function getImg(imgName) {
-  // 获取图片在三端上不同的路径
-  var platform = weex.config.env.platform;
-  var imgPath = '';
-  if (platform === 'Web') {
-    imgPath = 'src/images/' + imgName;
-  } else if (platform === 'android') {
-    // android不需要后缀
-    imgName = imgName.substr(0, imgName.lastIndexOf('.'));
-    imgPath = 'local:///' + imgName;
-  } else {
-    imgPath = 'local:///' + imgName; // imgPath = `../images/${imgName}`
-  }
-  return imgPath;
-};
-
-// 导出接口
-exports.default = {
-  getImg: getImg
-};
 
 /***/ }),
 /* 25 */
@@ -23452,7 +23453,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Result.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -23553,16 +23554,6 @@ exports.default = {
   methods: {
     goBack: function goBack() {
       this.$router.go(-1);
-      // var navigator = weex.requireModule('navigator')
-      // navigator.push(
-      //   {
-      //     url: 'http://192.168.31.159:8081/web/preview.html?page=index.js&wsport=8082',
-      //     animated: 'true'
-      //   },
-      //   event => {
-      //     console.log('callback: ', event)
-      //   }
-      // )
     }
   }
 }; //
@@ -23618,7 +23609,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -24937,13 +24928,13 @@ var Component = __webpack_require__(2)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-89a6e4fa",
+  "data-v-5d660d76",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] AdPage.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -24952,9 +24943,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-89a6e4fa", Component.options)
+    hotAPI.createRecord("data-v-5d660d76", Component.options)
   } else {
-    hotAPI.reload("data-v-89a6e4fa", Component.options)
+    hotAPI.reload("data-v-5d660d76", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -24975,13 +24966,13 @@ var content = __webpack_require__(44);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(1)("14fc5e9f", content, false, {});
+var update = __webpack_require__(1)("ffff627e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-89a6e4fa\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-89a6e4fa\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d660d76\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdPage.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d660d76\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdPage.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -24999,7 +24990,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  flex-direction: column;\r\n  align-items: stretch;\r\n  background-color: red;\n}\r\n", ""]);
+exports.push([module.i, "\n.ad-page-wrapper[data-v-5d660d76] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  flex-direction: column;\r\n  align-items: stretch;\r\n  background-color: #e1ede6;\n}\n.ad-page-logo[data-v-5d660d76] {\r\n  width: 3.466667rem;\r\n  height: 3.466667rem;\n}\r\n", ""]);
 
 // exports
 
@@ -25018,12 +25009,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  name: 'Home',
+  name: 'AdPage',
   components: {},
   data: function data() {
-    return {};
+    return {
+      logoSrc: this.$getImg('logo3.png')
+    };
   },
 
   methods: {}
@@ -25035,17 +25034,39 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "home-wrapper weex-ct weex-div",
+    staticClass: "ad-page-wrapper weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
-  })
+  }, [_c('div', {
+    staticClass: "title weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("伯雅音乐")]), _vm._v(" "), _c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Your dream tutor")])]), _vm._v(" "), _c('figure', {
+    staticClass: "ad-page-logo weex-el weex-image",
+    attrs: {
+      "src": _vm.logoSrc,
+      "data-img-src": _vm.logoSrc,
+      "weex-type": "image"
+    }
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-89a6e4fa", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5d660d76", module.exports)
   }
 }
 
@@ -25070,7 +25091,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\index.vue"
+Component.options.__file = "E:\\GraduationProject\\boya-app-weex\\src\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 

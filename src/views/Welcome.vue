@@ -21,7 +21,6 @@
   </div>
 </template>
 <script>
-import { getImg } from '../mixins/index.js'
 import { WxcButton } from 'weex-ui'
 export default {
   name: 'Welcome',
@@ -30,12 +29,12 @@ export default {
   },
   data() {
     return {
-      logoSrc: getImg('logo2.png')
+      logoSrc: this.$getImg('logo2.png')
     }
   },
   methods: {
     enterSystem() {
-      this.$router.push('/home')
+      this.$router.push('/adpage')
     },
     gotoGithub(e) {
       this.$router.push('/result')

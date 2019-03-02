@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Welcome from '@/views/Welcome'
 import Result from '@/views/Result'
-import Home from '@/views/Home'
+import AdPage from '@/views/AdPage'
 
 Vue.use(Router)
 
@@ -24,9 +24,9 @@ export const router = new Router({
       component: Result
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/adpage',
+      name: 'AdPage',
+      component: AdPage
     }
   ]
 })

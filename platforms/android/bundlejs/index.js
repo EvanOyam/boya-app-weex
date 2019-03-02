@@ -4897,7 +4897,7 @@ exports.default = {
   created: function created() {
     var objThis = this;
     globalEvent.addEventListener('androidback', function (e) {
-      if (objThis.$route.path === '/' || objThis.$route.path === '/home' || objThis.$route.path === '/welcome') {
+      if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
         eventModule.closeApp();
       } else {
         objThis.$router.go(-1);

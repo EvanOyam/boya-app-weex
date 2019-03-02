@@ -2,7 +2,7 @@
 // - H5      : images/test.jpg        images和所在html路径同级
 // - Android : local:///test          local代表项目各dpi目录,一般放在hdpi里一张即可
 // - iOS     : local///test.jpg       local代表从项目中全局扫描 test.jpg可放至项目中任何目录
-export const getImg = function(imgName) {
+const getImg = function(imgName) {
   // 获取图片在三端上不同的路径
   let platform = weex.config.env.platform
   let imgPath = ''
@@ -19,6 +19,4 @@ export const getImg = function(imgName) {
 }
 
 // 导出接口
-export default {
-  getImg: getImg
-}
+export default getImg

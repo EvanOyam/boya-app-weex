@@ -72,10 +72,19 @@
 "use strict";
 
 
+var _getImg = __webpack_require__(1);
+
+var _getImg2 = _interopRequireDefault(_getImg);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+Vue.prototype.$getImg = _getImg2.default;
+/* weex initialized here, please do not move this line */
 /* global Vue */
 
-/* weex initialized here, please do not move this line */
-var _require = __webpack_require__(1),
+//全局引入图片路径处理方法
+
+var _require = __webpack_require__(2),
     router = _require.router;
 
 var App = __webpack_require__(32);
@@ -93,13 +102,46 @@ router.push('/');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+// e.g. 图片文件名是 test.jpg, 转换得到的图片地址为
+// - H5      : images/test.jpg        images和所在html路径同级
+// - Android : local:///test          local代表项目各dpi目录,一般放在hdpi里一张即可
+// - iOS     : local///test.jpg       local代表从项目中全局扫描 test.jpg可放至项目中任何目录
+var getImg = function getImg(imgName) {
+  // 获取图片在三端上不同的路径
+  var platform = weex.config.env.platform;
+  var imgPath = '';
+  if (platform === 'Web') {
+    imgPath = 'src/images/' + imgName;
+  } else if (platform === 'android') {
+    // android不需要后缀
+    imgName = imgName.substr(0, imgName.lastIndexOf('.'));
+    imgPath = 'local:///' + imgName;
+  } else {
+    imgPath = 'local:///' + imgName; // imgPath = `../images/${imgName}`
+  }
+  return imgPath;
+};
+
+// 导出接口
+exports.default = getImg;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.router = undefined;
 
-var _vueRouter = __webpack_require__(2);
+var _vueRouter = __webpack_require__(3);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Welcome = __webpack_require__(3);
+var _Welcome = __webpack_require__(4);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
@@ -107,9 +149,9 @@ var _Result = __webpack_require__(14);
 
 var _Result2 = _interopRequireDefault(_Result);
 
-var _Home = __webpack_require__(28);
+var _AdPage = __webpack_require__(28);
 
-var _Home2 = _interopRequireDefault(_Home);
+var _AdPage2 = _interopRequireDefault(_AdPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -129,14 +171,14 @@ var router = exports.router = new _vueRouter2.default({
     name: 'Result',
     component: _Result2.default
   }, {
-    path: '/home',
-    name: 'Home',
-    component: _Home2.default
+    path: '/adpage',
+    name: 'AdPage',
+    component: _AdPage2.default
   }]
 });
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2762,18 +2804,18 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(4)
+__vue_styles__.push(__webpack_require__(5)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(5)
+__vue_exports__ = __webpack_require__(6)
 
 /* template */
 var __vue_template__ = __webpack_require__(13)
@@ -2788,7 +2830,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-75a5423e"
@@ -2806,7 +2848,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -2855,7 +2897,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2865,11 +2907,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(6);
+var _wxcButton = __webpack_require__(7);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
-
-var _index = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2880,13 +2920,13 @@ exports.default = {
   },
   data: function data() {
     return {
-      logoSrc: (0, _index.getImg)('logo2.png')
+      logoSrc: this.$getImg('logo2.png')
     };
   },
 
   methods: {
     enterSystem: function enterSystem() {
-      this.$router.push('/home');
+      this.$router.push('/adpage');
     },
     gotoGithub: function gotoGithub(e) {
       this.$router.push('/result');
@@ -2916,7 +2956,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2926,7 +2966,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(7);
+var _index = __webpack_require__(8);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -2938,21 +2978,21 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(8)
+__vue_styles__.push(__webpack_require__(9)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(9)
+__vue_exports__ = __webpack_require__(10)
 
 /* template */
-var __vue_template__ = __webpack_require__(11)
+var __vue_template__ = __webpack_require__(12)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2964,7 +3004,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-77c133fc"
@@ -2982,7 +3022,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -3006,7 +3046,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3030,7 +3070,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _type = __webpack_require__(10);
+var _type = __webpack_require__(11);
 
 exports.default = {
   props: {
@@ -3095,7 +3135,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3177,7 +3217,7 @@ var TEXT_FONTSIZE_STYLE_MAP = exports.TEXT_FONTSIZE_STYLE_MAP = {
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3197,41 +3237,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v(_vm._s(_vm.text))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// e.g. 图片文件名是 test.jpg, 转换得到的图片地址为
-// - H5      : images/test.jpg        images和所在html路径同级
-// - Android : local:///test          local代表项目各dpi目录,一般放在hdpi里一张即可
-// - iOS     : local///test.jpg       local代表从项目中全局扫描 test.jpg可放至项目中任何目录
-var getImg = exports.getImg = function getImg(imgName) {
-  // 获取图片在三端上不同的路径
-  var platform = weex.config.env.platform;
-  var imgPath = '';
-  if (platform === 'Web') {
-    imgPath = 'src/images/' + imgName;
-  } else if (platform === 'android') {
-    // android不需要后缀
-    imgName = imgName.substr(0, imgName.lastIndexOf('.'));
-    imgPath = 'local:///' + imgName;
-  } else {
-    imgPath = 'local:///' + imgName; // imgPath = `../images/${imgName}`
-  }
-  return imgPath;
-};
-
-// 导出接口
-exports.default = {
-  getImg: getImg
-};
 
 /***/ }),
 /* 13 */
@@ -3320,7 +3325,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5543f671"
@@ -3391,16 +3396,6 @@ exports.default = {
   methods: {
     goBack: function goBack() {
       this.$router.go(-1);
-      // var navigator = weex.requireModule('navigator')
-      // navigator.push(
-      //   {
-      //     url: 'http://192.168.31.159:8081/web/preview.html?page=index.js&wsport=8082',
-      //     animated: 'true'
-      //   },
-      //   event => {
-      //     console.log('callback: ', event)
-      //   }
-      // )
     }
   }
 }; //
@@ -3462,7 +3457,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-9b19c5a6"
@@ -4753,10 +4748,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5e265133"
+__vue_options__._scopeId = "data-v-28fda526"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -4775,7 +4770,7 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
-  "home-wrapper": {
+  "ad-page-wrapper": {
     "position": "absolute",
     "top": 0,
     "bottom": 0,
@@ -4783,7 +4778,11 @@ module.exports = {
     "right": 0,
     "flexDirection": "column",
     "alignItems": "stretch",
-    "backgroundColor": "#FF0000"
+    "backgroundColor": "#e1ede6"
+  },
+  "ad-page-logo": {
+    "width": "260",
+    "height": "260"
   }
 }
 
@@ -4801,12 +4800,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  name: 'Home',
+  name: 'AdPage',
   components: {},
   data: function data() {
-    return {};
+    return {
+      logoSrc: this.$getImg('logo3.png')
+    };
   },
 
   methods: {}
@@ -4818,9 +4825,18 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["home-wrapper"]
-  })
-},staticRenderFns: []}
+    staticClass: ["ad-page-wrapper"]
+  }, [_vm._m(0), _c('image', {
+    staticClass: ["ad-page-logo"],
+    attrs: {
+      "src": _vm.logoSrc
+    }
+  })])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["title"]
+  }, [_c('text', [_vm._v("伯雅音乐")]), _c('text', [_vm._v("Your dream tutor")])])
+}]}
 module.exports.render._withStripped = true
 
 /***/ }),
@@ -4850,7 +4866,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1a4d8e3c"
