@@ -25128,7 +25128,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25150,8 +25150,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+var globalEvent = weex.requireModule('globalEvent');
+var eventModule = weex.requireModule('event');
 exports.default = {
   name: 'App',
+  created: function created() {
+    var objThis = this;
+    globalEvent.addEventListener('androidback', function (e) {
+      if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
+        eventModule.closeApp();
+      } else {
+        objThis.$router.go(-1);
+      }
+    });
+  },
   data: function data() {
     return {};
   }

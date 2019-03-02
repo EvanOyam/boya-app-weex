@@ -1,6 +1,5 @@
 node_modules
 release
-/platforms/android
 .DS_Store
 .npm
 .vscode
