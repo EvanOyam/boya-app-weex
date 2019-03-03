@@ -13,6 +13,7 @@
       <!-- 第二个页面内容-->
       <div class="item-container"><text>我的</text></div>
     </wxc-tab-bar>
+    <BookingBtn></BookingBtn>
   </div>
 </template>
 <script>
@@ -20,9 +21,16 @@ import { WxcTabBar } from 'weex-ui'
 import TopBar from '@/components/TopBar'
 import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
+import BookingBtn from '@/components/BookingBtn'
 export default {
   name: 'HomePage',
-  components: { TopBar, HeadBlock, MyCard, WxcTabBar },
+  components: {
+    TopBar,
+    HeadBlock,
+    MyCard,
+    WxcTabBar,
+    BookingBtn
+  },
   created() {},
   data() {
     return {
@@ -39,7 +47,7 @@ export default {
       tabIconFontStyles: {
         bgColor: '#FFFFFF',
         titleColor: '#666666',
-        activeTitleColor: '#3D3D3D',
+        activeTitleColor: '#FF9900',
         activeBgColor: '#FFFFFF',
         isActiveTitleBold: true,
         width: 160,
@@ -50,8 +58,8 @@ export default {
         iconFontSize: 50,
         iconFontMarginBottom: 8,
         iconFontColor: '#333333',
-        activeIconFontColor: 'red',
-        iconFontUrl: 'http://at.alicdn.com/t/font_1068180_1rh0hc3vbjw.ttf'
+        activeIconFontColor: '#FF9900',
+        iconFontUrl: 'http://at.alicdn.com/t/font_1068180_lzkgwo6po4j.ttf'
       }
     }
   },
