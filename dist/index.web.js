@@ -9304,7 +9304,7 @@ _weexVueRender2.default.init(_vue2.default);
 var _require = __webpack_require__(13),
     router = _require.router;
 
-var App = __webpack_require__(80);
+var App = __webpack_require__(85);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -25193,7 +25193,7 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(51),
   /* template */
-  __webpack_require__(79),
+  __webpack_require__(84),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25259,7 +25259,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.item-container[data-v-89a6e4fa] {\r\n  width: 10rem;\r\n  background-color: #f2f3f4;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.home-card[data-v-89a6e4fa] {\r\n  margin-top: -1.333333rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.item-container[data-v-89a6e4fa] {\r\n  width: 10rem;\r\n  background-color: #f2f3f4;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.home-card[data-v-89a6e4fa] {\r\n  margin-top: -1.333333rem;\n}\n.slider[data-v-89a6e4fa] {\r\n  width: 9rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.frame[data-v-89a6e4fa] {\r\n  width: 9rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\r\n  position: relative;\n}\n.image[data-v-89a6e4fa] {\r\n  width: 9rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.ad-card-box[data-v-89a6e4fa] {\r\n  width: 9rem;\r\n  height: 1.333333rem;\r\n  line-height: 1.333333rem;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: space-between;\n}\n.ad-card-title[data-v-89a6e4fa] {\r\n  font-size: 0.506667rem;\r\n  font-weight: bold;\r\n  color: #333;\n}\n.ad-card-more[data-v-89a6e4fa] {\r\n  color: #6e8ca0;\r\n  font-size: 0.426667rem;\n}\n.ad-card-box[data-v-89a6e4fa] {\r\n  margin-top: 0.266667rem;\n}\r\n", ""]);
 
 // exports
 
@@ -25291,7 +25291,7 @@ var _MyCard = __webpack_require__(74);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-var _BookingBtn = __webpack_require__(87);
+var _BookingBtn = __webpack_require__(79);
 
 var _BookingBtn2 = _interopRequireDefault(_BookingBtn);
 
@@ -25309,6 +25309,17 @@ exports.default = {
   created: function created() {},
   data: function data() {
     return {
+      imageList: [{
+        src: this.$getImg('ad1.png')
+      }, {
+        src: this.$getImg('ad2.png')
+      }, {
+        src: this.$getImg('ad3.png')
+      }, {
+        src: this.$getImg('ad4.png')
+      }, {
+        src: this.$getImg('ad5.png')
+      }],
       tabIconFontTitles: [{
         title: '首页',
         codePoint: '\uE64F'
@@ -25340,9 +25351,33 @@ exports.default = {
     wxcTabBarCurrentTabSelected: function wxcTabBarCurrentTabSelected(e) {
       var index = e.page;
       console.log(index);
+    },
+    wxcEpSliderCurrentIndexSelected: function wxcEpSliderCurrentIndexSelected(e) {
+      var index = e.currentIndex;
+      console.log(index);
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -26745,6 +26780,150 @@ if (false) {
 /* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(80)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(82),
+  /* template */
+  __webpack_require__(83),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-796d1e6e",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\BookingBtn.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] BookingBtn.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-796d1e6e", Component.options)
+  } else {
+    hotAPI.reload("data-v-796d1e6e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(81);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("ef25e190", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-796d1e6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./BookingBtn.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-796d1e6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./BookingBtn.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.booking-btn-outer[data-v-796d1e6e] {\r\n  width: 2.4rem;\r\n  height: 2.4rem;\r\n  border-radius: 1.066667rem;\r\n  background-color: #fff;\r\n  position: absolute;\r\n  bottom: 1.6rem;\r\n  margin-bottom: -1.466667rem;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.booking-btn-inner[data-v-796d1e6e] {\r\n  width: 1.786667rem;\r\n  height: 1.786667rem;\r\n  border-radius: 0.933333rem;\r\n  background-color: #FF9900;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.iconfont[data-v-796d1e6e] {\r\n  font-family: iconfont;\n}\n.iconText[data-v-796d1e6e] {\r\n  font-size: 0.8rem;\r\n  color: #e6efea;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'BookingBtn',
+  data: function data() {
+    return {};
+  },
+  created: function created() {
+    this.$getIcon();
+  },
+
+  methods: {}
+};
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "booking-btn-outer weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "booking-btn-inner weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont iconText weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-796d1e6e", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "home-wrapper weex-ct weex-div",
@@ -26769,17 +26948,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
     staticClass: "home-card",
     attrs: {}
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "item-container weex-ct weex-div",
+  }), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
   }, [_c('p', {
-    staticClass: " weex-el weex-text",
+    staticClass: "ad-card-title weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("我的")])])]), _vm._v(" "), _c('BookingBtn')], 1)
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0)], 1), _vm._v(" "), _c('div', {
+    staticClass: "item-container weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  })]), _vm._v(" "), _c('BookingBtn')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -26790,19 +27017,19 @@ if (false) {
 }
 
 /***/ }),
-/* 80 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(81)
+  __webpack_require__(86)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(83),
+  __webpack_require__(88),
   /* template */
-  __webpack_require__(84),
+  __webpack_require__(89),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26834,13 +27061,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 81 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(82);
+var content = __webpack_require__(87);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26860,7 +27087,7 @@ if(false) {
 }
 
 /***/ }),
-/* 82 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26874,7 +27101,7 @@ exports.push([module.i, "\n.iconfont {\n  font-family: iconfont;\n}\n", ""]);
 
 
 /***/ }),
-/* 83 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26912,7 +27139,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 84 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -26928,152 +27155,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-65db549f", module.exports)
-  }
-}
-
-/***/ }),
-/* 85 */,
-/* 86 */,
-/* 87 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(88)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(90),
-  /* template */
-  __webpack_require__(91),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-796d1e6e",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\BookingBtn.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] BookingBtn.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-796d1e6e", Component.options)
-  } else {
-    hotAPI.reload("data-v-796d1e6e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(89);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("ef25e190", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-796d1e6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./BookingBtn.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-796d1e6e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./BookingBtn.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.booking-btn-outer[data-v-796d1e6e] {\r\n  width: 2.4rem;\r\n  height: 2.4rem;\r\n  border-radius: 1.066667rem;\r\n  background-color: #fff;\r\n  position: absolute;\r\n  bottom: 1.6rem;\r\n  margin-bottom: -1.466667rem;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.booking-btn-inner[data-v-796d1e6e] {\r\n  width: 1.786667rem;\r\n  height: 1.786667rem;\r\n  border-radius: 0.933333rem;\r\n  background-color: #FF9900;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.iconfont[data-v-796d1e6e] {\r\n  font-family: iconfont;\n}\n.iconText[data-v-796d1e6e] {\r\n  font-size: 0.8rem;\r\n  color: #e6efea;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'BookingBtn',
-  data: function data() {
-    return {};
-  },
-  created: function created() {
-    this.$getIcon();
-  },
-
-  methods: {}
-};
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "booking-btn-outer weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('div', {
-    staticClass: "booking-btn-inner weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "iconfont iconText weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("")])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-796d1e6e", module.exports)
   }
 }
 

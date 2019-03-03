@@ -9,9 +9,29 @@
         <TopBar></TopBar>
         <HeadBlock></HeadBlock>
         <MyCard class="home-card"></MyCard>
+        <div class="ad-card-box">
+          <div>
+            <text class="ad-card-title">推荐的课程</text>
+          </div>
+          <div>
+            <text class="ad-card-more">查看更多></text>
+          </div>
+        </div>
+        <slider class="slider"
+                interval="3000"
+                auto-play="true">
+          <div class="frame"
+               v-for="(img,index) in imageList"
+               :key="index">
+            <image class="image"
+                   resize="cover"
+                   :src="img.src"></image>
+          </div>
+        </slider>
       </div>
       <!-- 第二个页面内容-->
-      <div class="item-container"><text>我的</text></div>
+      <div class="item-container">
+      </div>
     </wxc-tab-bar>
     <BookingBtn></BookingBtn>
   </div>
@@ -34,6 +54,23 @@ export default {
   created() {},
   data() {
     return {
+      imageList: [
+        {
+          src: this.$getImg('ad1.png')
+        },
+        {
+          src: this.$getImg('ad2.png')
+        },
+        {
+          src: this.$getImg('ad3.png')
+        },
+        {
+          src: this.$getImg('ad4.png')
+        },
+        {
+          src: this.$getImg('ad5.png')
+        }
+      ],
       tabIconFontTitles: [
         {
           title: '首页',
@@ -67,6 +104,10 @@ export default {
     wxcTabBarCurrentTabSelected(e) {
       const index = e.page
       console.log(index)
+    },
+    wxcEpSliderCurrentIndexSelected(e) {
+      const index = e.currentIndex
+      console.log(index)
     }
   }
 }
@@ -91,5 +132,41 @@ export default {
 }
 .home-card {
   margin-top: -100px;
+}
+.slider {
+  width: 675px;
+  height: 460px;
+  border-radius: 16px;
+}
+.frame {
+  width: 675px;
+  height: 460px;
+  border-radius: 16px;
+  position: relative;
+}
+.image {
+  width: 675px;
+  height: 460px;
+  border-radius: 16px;
+}
+.ad-card-box {
+  width: 675px;
+  height: 100px;
+  line-height: 100px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.ad-card-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+}
+.ad-card-more {
+  color: #6e8ca0;
+  font-size: 32px;
+}
+.ad-card-box {
+  margin-top: 20px;
 }
 </style>

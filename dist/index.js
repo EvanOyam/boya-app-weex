@@ -446,7 +446,7 @@ Vue.prototype.$getIcon = _getIcon2.default;
 var _require = __webpack_require__(4),
     router = _require.router;
 
-var App = __webpack_require__(59);
+var App = __webpack_require__(63);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -5008,7 +5008,7 @@ __vue_styles__.push(__webpack_require__(34)
 __vue_exports__ = __webpack_require__(35)
 
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(62)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -5060,6 +5060,49 @@ module.exports = {
   },
   "home-card": {
     "marginTop": "-100"
+  },
+  "slider": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16"
+  },
+  "frame": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16",
+    "position": "relative"
+  },
+  "image": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16"
+  },
+  "ad-card-box": {
+    "width": "675",
+    "height": "100",
+    "lineHeight": "100",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "space-between",
+    "marginTop": "20"
+  },
+  "ad-card-title": {
+    "fontSize": "38",
+    "fontWeight": "bold",
+    "color": "#333333"
+  },
+  "ad-card-more": {
+    "color": "#6e8ca0",
+    "fontSize": "32"
   }
 }
 
@@ -5090,7 +5133,7 @@ var _MyCard = __webpack_require__(54);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-var _BookingBtn = __webpack_require__(63);
+var _BookingBtn = __webpack_require__(58);
 
 var _BookingBtn2 = _interopRequireDefault(_BookingBtn);
 
@@ -5108,6 +5151,17 @@ exports.default = {
   created: function created() {},
   data: function data() {
     return {
+      imageList: [{
+        src: this.$getImg('ad1.png')
+      }, {
+        src: this.$getImg('ad2.png')
+      }, {
+        src: this.$getImg('ad3.png')
+      }, {
+        src: this.$getImg('ad4.png')
+      }, {
+        src: this.$getImg('ad5.png')
+      }],
       tabIconFontTitles: [{
         title: '首页',
         codePoint: '\uE64F'
@@ -5139,9 +5193,33 @@ exports.default = {
     wxcTabBarCurrentTabSelected: function wxcTabBarCurrentTabSelected(e) {
       var index = e.page;
       console.log(index);
+    },
+    wxcEpSliderCurrentIndexSelected: function wxcEpSliderCurrentIndexSelected(e) {
+      var index = e.currentIndex;
+      console.log(index);
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6429,149 +6507,20 @@ module.exports.render._withStripped = true
 
 /***/ }),
 /* 58 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["home-wrapper"]
-  }, [_c('wxc-tab-bar', {
-    attrs: {
-      "tabTitles": _vm.tabIconFontTitles,
-      "tabStyles": _vm.tabIconFontStyles,
-      "titleType": "iconFont"
-    },
-    on: {
-      "wxcTabBarCurrentTabSelected": _vm.wxcTabBarCurrentTabSelected
-    }
-  }, [_c('div', {
-    staticClass: ["item-container"]
-  }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
-    staticClass: ["home-card"]
-  })], 1), _c('div', {
-    staticClass: ["item-container"]
-  }, [_c('text', [_vm._v("我的")])])]), _c('BookingBtn')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(60)
+__vue_styles__.push(__webpack_require__(59)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(61)
+__vue_exports__ = __webpack_require__(60)
 
 /* template */
-var __vue_template__ = __webpack_require__(62)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\index.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-1a4d8e3c"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "iconfont": {
-    "fontFamily": "iconfont"
-  }
-}
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-
-var globalEvent = weex.requireModule('globalEvent');
-var eventModule = weex.requireModule('event');
-exports.default = {
-  name: 'App',
-  created: function created() {
-    var objThis = this;
-    globalEvent.addEventListener('androidback', function (e) {
-      if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
-        eventModule.closeApp();
-      } else {
-        objThis.$router.go(-1);
-      }
-    });
-  },
-  data: function data() {
-    return {};
-  },
-
-  methods: {}
-};
-
-/***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('router-view')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(64)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(65)
-
-/* template */
-var __vue_template__ = __webpack_require__(66)
+var __vue_template__ = __webpack_require__(61)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -6601,7 +6550,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 64 */
+/* 59 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6641,7 +6590,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 65 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6671,7 +6620,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 66 */
+/* 61 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6685,6 +6634,158 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["iconfont", "iconText"]
   }, [_vm._v("")])])])
 }]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["home-wrapper"]
+  }, [_c('wxc-tab-bar', {
+    attrs: {
+      "tabTitles": _vm.tabIconFontTitles,
+      "tabStyles": _vm.tabIconFontStyles,
+      "titleType": "iconFont"
+    },
+    on: {
+      "wxcTabBarCurrentTabSelected": _vm.wxcTabBarCurrentTabSelected
+    }
+  }, [_c('div', {
+    staticClass: ["item-container"]
+  }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
+    staticClass: ["home-card"]
+  }), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])]), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"]
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  }))], 1), _c('div', {
+    staticClass: ["item-container"]
+  })]), _c('BookingBtn')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(64)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(65)
+
+/* template */
+var __vue_template__ = __webpack_require__(66)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-1a4d8e3c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "iconfont": {
+    "fontFamily": "iconfont"
+  }
+}
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+
+var globalEvent = weex.requireModule('globalEvent');
+var eventModule = weex.requireModule('event');
+exports.default = {
+  name: 'App',
+  created: function created() {
+    var objThis = this;
+    globalEvent.addEventListener('androidback', function (e) {
+      if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
+        eventModule.closeApp();
+      } else {
+        objThis.$router.go(-1);
+      }
+    });
+  },
+  data: function data() {
+    return {};
+  },
+
+  methods: {}
+};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('router-view')], 1)
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ })

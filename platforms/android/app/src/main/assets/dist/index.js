@@ -446,7 +446,7 @@ Vue.prototype.$getIcon = _getIcon2.default;
 var _require = __webpack_require__(4),
     router = _require.router;
 
-var App = __webpack_require__(59);
+var App = __webpack_require__(63);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -512,7 +512,7 @@ var getIcon = function getIcon() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')";
   } else {
-    url = "url('http://at.alicdn.com/t/font_1068180_1rh0hc3vbjw.ttf')";
+    url = "url('http://at.alicdn.com/t/font_1068180_lzkgwo6po4j.ttf')";
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
@@ -5008,7 +5008,7 @@ __vue_styles__.push(__webpack_require__(34)
 __vue_exports__ = __webpack_require__(35)
 
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(62)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -5060,6 +5060,49 @@ module.exports = {
   },
   "home-card": {
     "marginTop": "-100"
+  },
+  "slider": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16"
+  },
+  "frame": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16",
+    "position": "relative"
+  },
+  "image": {
+    "width": "675",
+    "height": "460",
+    "borderTopLeftRadius": "16",
+    "borderTopRightRadius": "16",
+    "borderBottomRightRadius": "16",
+    "borderBottomLeftRadius": "16"
+  },
+  "ad-card-box": {
+    "width": "675",
+    "height": "100",
+    "lineHeight": "100",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "justifyContent": "space-between",
+    "marginTop": "20"
+  },
+  "ad-card-title": {
+    "fontSize": "38",
+    "fontWeight": "bold",
+    "color": "#333333"
+  },
+  "ad-card-more": {
+    "color": "#6e8ca0",
+    "fontSize": "32"
   }
 }
 
@@ -5090,32 +5133,35 @@ var _MyCard = __webpack_require__(54);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _BookingBtn = __webpack_require__(58);
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _BookingBtn2 = _interopRequireDefault(_BookingBtn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   name: 'HomePage',
-  components: { TopBar: _TopBar2.default, HeadBlock: _HeadBlock2.default, MyCard: _MyCard2.default, WxcTabBar: _wxcTabBar2.default },
+  components: {
+    TopBar: _TopBar2.default,
+    HeadBlock: _HeadBlock2.default,
+    MyCard: _MyCard2.default,
+    WxcTabBar: _wxcTabBar2.default,
+    BookingBtn: _BookingBtn2.default
+  },
   created: function created() {},
   data: function data() {
     return {
+      imageList: [{
+        src: this.$getImg('ad1.png')
+      }, {
+        src: this.$getImg('ad2.png')
+      }, {
+        src: this.$getImg('ad3.png')
+      }, {
+        src: this.$getImg('ad4.png')
+      }, {
+        src: this.$getImg('ad5.png')
+      }],
       tabIconFontTitles: [{
         title: '首页',
         codePoint: '\uE64F'
@@ -5126,7 +5172,7 @@ exports.default = {
       tabIconFontStyles: {
         bgColor: '#FFFFFF',
         titleColor: '#666666',
-        activeTitleColor: '#3D3D3D',
+        activeTitleColor: '#FF9900',
         activeBgColor: '#FFFFFF',
         isActiveTitleBold: true,
         width: 160,
@@ -5137,8 +5183,8 @@ exports.default = {
         iconFontSize: 50,
         iconFontMarginBottom: 8,
         iconFontColor: '#333333',
-        activeIconFontColor: 'red',
-        iconFontUrl: 'http://at.alicdn.com/t/font_1068180_1rh0hc3vbjw.ttf'
+        activeIconFontColor: '#FF9900',
+        iconFontUrl: 'http://at.alicdn.com/t/font_1068180_lzkgwo6po4j.ttf'
       }
     };
   },
@@ -5147,9 +5193,50 @@ exports.default = {
     wxcTabBarCurrentTabSelected: function wxcTabBarCurrentTabSelected(e) {
       var index = e.page;
       console.log(index);
+    },
+    wxcEpSliderCurrentIndexSelected: function wxcEpSliderCurrentIndexSelected(e) {
+      var index = e.currentIndex;
+      console.log(index);
     }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 36 */
@@ -6420,6 +6507,137 @@ module.exports.render._withStripped = true
 
 /***/ }),
 /* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(59)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(60)
+
+/* template */
+var __vue_template__ = __webpack_require__(61)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\BookingBtn.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-69e87dd3"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "booking-btn-outer": {
+    "width": "180",
+    "height": "180",
+    "borderTopLeftRadius": "80",
+    "borderTopRightRadius": "80",
+    "borderBottomRightRadius": "80",
+    "borderBottomLeftRadius": "80",
+    "backgroundColor": "#ffffff",
+    "position": "absolute",
+    "bottom": "120",
+    "marginBottom": "-110",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "booking-btn-inner": {
+    "width": "134",
+    "height": "134",
+    "borderTopLeftRadius": "70",
+    "borderTopRightRadius": "70",
+    "borderBottomRightRadius": "70",
+    "borderBottomLeftRadius": "70",
+    "backgroundColor": "#FF9900",
+    "textAlign": "center",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "iconfont": {
+    "fontFamily": "iconfont"
+  },
+  "iconText": {
+    "fontSize": "60",
+    "color": "#e6efea"
+  }
+}
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'BookingBtn',
+  data: function data() {
+    return {};
+  },
+  created: function created() {
+    this.$getIcon();
+  },
+
+  methods: {}
+};
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["booking-btn-outer"]
+  }, [_c('div', {
+    staticClass: ["booking-btn-inner"]
+  }, [_c('text', {
+    staticClass: ["iconfont", "iconText"]
+  }, [_vm._v("")])])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6438,28 +6656,51 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["item-container"]
   }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
     staticClass: ["home-card"]
-  })], 1), _c('div', {
+  }), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])]), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"]
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  }))], 1), _c('div', {
     staticClass: ["item-container"]
-  }, [_c('text', [_vm._v("我的")])])])], 1)
+  })]), _c('BookingBtn')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(60)
+__vue_styles__.push(__webpack_require__(64)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(61)
+__vue_exports__ = __webpack_require__(65)
 
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(66)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -6489,7 +6730,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6499,7 +6740,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6537,7 +6778,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
