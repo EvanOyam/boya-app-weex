@@ -167,7 +167,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(16)
+var listToStyles = __webpack_require__(17)
 
 /*
 type StyleObject = {
@@ -8933,20 +8933,24 @@ var _getImg = __webpack_require__(10);
 
 var _getImg2 = _interopRequireDefault(_getImg);
 
+var _getIcon = __webpack_require__(11);
+
+var _getIcon2 = _interopRequireDefault(_getIcon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.prototype.$getImg = _getImg2.default;
 /* global Vue */
 
 //全局引入图片路径处理方法
-
+_vue2.default.prototype.$getImg = _getImg2.default;
+_vue2.default.prototype.$getIcon = _getIcon2.default;
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     router = _require.router;
 
-var App = __webpack_require__(58);
+var App = __webpack_require__(59);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -20189,29 +20193,68 @@ exports.default = getImg;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+// 初始化iconfont文件位置
+// - H5      : 使用在线资源
+// - Android : local:///font
+// - iOS     : 未测试
+var getIcon = function getIcon() {
+  var dom = weex.requireModule('dom');
+  // 通过获取platform判断加载字体文件的路径,(待完善,在手机的playground中,是无法加载本地文件的)
+  var platform = weex.config.env.platform.toLowerCase();
+  var url = void 0;
+  if (platform === 'android') {
+    // 本地资源采用'local:// '的方式加载
+    // 第三个斜杠是代表当前目录,对于android来说,如果加载的是字体,那么就是assets目录,同理`/iconfont.ttf'`就是加载`assets`目录下的iconfont.ttf文件
+    // 注意这里将字体文件放在'assets/font/'目录下
+    url = "url('local:///font/iconfont.ttf')";
+  } else if (platform === 'ios') {
+    // ios未测试
+    url = "url('local:///font/iconfont.ttf')";
+  } else {
+    url = "url('http://at.alicdn.com/t/font_1068180_dzxj5qa3kjk.ttf')";
+  }
+  dom.addRule('fontFace', {
+    fontFamily: 'iconfont',
+    src: url
+  });
+};
+
+// 导出接口
+exports.default = getIcon;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.router = undefined;
 
 var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(12);
+var _vueRouter = __webpack_require__(13);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Welcome = __webpack_require__(13);
+var _Welcome = __webpack_require__(14);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
-var _Result = __webpack_require__(26);
+var _Result = __webpack_require__(27);
 
 var _Result2 = _interopRequireDefault(_Result);
 
-var _AdPage = __webpack_require__(42);
+var _AdPage = __webpack_require__(43);
 
 var _AdPage2 = _interopRequireDefault(_AdPage);
 
-var _Home = __webpack_require__(47);
+var _Home = __webpack_require__(48);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -20243,7 +20286,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22869,19 +22912,19 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(14)
+  __webpack_require__(15)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(17),
+  __webpack_require__(18),
   /* template */
-  __webpack_require__(25),
+  __webpack_require__(26),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -22913,13 +22956,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(15);
+var content = __webpack_require__(16);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22939,7 +22982,7 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -22953,7 +22996,7 @@ exports.push([module.i, "\n.welcome-wrapper[data-v-636c3824] {\r\n  position: ab
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 /**
@@ -22986,7 +23029,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22996,7 +23039,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(18);
+var _wxcButton = __webpack_require__(19);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -23045,7 +23088,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23055,7 +23098,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(19);
+var _index = __webpack_require__(20);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -23067,19 +23110,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(20)
+  __webpack_require__(21)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(22),
+  __webpack_require__(23),
   /* template */
-  __webpack_require__(24),
+  __webpack_require__(25),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23111,13 +23154,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(21);
+var content = __webpack_require__(22);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23137,7 +23180,7 @@ if(false) {
 }
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23151,7 +23194,7 @@ exports.push([module.i, "\n.wxc-btn[data-v-6994ede6] {\n  width: 9.36rem;\n  hei
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23175,7 +23218,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _type = __webpack_require__(23);
+var _type = __webpack_require__(24);
 
 exports.default = {
   props: {
@@ -23240,7 +23283,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23322,7 +23365,7 @@ var TEXT_FONTSIZE_STYLE_MAP = exports.TEXT_FONTSIZE_STYLE_MAP = {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -23359,7 +23402,7 @@ if (false) {
 }
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -23442,19 +23485,19 @@ if (false) {
 }
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(27)
+  __webpack_require__(28)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(29),
+  __webpack_require__(30),
   /* template */
-  __webpack_require__(41),
+  __webpack_require__(42),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23486,13 +23529,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(28);
+var content = __webpack_require__(29);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23512,7 +23555,7 @@ if(false) {
 }
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23526,7 +23569,7 @@ exports.push([module.i, "\n.result-wrapper[data-v-eca7427e] {\r\n  position: abs
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23536,7 +23579,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcResult = __webpack_require__(30);
+var _wxcResult = __webpack_require__(31);
 
 var _wxcResult2 = _interopRequireDefault(_wxcResult);
 
@@ -23576,7 +23619,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23586,7 +23629,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(31);
+var _index = __webpack_require__(32);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -23598,19 +23641,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(32)
+  __webpack_require__(33)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(34),
+  __webpack_require__(35),
   /* template */
-  __webpack_require__(40),
+  __webpack_require__(41),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23642,13 +23685,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(33);
+var content = __webpack_require__(34);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23668,7 +23711,7 @@ if(false) {
 }
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23682,7 +23725,7 @@ exports.push([module.i, "\n.wrap[data-v-57e8a511] {\n  position: absolute;\n  to
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23692,11 +23735,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _type = __webpack_require__(35);
+var _type = __webpack_require__(36);
 
 var _type2 = _interopRequireDefault(_type);
 
-var _utils = __webpack_require__(36);
+var _utils = __webpack_require__(37);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -23839,7 +23882,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23881,7 +23924,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23896,7 +23939,7 @@ var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbo
                                                                                                                                                                                                                                                                                 * Created by Tw93 on 17/11/01
                                                                                                                                                                                                                                                                                 */
 
-var _urlParse = __webpack_require__(37);
+var _urlParse = __webpack_require__(38);
 
 var _urlParse2 = _interopRequireDefault(_urlParse);
 
@@ -24235,14 +24278,14 @@ var Utils = {
 exports.default = Utils;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var required = __webpack_require__(38)
-  , qs = __webpack_require__(39)
+var required = __webpack_require__(39)
+  , qs = __webpack_require__(40)
   , protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\S\s]*)/i
   , slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//;
 
@@ -24675,7 +24718,7 @@ module.exports = Url;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24720,7 +24763,7 @@ module.exports = function required(port, protocol) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24815,7 +24858,7 @@ exports.parse = querystring;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -24890,7 +24933,7 @@ if (false) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -24921,19 +24964,19 @@ if (false) {
 }
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(43)
+  __webpack_require__(44)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(45),
-  /* template */
   __webpack_require__(46),
+  /* template */
+  __webpack_require__(47),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -24965,13 +25008,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(44);
+var content = __webpack_require__(45);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -24991,7 +25034,7 @@ if(false) {
 }
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -25005,7 +25048,7 @@ exports.push([module.i, "\n.ad-page-wrapper[data-v-5d660d76] {\r\n  position: ab
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25084,7 +25127,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -25138,19 +25181,19 @@ if (false) {
 }
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(48)
+  __webpack_require__(49)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(50),
+  __webpack_require__(51),
   /* template */
-  __webpack_require__(57),
+  __webpack_require__(58),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25182,13 +25225,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(49);
+var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25208,7 +25251,7 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -25216,13 +25259,13 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\n}\n.iconfont[data-v-89a6e4fa] {\r\n  font-family: iconfont;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25232,7 +25275,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcMinibar = __webpack_require__(51);
+var _wxcMinibar = __webpack_require__(52);
 
 var _wxcMinibar2 = _interopRequireDefault(_wxcMinibar);
 
@@ -25260,6 +25303,9 @@ var modal = weex.requireModule('modal'); //
 exports.default = {
   name: 'HomePage',
   components: { WxcMinibar: _wxcMinibar2.default },
+  created: function created() {
+    this.$getIcon();
+  },
   data: function data() {
     return {
       logoSrc: this.$getImg('logo3.png')
@@ -25277,7 +25323,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25287,7 +25333,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(52);
+var _index = __webpack_require__(53);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -25299,19 +25345,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(53)
+  __webpack_require__(54)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(55),
-  /* template */
   __webpack_require__(56),
+  /* template */
+  __webpack_require__(57),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25343,13 +25389,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(54);
+var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25369,7 +25415,7 @@ if(false) {
 }
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -25383,7 +25429,7 @@ exports.push([module.i, "\n.wxc-minibar[data-v-571ad504] {\n  width: 10rem;\n  h
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25541,7 +25587,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -25629,7 +25675,7 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -25685,19 +25731,19 @@ if (false) {
 }
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(59)
+  __webpack_require__(60)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(61),
-  /* template */
   __webpack_require__(62),
+  /* template */
+  __webpack_require__(63),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25729,13 +25775,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(60);
+var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25755,7 +25801,7 @@ if(false) {
 }
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -25769,7 +25815,7 @@ exports.push([module.i, "\n.iconfont {\n  font-family: iconfont;\n}\n", ""]);
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25791,11 +25837,6 @@ exports.default = {
   name: 'App',
   created: function created() {
     var objThis = this;
-    var domModule = weex.requireModule('dom');
-    domModule.addRule('fontFace', {
-      fontFamily: 'iconfont',
-      src: "url('http://at.alicdn.com/t/font_1068180_dzxj5qa3kjk.ttf?t1231')"
-    });
     globalEvent.addEventListener('androidback', function (e) {
       if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
         eventModule.closeApp();
@@ -25806,11 +25847,13 @@ exports.default = {
   },
   data: function data() {
     return {};
-  }
+  },
+
+  methods: {}
 };
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

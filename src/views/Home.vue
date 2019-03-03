@@ -22,6 +22,9 @@ const modal = weex.requireModule('modal')
 export default {
   name: 'HomePage',
   components: { WxcMinibar },
+  created() {
+    this.$getIcon()
+  },
   data() {
     return {
       logoSrc: this.$getImg('logo3.png')
@@ -45,5 +48,8 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+}
+.iconfont {
+  font-family: iconfont;
 }
 </style>
