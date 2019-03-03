@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import weex from 'weex-vue-render'
 /* global Vue */
+
+//全局引入图片路径处理方法
 import getImg from '@/mixins/getImg'
 Vue.prototype.$getImg = getImg
 weex.init(Vue)

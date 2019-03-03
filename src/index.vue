@@ -11,6 +11,11 @@ export default {
   name: 'App',
   created: function() {
     var objThis = this
+    let domModule = weex.requireModule('dom')
+    domModule.addRule('fontFace', {
+      fontFamily: 'iconfont',
+      src: "url('http://at.alicdn.com/t/font_1068180_dzxj5qa3kjk.ttf?t1231')"
+    })
     globalEvent.addEventListener('androidback', function(e) {
       if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
         eventModule.closeApp()
@@ -25,5 +30,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.iconfont {
+  font-family: iconfont;
+}
 </style>

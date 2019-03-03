@@ -8,12 +8,12 @@
       <wxc-button text="进入系统"
                   type="green"
                   :btnStyle="{height:'110px', marginBottom:'20px'}"
-                  :textStyle="{fontSize:'40px',fontWeight:'bold',color:'#e1ede6'}"
+                  :textStyle="{fontSize:'40px',fontWeight:'bold',color:'#E6EFEA'}"
                   @wxcButtonClicked="enterSystem"></wxc-button>
       <wxc-button text="Github"
                   type="blue"
                   :btnStyle="{height:'110px',marginTop:'20px'}"
-                  :textStyle="{fontSize:'40px',fontWeight:'bold',color:'#e1ede6'}"
+                  :textStyle="{fontSize:'40px',fontWeight:'bold',color:'#E6EFEA'}"
                   @wxcButtonClicked="gotoGithub"></wxc-button>
     </div>
     <image class="welcome-logo"
@@ -61,7 +61,7 @@ export default {
   justify-content: center;
 }
 .welcome-wrapper-bottom {
-  background-color: #e1ede6;
+  background-color: #E6EFEA;
   flex: 1;
   flex-direction: column;
   align-items: center;
@@ -69,11 +69,11 @@ export default {
 }
 .welcome-title-zh {
   font-weight: bold;
-  color: #e1ede6;
+  color: #E6EFEA;
   font-size: 96px;
 }
 .welcome-title-en {
-  color: #e1ede6;
+  color: #E6EFEA;
   font-size: 72px;
   margin-bottom: 80px;
 }
