@@ -24,17 +24,14 @@ export default {
   height: 180px;
   border-radius: 80px;
   background-color: #fff;
-  position: absolute;
-  bottom: 120px;
-  margin-bottom: -110px;
   justify-content: center;
   align-items: center;
 }
 .booking-btn-inner {
   width: 134px;
   height: 134px;
-  border-radius: 70px;
-  background-color: #FF9900;
+  border-radius: 134px;
+  background-color: #ff9900;
   text-align: center;
   justify-content: center;
   align-items: center;

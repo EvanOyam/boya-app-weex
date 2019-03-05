@@ -4,36 +4,84 @@
                  :tab-styles="tabIconFontStyles"
                  title-type="iconFont"
                  @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
-      <!-- 第一个页面内容-->
-      <div class="item-container">
-        <TopBar></TopBar>
-        <HeadBlock></HeadBlock>
-        <MyCard class="home-card"></MyCard>
-        <div class="ad-card-box">
-          <div>
-            <text class="ad-card-title">推荐的课程</text>
+      <scroller class="scroller"
+                :style="`height:${scrollerHeight}px`">
+        <!-- 第一个页面内容-->
+        <div class="item-container">
+          <TopBar></TopBar>
+          <HeadBlock></HeadBlock>
+          <MyCard class="home-card"></MyCard>
+          <div class="ad-card-box">
+            <div>
+              <text class="ad-card-title">推荐的课程</text>
+            </div>
+            <div>
+              <text class="ad-card-more"
+                    @click="gotoTest">查看更多></text>
+            </div>
           </div>
-          <div>
-            <text class="ad-card-more">查看更多></text>
+          <slider class="slider"
+                  interval="3000"
+                  keep-index="false"
+                  auto-play="true">
+            <div class="frame"
+                 v-for="(img,index) in imageList"
+                 :key="index">
+              <image class="image"
+                     resize="cover"
+                     :src="img.src"></image>
+            </div>
+          </slider>
+          <div class="ad-card-box">
+            <div>
+              <text class="ad-card-title">推荐的课程</text>
+            </div>
+            <div>
+              <text class="ad-card-more"
+                    @click="gotoTest">查看更多></text>
+            </div>
           </div>
+          <slider class="slider"
+                  interval="3000"
+                  keep-index="false"
+                  auto-play="true">
+            <div class="frame"
+                 v-for="(img,index) in imageList"
+                 :key="index">
+              <image class="image"
+                     resize="cover"
+                     :src="img.src"></image>
+            </div>
+          </slider>
+          <div class="ad-card-box">
+            <div>
+              <text class="ad-card-title">推荐的课程</text>
+            </div>
+            <div>
+              <text class="ad-card-more"
+                    @click="gotoTest">查看更多></text>
+            </div>
+          </div>
+          <slider class="slider"
+                  interval="3000"
+                  keep-index="false"
+                  auto-play="true">
+            <div class="frame"
+                 v-for="(img,index) in imageList"
+                 :key="index">
+              <image class="image"
+                     resize="cover"
+                     :src="img.src"></image>
+            </div>
+          </slider>
         </div>
-        <slider class="slider"
-                interval="3000"
-                auto-play="true">
-          <div class="frame"
-               v-for="(img,index) in imageList"
-               :key="index">
-            <image class="image"
-                   resize="cover"
-                   :src="img.src"></image>
-          </div>
-        </slider>
-      </div>
+      </scroller>
+
       <!-- 第二个页面内容-->
       <div class="item-container">
       </div>
     </wxc-tab-bar>
-    <BookingBtn></BookingBtn>
+    <BookingBtn class="bookingBtn"></BookingBtn>
   </div>
 </template>
 <script>
@@ -51,24 +99,27 @@ export default {
     WxcTabBar,
     BookingBtn
   },
-  created() {},
+  created() {
+    this.scrollerHeight = weex.config.env.deviceHeight - 200
+    console.log(this.scrollerHeight)
+  },
   data() {
     return {
       imageList: [
         {
-          src: this.$getImg('ad1.png')
+          src: 'https://s2.ax1x.com/2019/03/04/kOsGD0.png'
         },
         {
-          src: this.$getImg('ad2.png')
+          src: 'https://s2.ax1x.com/2019/03/04/kOs8uq.png'
         },
         {
-          src: this.$getImg('ad3.png')
+          src: 'https://s2.ax1x.com/2019/03/04/kOsJbV.png'
         },
         {
-          src: this.$getImg('ad4.png')
+          src: 'https://s2.ax1x.com/2019/03/04/kOs1vn.png'
         },
         {
-          src: this.$getImg('ad5.png')
+          src: 'https://s2.ax1x.com/2019/03/04/kOslgs.png'
         }
       ],
       tabIconFontTitles: [
@@ -108,12 +159,22 @@ export default {
     wxcEpSliderCurrentIndexSelected(e) {
       const index = e.currentIndex
       console.log(index)
+    },
+    gotoTest() {
+      this.$router.push('/test')
     }
   }
 }
 </script>
 
 <style scoped>
+.bookingBtn {
+  position: absolute;
+  bottom: 0;
+}
+.scroller {
+  width: 750px;
+}
 .item-container {
   width: 750px;
   background-color: #f2f3f4;
@@ -168,5 +229,14 @@ export default {
 }
 .ad-card-box {
   margin-top: 20px;
+}
+</style>
+<style>
+.tab-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 </style>
