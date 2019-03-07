@@ -1,5 +1,179 @@
 <template>
-  <div class="wxc-demo">
+  <scroller class="scroller">
+    <TopBar></TopBar>
+    <HeadBlock></HeadBlock>
+    <MyCard class="home-card"></MyCard>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    <div class="ad-card-box">
+      <div>
+        <text class="ad-card-title">推荐的课程</text>
+      </div>
+      <div>
+        <text class="ad-card-more"
+              @click="gotoTest">查看更多></text>
+      </div>
+    </div>
+    <slider class="slider"
+            interval="3000"
+            keep-index="false"
+            auto-play="true">
+      <div class="frame"
+           v-for="(img,index) in imageList"
+           :key="index">
+        <image class="image"
+               resize="cover"
+               :src="img.src"></image>
+      </div>
+    </slider>
+    </div>
+  </scroller>
+  <!-- <div class="wxc-demo">
     <scroller class="scroller">
       <div class="wrapper">
         <wxc-ep-slider :slider-id="1"
@@ -9,9 +183,9 @@
                        :auto-play="true"
                        :select-index="0"
                        :interval="5000"
-                       @wxcEpSliderCurrentIndexSelected="wxcEpSliderCurrentIndexSelected">
-          <!--自动生成demo-->
-          <!-- <wxc-pan-item v-for="(v,index) in [1,2,3,4,5]"
+                       @wxcEpSliderCurrentIndexSelected="wxcEpSliderCurrentIndexSelected"> -->
+  <!--自动生成demo-->
+  <!-- <wxc-pan-item v-for="(v,index) in [1,2,3,4,5]"
                         :key="index"
                         :extId="index"
                         :class="['slider',`slider${index}`]"
@@ -22,7 +196,7 @@
                         :aria-label="`这里是第${index + 1}个滑块`">
             <text class="text">这里是第{{index + 1}}个滑块</text>
           </wxc-pan-item> -->
-          <wxc-pan-item v-for="(item,index) in imgList"
+  <!-- <wxc-pan-item v-for="(item,index) in imgList"
                         :key="index"
                         :class="['slider',`slider${index}`]"
                         @wxcPanItemPan="wxcPanItemPan"
@@ -35,7 +209,7 @@
         </wxc-ep-slider>
       </div>
     </scroller>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
@@ -87,6 +261,13 @@
   height: 300px;
   background-color: #ffc302;
 } */
+.scroller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 </style>
 
 <script>

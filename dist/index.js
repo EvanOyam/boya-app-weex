@@ -4098,7 +4098,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-75a5423e"
@@ -4272,7 +4272,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-77c133fc"
@@ -4593,7 +4593,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5543f671"
@@ -4725,7 +4725,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-9b19c5a6"
@@ -5662,7 +5662,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-28fda526"
@@ -5886,7 +5886,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5e265133"
@@ -5983,15 +5983,7 @@ module.exports = {
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = {
-  "tab-container": {
-    "position": "absolute",
-    "left": 0,
-    "right": 0,
-    "top": 0,
-    "bottom": 0
-  }
-}
+module.exports = {}
 
 /***/ }),
 /* 38 */
@@ -6177,7 +6169,6 @@ exports.default = {
 //
 //
 //
-//
 
 /***/ }),
 /* 39 */
@@ -6228,7 +6219,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-tab-bar\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-tab-bar\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-dc8303b2"
@@ -6700,7 +6691,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7a7ab78e"
@@ -6832,7 +6823,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-e026d130"
@@ -7171,7 +7162,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-35d0962d"
@@ -7276,7 +7267,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-4ea34e28"
@@ -7473,7 +7464,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\components\\BookingBtn.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\components\\BookingBtn.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-69e87dd3"
@@ -7713,7 +7704,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-36c68f66"
@@ -7744,7 +7735,12 @@ module.exports = {
     "backgroundColor": "#ffffff"
   },
   "scroller": {
-    "flex": 1
+    "flex": 1,
+    "position": "absolute",
+    "top": 0,
+    "left": 0,
+    "right": 0,
+    "bottom": 0
   },
   "slider": {
     "width": "560",
@@ -7924,6 +7920,187 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 69 */
@@ -7992,7 +8169,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-pan-item\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-pan-item\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__.style = __vue_options__.style || {}
@@ -8184,7 +8361,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-ep-slider\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-ep-slider\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-30efe70f"
@@ -8711,50 +8888,244 @@ module.exports.render._withStripped = true
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wxc-demo"]
-  }, [_c('scroller', {
+  return _c('scroller', {
     staticClass: ["scroller"]
-  }, [_c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('wxc-ep-slider', {
-    ref: "wxc-ep-slider",
-    attrs: {
-      "sliderId": 1,
-      "cardLength": 5,
-      "cardS": _vm.cardSize,
-      "autoPlay": true,
-      "selectIndex": 0,
-      "interval": 5000
-    },
+  }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
+    staticClass: ["home-card"]
+  }), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(0), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
     on: {
-      "wxcEpSliderCurrentIndexSelected": _vm.wxcEpSliderCurrentIndexSelected
+      "click": _vm.gotoTest
     }
-  }, _vm._l((_vm.imgList), function(item, index) {
-    return _c('wxc-pan-item', {
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
       key: index,
-      class: ['slider', ("slider" + index)],
-      attrs: {
-        "slot": ("card" + index + "_1"),
-        "accessible": true
-      },
-      on: {
-        "wxcPanItemPan": _vm.wxcPanItemPan
-      },
-      slot: ("card" + index + "_1")
+      staticClass: ["frame"]
     }, [_c('image', {
-      staticClass: ["sliderImg"],
+      staticClass: ["image"],
       attrs: {
-        "src": item.src
-      },
-      on: {
-        "click": function($event) {
-          _vm.handleClick(index)
-        }
+        "resize": "cover",
+        "src": img.src
       }
     })])
-  }))], 1)])])
-},staticRenderFns: []}
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(1), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(2), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(3), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(4), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(5), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(6), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  })), _c('div', {
+    staticClass: ["ad-card-box"]
+  }, [_vm._m(7), _c('div', [_c('text', {
+    staticClass: ["ad-card-more"],
+    on: {
+      "click": _vm.gotoTest
+    }
+  }, [_vm._v("查看更多>")])])]), _c('slider', {
+    staticClass: ["slider"],
+    attrs: {
+      "interval": "3000",
+      "keepIndex": "false",
+      "autoPlay": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["frame"]
+    }, [_c('image', {
+      staticClass: ["image"],
+      attrs: {
+        "resize": "cover",
+        "src": img.src
+      }
+    })])
+  }))], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('text', {
+    staticClass: ["ad-card-title"]
+  }, [_vm._v("推荐的课程")])])
+}]}
 module.exports.render._withStripped = true
 
 /***/ }),
@@ -8784,7 +9155,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "e:\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.__file = "E:\\GraduationProject\\boya-app-weex\\src\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1a4d8e3c"

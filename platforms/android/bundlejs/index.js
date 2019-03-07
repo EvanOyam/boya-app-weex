@@ -5983,15 +5983,7 @@ module.exports = {
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = {
-  "tab-container": {
-    "position": "absolute",
-    "left": 0,
-    "right": 0,
-    "top": 0,
-    "bottom": 0
-  }
-}
+module.exports = {}
 
 /***/ }),
 /* 38 */
@@ -6093,6 +6085,9 @@ exports.default = {
     }
   }
 }; //
+//
+//
+//
 //
 //
 //
@@ -7677,9 +7672,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "src": img.src
       }
     })])
-  }))], 1), _c('div', {
+  }))], 1)]), _c('div', {
     staticClass: ["item-container"]
-  })])]), _c('BookingBtn', {
+  })]), _c('BookingBtn', {
     staticClass: ["bookingBtn"]
   })], 1)
 },staticRenderFns: []}

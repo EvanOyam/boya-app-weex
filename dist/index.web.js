@@ -26163,7 +26163,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.tab-container {\r\n  position: absolute;\r\n  left: 0;\r\n  right: 0;\r\n  top: 0;\r\n  bottom: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .tab-container {\r\n  position: absolute;\r\n  left: 0;\r\n  right: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n} */\r\n", ""]);
 
 // exports
 
@@ -26268,7 +26268,6 @@ exports.default = {
     }
   }
 }; //
-//
 //
 //
 //
@@ -28193,7 +28192,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.wxc-demo[data-v-d8666894] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #ffffff;\n}\n.scroller[data-v-d8666894] {\r\n  flex: 1;\n}\n/* .wrapper {\r\n  padding-top: 40px;\r\n}\r\n.text {\r\n  font-size: 32px;\r\n  color: #333333;\r\n} */\n.slider[data-v-d8666894] {\r\n  width: 7.466667rem;\r\n  height: 8.533333rem;\r\n  background-color: #c3413d;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: 0.213333rem;\n}\n.sliderImg[data-v-d8666894] {\r\n  width: 7.466667rem;\r\n  height: 8.533333rem;\r\n  border-radius: 0.213333rem;\n}\n.slider1[data-v-d8666894] {\r\n  background-color: #635147;\n}\n.slider2[data-v-d8666894] {\r\n  background-color: #ffc302;\n}\n.slider3[data-v-d8666894] {\r\n  background-color: #ff9090;\n}\n.slider4[data-v-d8666894] {\r\n  background-color: #546e7a;\n}\n/* .more-slider {\r\n  width: 100px;\r\n  height: 300px;\r\n  background-color: #ffc302;\r\n} */\r\n", ""]);
+exports.push([module.i, "\n.wxc-demo[data-v-d8666894] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #ffffff;\n}\n.scroller[data-v-d8666894] {\r\n  flex: 1;\n}\n/* .wrapper {\r\n  padding-top: 40px;\r\n}\r\n.text {\r\n  font-size: 32px;\r\n  color: #333333;\r\n} */\n.slider[data-v-d8666894] {\r\n  width: 7.466667rem;\r\n  height: 8.533333rem;\r\n  background-color: #c3413d;\r\n  align-items: center;\r\n  justify-content: center;\r\n  border-radius: 0.213333rem;\n}\n.sliderImg[data-v-d8666894] {\r\n  width: 7.466667rem;\r\n  height: 8.533333rem;\r\n  border-radius: 0.213333rem;\n}\n.slider1[data-v-d8666894] {\r\n  background-color: #635147;\n}\n.slider2[data-v-d8666894] {\r\n  background-color: #ffc302;\n}\n.slider3[data-v-d8666894] {\r\n  background-color: #ff9090;\n}\n.slider4[data-v-d8666894] {\r\n  background-color: #546e7a;\n}\n/* .more-slider {\r\n  width: 100px;\r\n  height: 300px;\r\n  background-color: #ffc302;\r\n} */\n.scroller[data-v-d8666894] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -28253,6 +28252,187 @@ exports.default = {
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29229,63 +29409,509 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wxc-demo weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('scroller', {
+  return _c('scroller', {
     staticClass: "scroller",
     attrs: {}
-  }, [_c('div', {
-    staticClass: "wrapper weex-ct weex-div",
+  }, [_c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
+    staticClass: "home-card",
+    attrs: {}
+  }), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('wxc-ep-slider', {
-    ref: "wxc-ep-slider",
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
     attrs: {
-      "slider-id": 1,
-      "card-length": 5,
-      "card-s": _vm.cardSize,
-      "auto-play": true,
-      "select-index": 0,
-      "interval": 5000,
-      "data-evt-wxcEpSliderCurrentIndexSelected": ""
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
     },
     on: {
-      "wxcEpSliderCurrentIndexSelected": _vm.wxcEpSliderCurrentIndexSelected
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
     }
-  }, _vm._l((_vm.imgList), function(item, index) {
-    return _c('wxc-pan-item', {
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
       key: index,
-      class: ['slider', ("slider" + index)],
+      staticClass: "frame weex-ct weex-div",
       attrs: {
-        "slot": ("card" + index + "_1"),
-        "accessible": true,
-        "data-evt-wxcPanItemPan": ""
-      },
-      on: {
-        "wxcPanItemPan": _vm.wxcPanItemPan
-      },
-      slot: ("card" + index + "_1")
+        "weex-type": "div"
+      }
     }, [_c('figure', {
-      staticClass: "sliderImg weex-el weex-image",
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
       attrs: {
-        "src": item.src,
-        "data-img-src": item.src,
-        "weex-type": "image",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          return _vm.handleClick(index)
-        }
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
       }
     })])
-  }), 1)], 1)])], 1)
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0), _vm._v(" "), _c('div', {
+    staticClass: "ad-card-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("推荐的课程")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "ad-card-more weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoTest($event)
+      }
+    }
+  }, [_vm._v("查看更多>")])])]), _vm._v(" "), _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "interval": "3000",
+      "keep-index": "false",
+      "auto-play": "true"
+    }
+  }, _vm._l((_vm.imageList), function(img, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "frame weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "image weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": img.src,
+        "data-img-src": img.src,
+        "weex-type": "image"
+      }
+    })])
+  }), 0)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
