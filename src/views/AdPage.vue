@@ -37,7 +37,7 @@ export default {
         _this.timer = _this.timer - 1
         if (_this.timer === 0) {
           clearInterval(timerStart)
-          _this.$router.push('/home')
+          _this.$router.push('/index')
         }
       }, 1000)
     },

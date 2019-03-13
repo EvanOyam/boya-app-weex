@@ -31,9 +31,9 @@
       <MessageCard class="home-message-card"></MessageCard>
       <MessageCard class="home-message-card"></MessageCard>
       <MessageCard class="home-message-card"></MessageCard>
-      <MessageCard class="home-message-card" style="marginBottom:200px"></MessageCard>
+      <MessageCard class="home-message-card"
+                   style="marginBottom:200px"></MessageCard>
     </scroller>
-    <MyTabBar></MyTabBar>
   </div>
 </template>
 <script>
@@ -41,15 +41,13 @@ import TopBar from '@/components/TopBar'
 import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
 import MessageCard from '@/components/MessageCard'
-import MyTabBar from '@/components/MyTabBar'
 export default {
   name: 'HomePage',
   components: {
     TopBar,
     HeadBlock,
     MyCard,
-    MessageCard,
-    MyTabBar
+    MessageCard
   },
   data() {
     return {

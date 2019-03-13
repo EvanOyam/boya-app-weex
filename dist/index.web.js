@@ -10158,7 +10158,7 @@ _weexVueRender2.default.init(_vue2.default);
 var _require = __webpack_require__(15),
     router = _require.router;
 
-var App = __webpack_require__(104);
+var App = __webpack_require__(109);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -21462,11 +21462,11 @@ var _AdPage = __webpack_require__(45);
 
 var _AdPage2 = _interopRequireDefault(_AdPage);
 
-var _Home = __webpack_require__(50);
+var _Index = __webpack_require__(50);
 
-var _Home2 = _interopRequireDefault(_Home);
+var _Index2 = _interopRequireDefault(_Index);
 
-var _Test = __webpack_require__(88);
+var _Test = __webpack_require__(93);
 
 var _Test2 = _interopRequireDefault(_Test);
 
@@ -21492,9 +21492,9 @@ var router = exports.router = new _vueRouter2.default({
     name: 'AdPage',
     component: _AdPage2.default
   }, {
-    path: '/home',
-    name: 'Home',
-    component: _Home2.default
+    path: '/index',
+    name: 'Index',
+    component: _Index2.default
   }, {
     path: '/test',
     name: 'Test',
@@ -25960,7 +25960,7 @@ exports.default = {
         _this.timer = _this.timer - 1;
         if (_this.timer === 0) {
           clearInterval(timerStart);
-          _this.$router.push('/home');
+          _this.$router.push('/index');
         }
       }, 1000);
     },
@@ -26051,13 +26051,148 @@ var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(51)
-  __webpack_require__(53)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(55),
+  __webpack_require__(53),
   /* template */
-  __webpack_require__(87),
+  __webpack_require__(92),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-02bb3344",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Index.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-02bb3344", Component.options)
+  } else {
+    hotAPI.reload("data-v-02bb3344", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(52);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("0fd7c1f6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-02bb3344\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-02bb3344\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.index-wrap[data-v-02bb3344] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Home = __webpack_require__(54);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _MyTabBar = __webpack_require__(87);
+
+var _MyTabBar2 = _interopRequireDefault(_MyTabBar);
+
+var _Me = __webpack_require__(116);
+
+var _Me2 = _interopRequireDefault(_Me);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'Index',
+  components: {
+    Home: _Home2.default,
+    Me: _Me2.default,
+    MyTabBar: _MyTabBar2.default
+  },
+  data: function data() {
+    return {
+      viewComponent: 'Home'
+    };
+  },
+
+  methods: {
+    handleShow: function handleShow(view) {
+      this.viewComponent = view;
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(55)
+  __webpack_require__(57)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(59),
+  /* template */
+  __webpack_require__(86),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26089,13 +26224,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26115,7 +26250,7 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26129,13 +26264,13 @@ exports.push([module.i, "\n.weex-scroller-inner {\r\n  display: -webkit-box;\r\n
 
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(54);
+var content = __webpack_require__(58);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26155,7 +26290,7 @@ if(false) {
 }
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26169,7 +26304,7 @@ exports.push([module.i, "\n.scroller[data-v-89a6e4fa] {\r\n  position: absolute;
 
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26179,27 +26314,62 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _TopBar = __webpack_require__(56);
+var _TopBar = __webpack_require__(60);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(67);
+var _HeadBlock = __webpack_require__(71);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(72);
+var _MyCard = __webpack_require__(76);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-var _MessageCard = __webpack_require__(82);
+var _MessageCard = __webpack_require__(81);
 
 var _MessageCard2 = _interopRequireDefault(_MessageCard);
 
-var _MyTabBar = __webpack_require__(111);
-
-var _MyTabBar2 = _interopRequireDefault(_MyTabBar);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'HomePage',
@@ -26207,8 +26377,7 @@ exports.default = {
     TopBar: _TopBar2.default,
     HeadBlock: _HeadBlock2.default,
     MyCard: _MyCard2.default,
-    MessageCard: _MessageCard2.default,
-    MyTabBar: _MyTabBar2.default
+    MessageCard: _MessageCard2.default
   },
   data: function data() {
     return {
@@ -26231,59 +26400,22 @@ exports.default = {
       this.$router.push('/test');
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(57)
+  __webpack_require__(61)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(59),
+  __webpack_require__(63),
   /* template */
-  __webpack_require__(66),
+  __webpack_require__(70),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26315,13 +26447,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(58);
+var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26341,7 +26473,7 @@ if(false) {
 }
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26355,7 +26487,7 @@ exports.push([module.i, "\n.iconfont[data-v-42079584] {\r\n  font-family: iconfo
 
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26365,7 +26497,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcMinibar = __webpack_require__(60);
+var _wxcMinibar = __webpack_require__(64);
 
 var _wxcMinibar2 = _interopRequireDefault(_wxcMinibar);
 
@@ -26411,7 +26543,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26421,7 +26553,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(61);
+var _index = __webpack_require__(65);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -26433,19 +26565,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(62)
+  __webpack_require__(66)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(64),
+  __webpack_require__(68),
   /* template */
-  __webpack_require__(65),
+  __webpack_require__(69),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26477,13 +26609,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(63);
+var content = __webpack_require__(67);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26503,7 +26635,7 @@ if(false) {
 }
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26517,7 +26649,7 @@ exports.push([module.i, "\n.wxc-minibar[data-v-571ad504] {\n  width: 10rem;\n  h
 
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26675,7 +26807,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -26763,7 +26895,7 @@ if (false) {
 }
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -26819,19 +26951,19 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(72)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(70),
+  __webpack_require__(74),
   /* template */
-  __webpack_require__(71),
+  __webpack_require__(75),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26863,13 +26995,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26889,7 +27021,7 @@ if(false) {
 }
 
 /***/ }),
-/* 69 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -26903,7 +27035,7 @@ exports.push([module.i, "\n.head-block[data-v-17aa6c77] {\r\n  width: 10rem;\r\n
 
 
 /***/ }),
-/* 70 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26930,7 +27062,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 71 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -26955,19 +27087,19 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(73)
+  __webpack_require__(77)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(75),
+  __webpack_require__(79),
   /* template */
-  __webpack_require__(76),
+  __webpack_require__(80),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -26999,13 +27131,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 73 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(74);
+var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27025,7 +27157,7 @@ if(false) {
 }
 
 /***/ }),
-/* 74 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -27039,7 +27171,7 @@ exports.push([module.i, "\n.front-card[data-v-bf89923c] {\r\n  width: 9rem;\r\n 
 
 
 /***/ }),
-/* 75 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27082,7 +27214,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 76 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27144,24 +27276,19 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(83)
+  __webpack_require__(82)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(85),
+  __webpack_require__(84),
   /* template */
-  __webpack_require__(86),
+  __webpack_require__(85),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -27193,13 +27320,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27219,7 +27346,7 @@ if(false) {
 }
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -27233,7 +27360,7 @@ exports.push([module.i, "\n.front-card[data-v-a3f107be] {\r\n  width: 9rem;\r\n 
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27266,7 +27393,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27296,7 +27423,7 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27396,7 +27523,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "marginBottom": "2.66667rem"
     },
     attrs: {}
-  })], 1), _vm._v(" "), _c('MyTabBar')], 1)
+  })], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -27407,19 +27534,306 @@ if (false) {
 }
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(89)
+  __webpack_require__(88)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(91),
+  __webpack_require__(90),
   /* template */
-  __webpack_require__(103),
+  __webpack_require__(91),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-ed9ca2e0",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] MyTabBar.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ed9ca2e0", Component.options)
+  } else {
+    hotAPI.reload("data-v-ed9ca2e0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(89);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("f797f358", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed9ca2e0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyTabBar.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed9ca2e0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyTabBar.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.my-tab-bar-wrap[data-v-ed9ca2e0] {\r\n  position: fixed;\r\n  height: 2.666667rem;\r\n  width: 10rem;\r\n  bottom: 0;\r\n  background: #e6efea;\n}\n.tab-bar[data-v-ed9ca2e0] {\r\n  width: 10rem;\r\n  height: 1.6rem;\r\n  background-color: #fff;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  position: fixed;\r\n  bottom: 0;\n}\n.icon-box[data-v-ed9ca2e0] {\r\n  flex: 1;\r\n  height: 1.6rem;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-content: stretch;\n}\n.title[data-v-ed9ca2e0] {\r\n  font-size: 0.373333rem;\r\n  text-align: center;\n}\n.active[data-v-ed9ca2e0] {\r\n  color: #ff9900;\n}\n.tarbar-icon[data-v-ed9ca2e0] {\r\n  font-size: 0.64rem;\r\n  text-align: center;\n}\n.booking-btn-outer[data-v-ed9ca2e0] {\r\n  width: 2.4rem;\r\n  height: 2.4rem;\r\n  border-radius: 1.066667rem;\r\n  background-color: #fff;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 5rem;\r\n  margin-left: -1.2rem;\n}\n.booking-btn-inner[data-v-ed9ca2e0] {\r\n  width: 1.786667rem;\r\n  height: 1.786667rem;\r\n  border-radius: 1.786667rem;\r\n  background-color: #ff9900;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.iconfont[data-v-ed9ca2e0] {\r\n  font-family: iconfont;\n}\n.iconText[data-v-ed9ca2e0] {\r\n  font-size: 0.8rem;\r\n  color: #e6efea;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'MyTabbar',
+  data: function data() {
+    return {
+      isActived: 0
+    };
+  },
+  created: function created() {
+    this.$getIcon();
+  },
+
+  methods: {
+    gotoHome: function gotoHome() {
+      this.isActived = 0;
+      this.$emit('onShow', 'Home');
+    },
+    gotoMe: function gotoMe() {
+      this.isActived = 1;
+      this.$emit('onShow', 'Me');
+    }
+  }
+};
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "my-tab-bar-wrap weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "tab-bar weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "icon-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoHome($event)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont tarbar-icon weex-el weex-text",
+    class: [_vm.isActived === 0 ? 'active' : ''],
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "title weex-el weex-text",
+    class: [_vm.isActived === 0 ? 'active' : ''],
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("首页")])])]), _vm._v(" "), _c('div', {
+    staticClass: "icon-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.gotoMe($event)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont tarbar-icon weex-el weex-text",
+    class: [_vm.isActived === 1 ? 'active' : ''],
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "title weex-el weex-text",
+    class: [_vm.isActived === 1 ? 'active' : ''],
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("我的")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "booking-btn-outer weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "booking-btn-inner weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont iconText weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-ed9ca2e0", module.exports)
+  }
+}
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "index-wrap weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c(_vm.viewComponent, {
+    tag: "component",
+    attrs: {}
+  }), _vm._v(" "), _c('MyTabBar', {
+    attrs: {
+      "data-evt-onShow": ""
+    },
+    on: {
+      "onShow": _vm.handleShow
+    }
+  })], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-02bb3344", module.exports)
+  }
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(94)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(96),
+  /* template */
+  __webpack_require__(108),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -27451,13 +27865,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 89 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(90);
+var content = __webpack_require__(95);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27477,7 +27891,7 @@ if(false) {
 }
 
 /***/ }),
-/* 90 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -27491,7 +27905,7 @@ exports.push([module.i, "\n.wxc-demo[data-v-d8666894] {\r\n  position: absolute;
 
 
 /***/ }),
-/* 91 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27501,15 +27915,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bindEnv = __webpack_require__(92);
+var _bindEnv = __webpack_require__(97);
 
 var _bindEnv2 = _interopRequireDefault(_bindEnv);
 
-var _wxcPanItem = __webpack_require__(93);
+var _wxcPanItem = __webpack_require__(98);
 
 var _wxcPanItem2 = _interopRequireDefault(_wxcPanItem);
 
-var _wxcEpSlider = __webpack_require__(97);
+var _wxcEpSlider = __webpack_require__(102);
 
 var _wxcEpSlider2 = _interopRequireDefault(_wxcEpSlider);
 
@@ -27818,7 +28232,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 92 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27840,7 +28254,7 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 93 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27850,7 +28264,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(94);
+var _index = __webpack_require__(99);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -27862,15 +28276,15 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 94 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(95),
+  __webpack_require__(100),
   /* template */
-  __webpack_require__(96),
+  __webpack_require__(101),
   /* styles */
   null,
   /* scopeId */
@@ -27902,7 +28316,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 95 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28007,7 +28421,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 96 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28068,7 +28482,7 @@ if (false) {
 }
 
 /***/ }),
-/* 97 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28078,7 +28492,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(98);
+var _index = __webpack_require__(103);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -28090,19 +28504,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 98 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(99)
+  __webpack_require__(104)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(101),
+  __webpack_require__(106),
   /* template */
-  __webpack_require__(102),
+  __webpack_require__(107),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -28134,13 +28548,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 99 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(100);
+var content = __webpack_require__(105);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28160,7 +28574,7 @@ if(false) {
 }
 
 /***/ }),
-/* 100 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -28174,7 +28588,7 @@ exports.push([module.i, "\n.slider[data-v-55803236] {\n  position: absolute;\n  
 
 
 /***/ }),
-/* 101 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28631,7 +29045,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 102 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28698,7 +29112,7 @@ if (false) {
 }
 
 /***/ }),
-/* 103 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29215,19 +29629,19 @@ if (false) {
 }
 
 /***/ }),
-/* 104 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(105)
+  __webpack_require__(110)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(107),
+  __webpack_require__(112),
   /* template */
-  __webpack_require__(108),
+  __webpack_require__(113),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -29259,13 +29673,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 105 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(106);
+var content = __webpack_require__(111);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -29285,7 +29699,7 @@ if(false) {
 }
 
 /***/ }),
-/* 106 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -29299,7 +29713,7 @@ exports.push([module.i, "\n.iconfont {\r\n  font-family: iconfont;\n}\r\n", ""])
 
 
 /***/ }),
-/* 107 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29337,7 +29751,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 108 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29357,31 +29771,31 @@ if (false) {
 }
 
 /***/ }),
-/* 109 */,
-/* 110 */,
-/* 111 */
+/* 114 */,
+/* 115 */,
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(112)
+  __webpack_require__(117)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(114),
+  __webpack_require__(119),
   /* template */
-  __webpack_require__(115),
+  __webpack_require__(120),
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-ed9ca2e0",
+  "data-v-1c16d688",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] MyTabBar.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Me.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -29390,9 +29804,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ed9ca2e0", Component.options)
+    hotAPI.createRecord("data-v-1c16d688", Component.options)
   } else {
-    hotAPI.reload("data-v-ed9ca2e0", Component.options)
+    hotAPI.reload("data-v-1c16d688", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -29403,23 +29817,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 112 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(113);
+var content = __webpack_require__(118);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(1)("f797f358", content, false, {});
+var update = __webpack_require__(1)("27b016b0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed9ca2e0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyTabBar.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed9ca2e0\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyTabBar.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1c16d688\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Me.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1c16d688\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Me.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -29429,7 +29843,7 @@ if(false) {
 }
 
 /***/ }),
-/* 113 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -29437,13 +29851,13 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.my-tab-bar-wrap[data-v-ed9ca2e0] {\r\n  position: fixed;\r\n  height: 2.666667rem;\r\n  width: 10rem;\r\n  bottom: 0;\r\n  background: #e6efea;\n}\n.tab-bar[data-v-ed9ca2e0] {\r\n  width: 10rem;\r\n  height: 1.6rem;\r\n  background-color: #fff;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  position: fixed;\r\n  bottom: 0;\n}\n.icon-box[data-v-ed9ca2e0] {\r\n  flex: 1;\r\n  height: 1.6rem;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-content: stretch;\n}\n.title[data-v-ed9ca2e0] {\r\n  font-size: 0.373333rem;\r\n  text-align: center;\n}\n.active[data-v-ed9ca2e0] {\r\n  color: #ff9900;\n}\n.tarbar-icon[data-v-ed9ca2e0] {\r\n  font-size: 0.64rem;\r\n  text-align: center;\n}\n.booking-btn-outer[data-v-ed9ca2e0] {\r\n  width: 2.4rem;\r\n  height: 2.4rem;\r\n  border-radius: 1.066667rem;\r\n  background-color: #fff;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 5rem;\r\n  margin-left: -1.2rem;\n}\n.booking-btn-inner[data-v-ed9ca2e0] {\r\n  width: 1.786667rem;\r\n  height: 1.786667rem;\r\n  border-radius: 1.786667rem;\r\n  background-color: #ff9900;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.iconfont[data-v-ed9ca2e0] {\r\n  font-family: iconfont;\n}\n.iconText[data-v-ed9ca2e0] {\r\n  font-size: 0.8rem;\r\n  color: #e6efea;\n}\r\n", ""]);
+exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: red;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 114 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29457,159 +29871,33 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
-  name: 'MyTabbar',
+  name: 'Me',
   data: function data() {
-    return {
-      isActived: 0
-    };
-  },
-  created: function created() {
-    this.$getIcon();
+    return {};
   },
 
-  methods: {
-    gotoHome: function gotoHome() {
-      this.isActived = 0;
-    },
-    gotoMe: function gotoMe() {
-      this.isActived = 1;
-    }
-  }
+  methods: {}
 };
 
 /***/ }),
-/* 115 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "my-tab-bar-wrap weex-ct weex-div",
+    staticClass: "me-wrap weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('div', {
-    staticClass: "tab-bar weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('div', {
-    staticClass: "icon-box weex-ct weex-div",
-    attrs: {
-      "weex-type": "div",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.gotoHome($event)
-      }
-    }
-  }, [_c('div', {
-    staticClass: "icon weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "iconfont tarbar-icon weex-el weex-text",
-    class: [_vm.isActived === 0 ? 'active' : ''],
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("")])]), _vm._v(" "), _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "title weex-el weex-text",
-    class: [_vm.isActived === 0 ? 'active' : ''],
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("首页")])])]), _vm._v(" "), _c('div', {
-    staticClass: "icon-box weex-ct weex-div",
-    attrs: {
-      "weex-type": "div",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.gotoMe($event)
-      }
-    }
-  }, [_c('div', {
-    staticClass: "icon weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "iconfont tarbar-icon weex-el weex-text",
-    class: [_vm.isActived === 1 ? 'active' : ''],
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("")])]), _vm._v(" "), _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "title weex-el weex-text",
-    class: [_vm.isActived === 1 ? 'active' : ''],
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("我的")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "booking-btn-outer weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('div', {
-    staticClass: "booking-btn-inner weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "iconfont iconText weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("")])])])])
+  })
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ed9ca2e0", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1c16d688", module.exports)
   }
 }
 

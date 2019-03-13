@@ -41,9 +41,11 @@ export default {
   methods: {
     gotoHome() {
       this.isActived = 0
+      this.$emit('onShow', 'Home')
     },
     gotoMe() {
       this.isActived = 1
+      this.$emit('onShow', 'Me')
     }
   }
 }
