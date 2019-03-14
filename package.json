@@ -33,6 +33,7 @@
     "postcss-weex": "^1.0.5",
     "vue": "^2.5.11",
     "vue-router": "^3.0.1",
+    "vuex": "^3.1.0",
     "weex-ui": "^0.6.9",
     "weex-vue-render": "^1.0.17"
   },

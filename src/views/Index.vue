@@ -2,13 +2,14 @@
   <!-- 系统主页面 -->
   <div class="index-wrap">
     <component :is="viewComponent"></component>
-    <MyTabBar @onShow="handleShow"></MyTabBar>
+    <MyTabBar></MyTabBar>
   </div>
 </template>
 <script>
 import Home from '@/views/Home'
 import MyTabBar from '@/components/MyTabBar'
 import Me from '@/views/Me'
+import Bus from '@/mixins/bus.js'
 export default {
   name: 'Index',
   components: {
@@ -16,16 +17,21 @@ export default {
     Me,
     MyTabBar
   },
+  created() {
+    Bus.$on('handleView', view => {
+      if (view === 0) {
+        this.viewComponent = 'Home'
+      } else if (view === 1) {
+        this.viewComponent = 'Me'
+      }
+    })
+  },
   data() {
     return {
       viewComponent: 'Home'
     }
   },
-  methods: {
-    handleShow(view) {
-      this.viewComponent = view
-    }
-  }
+  methods: {}
 }
 </script>
 <style scoped>

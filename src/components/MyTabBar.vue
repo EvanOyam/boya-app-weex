@@ -28,6 +28,7 @@
   </div>
 </template>
 <script>
+import Bus from '@/mixins/bus.js'
 export default {
   name: 'MyTabbar',
   data() {
@@ -41,11 +42,11 @@ export default {
   methods: {
     gotoHome() {
       this.isActived = 0
-      this.$emit('onShow', 'Home')
+      Bus.$emit('handleView', 0)
     },
     gotoMe() {
       this.isActived = 1
-      this.$emit('onShow', 'Me')
+      Bus.$emit('handleView', 1)
     }
   }
 }
