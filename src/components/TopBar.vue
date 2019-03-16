@@ -18,7 +18,7 @@
 </template>
 <script>
 import { WxcMinibar } from 'weex-ui'
-const modal = weex.requireModule('modal')
+import Bus from '@/mixins/bus.js'
 export default {
   name: 'TopBar',
   components: { WxcMinibar },
@@ -30,10 +30,15 @@ export default {
   },
   methods: {
     minibarLeftButtonClick() {
-      modal.toast({ message: 'click leftButton!', duration: 1 })
+      if (this.$route.path === '/index') {
+        Bus.$emit('topBarLeftClick')
+      } else {
+        this.$router.go(-1)
+      }
     },
     minibarRightButtonClick() {
-      modal.toast({ message: 'click rightButton!', duration: 1 })
+      Bus.$emit('topBarLeftClick')
+      this.$router.push('/index')
     }
   }
 }

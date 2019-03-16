@@ -1,18 +1,16 @@
 <template>
   <div class="my-card">
-    <div class="card-shadow">
-      <div class="front-card">
-        <image class="card-portrait"
-               :src="cardPortraitSrc"></image>
-        <div class="login-text-box"
-             v-if="username !== '请先登录'">
-          <text class="login-username">{{username}}</text>
-          <text class="login-introduction">{{introduction}}</text>
-        </div>
-        <div class="unlogin-text-box"
-             v-if="username === '请先登录'">
-          <text class="unlogin-username">{{username}}</text>
-        </div>
+    <div class="front-card">
+      <image class="card-portrait"
+             :src="cardPortraitSrc"></image>
+      <div class="login-text-box"
+           v-if="username !== '请先登录'">
+        <text class="login-username">{{username}}</text>
+        <text class="login-introduction">{{introduction}}</text>
+      </div>
+      <div class="unlogin-text-box"
+           v-if="username === '请先登录'">
+        <text class="unlogin-username">{{username}}</text>
       </div>
     </div>
   </div>
@@ -40,14 +38,6 @@ export default {
   flex-direction: row;
   align-items: center;
   padding: 20px 30px 20px 30px;
-}
-.card-shadow {
-  width: 682px;
-  height: 206px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.03);
 }
 .login-username {
   font-weight: bold;

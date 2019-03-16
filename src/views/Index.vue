@@ -19,11 +19,7 @@ export default {
   },
   created() {
     Bus.$on('handleView', view => {
-      if (view === 0) {
-        this.viewComponent = 'Home'
-      } else if (view === 1) {
-        this.viewComponent = 'Me'
-      }
+      this.setView(view)
     })
   },
   data() {
@@ -31,7 +27,15 @@ export default {
       viewComponent: 'Home'
     }
   },
-  methods: {}
+  methods: {
+    setView(view) {
+      if (view === 0) {
+        this.viewComponent = 'Home'
+      } else if (view === 1) {
+        this.viewComponent = 'Me'
+      }
+    }
+  }
 }
 </script>
 <style scoped>

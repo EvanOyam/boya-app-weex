@@ -38,6 +38,9 @@ export default {
   },
   created() {
     this.$getIcon()
+    Bus.$on('topBarLeftClick', () => {
+      this.gotoHome()
+    })
   },
   methods: {
     gotoHome() {

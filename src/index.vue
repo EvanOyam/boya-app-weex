@@ -12,7 +12,7 @@ export default {
   created: function() {
     var objThis = this
     globalEvent.addEventListener('androidback', function(e) {
-      if (objThis.$route.path === '/' || objThis.$route.path === '/home') {
+      if (objThis.$route.path === '/' || objThis.$route.path === '/index') {
         eventModule.closeApp()
       } else {
         objThis.$router.go(-1)

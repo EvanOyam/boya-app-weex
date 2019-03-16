@@ -27,12 +27,14 @@
           </div>
         </slider>
       </div>
-      <MessageCard class="home-message-card"></MessageCard>
-      <MessageCard class="home-message-card"></MessageCard>
-      <MessageCard class="home-message-card"></MessageCard>
-      <MessageCard class="home-message-card"></MessageCard>
       <MessageCard class="home-message-card"
-                   style="marginBottom:200px"></MessageCard>
+                   v-for="(item,index) in messageList"
+                   :key="index"
+                   :cardTextTitle="item.cardTextTitle"
+                   :cardTextDescription="item.cardTextDescription"
+                   :cardTextTime="item.cardTextTime"
+                   :iconType="item.iconType" />
+      <div class="clearBox"></div>
     </scroller>
   </div>
 </template>
@@ -66,6 +68,33 @@ export default {
         },
         {
           src: 'https://s2.ax1x.com/2019/03/04/kOslgs.png'
+        }
+      ],
+      messageList: [
+        {
+          cardTextTitle: '吉他大班本周9折',
+          cardTextDescription: '本周报名吉他大班，一律享受9折优惠',
+          cardTextTime: new Date().toLocaleString(),
+          iconType: 'course'
+        },
+        {
+          cardTextTitle: 'saga吉他到货',
+          cardTextDescription: '网红款吉他，saga-sf700现货发售',
+          cardTextTime: new Date().toLocaleString(),
+          iconType: 'commodity'
+        },
+        {
+          cardTextTitle: 'bandlive音乐节',
+          cardTextDescription: 'bandlive摇滚音乐之夜将于5月13号在风雨球场举行',
+          cardTextTime: new Date().toLocaleString(),
+          iconType: 'message'
+        },
+        {
+          cardTextTitle: '报名送琴',
+          cardTextDescription:
+            '报名尤克里里小班的小伙伴，将免费获赠uku尤克里里一把',
+          cardTextTime: new Date().toLocaleString(),
+          iconType: 'message'
         }
       ]
     }
@@ -129,7 +158,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 26px;
 }
 .ad-card-title {
   font-size: 38px;
@@ -142,5 +171,9 @@ export default {
 }
 .home-message-card {
   margin-top: 40px;
+}
+.clearBox {
+  width: 750px;
+  height: 200px;
 }
 </style>
