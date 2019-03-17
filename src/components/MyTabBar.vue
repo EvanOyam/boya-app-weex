@@ -70,7 +70,7 @@ export default {
         if (userInfo === 'undefined' || userInfo === undefined) {
           Bus.$emit('handleLogin')
         } else {
-          console.log('booking')
+          this.$router.push('/booking')
         }
       })
       // if (!this.isLogin) {

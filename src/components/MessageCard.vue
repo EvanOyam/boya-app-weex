@@ -86,7 +86,7 @@ export default {
 
 <style scoped>
 .front-card {
-  width: 675px;
+  width: 680px;
   height: 160px;
   background-color: #fff;
   border-radius: 10px;

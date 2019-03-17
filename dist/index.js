@@ -509,7 +509,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7a7ab78e"
@@ -553,7 +553,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-35d0962d"
@@ -597,7 +597,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-4ea34e28"
@@ -780,9 +780,15 @@ var _Login = __webpack_require__(98);
 
 var _Login2 = _interopRequireDefault(_Login);
 
+var _Booking = __webpack_require__(106);
+
+var _Booking2 = _interopRequireDefault(_Booking);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-Vue.use(_vueRouter2.default); /* global Vue */
+/* global Vue */
+Vue.use(_vueRouter2.default);
+
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
@@ -811,6 +817,10 @@ var router = exports.router = new _vueRouter2.default({
     path: '/login',
     name: 'Login',
     component: _Login2.default
+  }, {
+    path: '/booking',
+    name: 'Booking',
+    component: _Booking2.default
   }]
 });
 
@@ -3467,7 +3477,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-75a5423e"
@@ -3619,7 +3629,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-77c133fc"
@@ -3940,7 +3950,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5543f671"
@@ -4072,7 +4082,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-9b19c5a6"
@@ -5009,7 +5019,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-28fda526"
@@ -5231,7 +5241,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-8a3dcea4"
@@ -5373,7 +5383,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5e265133"
@@ -5431,7 +5441,7 @@ module.exports = {
     "marginTop": "-100"
   },
   "slider": {
-    "width": "675",
+    "width": "680",
     "height": "460",
     "borderTopLeftRadius": "16",
     "borderTopRightRadius": "16",
@@ -5439,7 +5449,7 @@ module.exports = {
     "borderBottomLeftRadius": "16"
   },
   "frame": {
-    "width": "675",
+    "width": "680",
     "height": "460",
     "borderTopLeftRadius": "16",
     "borderTopRightRadius": "16",
@@ -5448,7 +5458,7 @@ module.exports = {
     "position": "relative"
   },
   "image": {
-    "width": "675",
+    "width": "680",
     "height": "460",
     "borderTopLeftRadius": "16",
     "borderTopRightRadius": "16",
@@ -5456,7 +5466,7 @@ module.exports = {
     "borderBottomLeftRadius": "16"
   },
   "ad-title-box": {
-    "width": "675",
+    "width": "680",
     "height": "100",
     "lineHeight": "100",
     "flexDirection": "row",
@@ -5721,7 +5731,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ef24f190"
@@ -6025,7 +6035,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5dc5d348"
@@ -6352,7 +6362,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-e026d130"
@@ -15159,7 +15169,7 @@ module.exports.render._withStripped = true
 
 module.exports = {
   "front-card": {
-    "width": "675",
+    "width": "680",
     "height": "200",
     "backgroundColor": "#ffffff",
     "borderTopLeftRadius": "10",
@@ -15354,7 +15364,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-496bdf52"
@@ -15377,7 +15387,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "front-card": {
-    "width": "675",
+    "width": "680",
     "height": "160",
     "backgroundColor": "#ffffff",
     "borderTopLeftRadius": "10",
@@ -15705,7 +15715,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7164761a"
@@ -15885,12 +15895,14 @@ exports.default = {
       // }
     },
     booking: function booking() {
+      var _this3 = this;
+
       storage.getItem('userInfo', function (event) {
         var userInfo = event.data;
         if (userInfo === 'undefined' || userInfo === undefined) {
           _bus2.default.$emit('handleLogin');
         } else {
-          console.log('booking');
+          _this3.$router.push('/booking');
         }
       });
       // if (!this.isLogin) {
@@ -15977,7 +15989,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1228f728"
@@ -16021,7 +16033,7 @@ module.exports = {
     "alignItems": "center"
   },
   "info-front-card": {
-    "width": "675",
+    "width": "680",
     "marginTop": "30",
     "backgroundColor": "#ffffff",
     "borderTopLeftRadius": "10",
@@ -16247,7 +16259,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1d536dbc"
@@ -16645,7 +16657,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-63bed4b2"
@@ -17083,7 +17095,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-36c68f66"
@@ -17270,7 +17282,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-f6ee8876"
@@ -17749,7 +17761,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1a4d8e3c"
@@ -17824,6 +17836,743 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(107)
+)
+__vue_styles__.push(__webpack_require__(119)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(108)
+
+/* template */
+var __vue_template__ = __webpack_require__(109)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Booking.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-ebf94896"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "booking-wrapper": {
+    "position": "absolute",
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "backgroundColor": "#e6efea",
+    "alignItems": "center"
+  },
+  "front-card": {
+    "width": "680",
+    "height": "600",
+    "backgroundColor": "#ffffff",
+    "borderTopLeftRadius": "10",
+    "borderTopRightRadius": "10",
+    "borderBottomRightRadius": "10",
+    "borderBottomLeftRadius": "10",
+    "position": "absolute",
+    "top": "330",
+    "marginTop": "-100",
+    "left": "375",
+    "marginLeft": "-340",
+    "overflow": "hidden"
+  },
+  "bar": {
+    "width": "680",
+    "height": "99",
+    "backgroundColor": "#ffb200",
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+  "bar-label": {
+    "color": "#ffffff",
+    "fontSize": "32"
+  }
+}
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _wxcGridSelect = __webpack_require__(110);
+
+var _wxcGridSelect2 = _interopRequireDefault(_wxcGridSelect);
+
+var _TopBar = __webpack_require__(4);
+
+var _TopBar2 = _interopRequireDefault(_TopBar);
+
+var _HeadBlock = __webpack_require__(5);
+
+var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'Booking',
+  components: {
+    HeadBlock: _HeadBlock2.default,
+    TopBar: _TopBar2.default,
+    WxcGridSelect: _wxcGridSelect2.default
+  },
+  data: function data() {
+    return {
+      customStyles: {
+        lineSpacing: '14px',
+        width: '200px',
+        height: '90px',
+        icon: '',
+        color: '#333333',
+        checkedColor: '#ffffff',
+        disabledColor: '#eeeeee',
+        borderColor: '#666666',
+        checkedBorderColor: '#ffb200',
+        backgroundColor: '#ffffff',
+        checkedBackgroundColor: '#ffb200'
+      },
+      roomData: [{
+        title: '吉他',
+        checked: true
+      }, {
+        title: '钢琴'
+      }, {
+        title: '尤克里里'
+      }, {
+        title: '古筝'
+      }, {
+        title: '架子鼓'
+      }, {
+        title: '小提琴'
+      }]
+    };
+  },
+
+  methods: {
+    selectRoom: function selectRoom() {
+      console.log('select room');
+    }
+  }
+};
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["booking-wrapper"]
+  }, [_c('TopBar'), _c('HeadBlock'), _c('div', {
+    staticClass: ["front-card"]
+  }, [_vm._m(0), _c('wxc-grid-select', {
+    attrs: {
+      "single": true,
+      "cols": 3,
+      "customStyles": _vm.customStyles,
+      "list": _vm.roomData
+    },
+    on: {
+      "select": _vm.selectRoom
+    }
+  })], 1)], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["bar"]
+  }, [_c('text', {
+    staticClass: ["bar-label"]
+  }, [_vm._v("请选择乐器类型")])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _index = __webpack_require__(111);
+
+Object.defineProperty(exports, 'default', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(112)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(113)
+
+/* template */
+var __vue_template__ = __webpack_require__(118)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-39973ea2"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "grid-select": {
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "flexWrap": "wrap"
+  }
+}
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var _option = __webpack_require__(114);
+
+var _option2 = _interopRequireDefault(_option);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: { Option: _option2.default },
+  props: {
+    // 标识, 当界面展示多个grid, 防止v-for :key重复
+    id: {
+      type: String,
+      default: 'one'
+    },
+    // 列数
+    cols: {
+      type: Number,
+      default: 4
+    },
+    // 是否单选
+    single: {
+      type: Boolean,
+      default: false
+    },
+    // 数据
+    list: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    // 选择个数限制
+    limit: {
+      type: Number
+    },
+    // 用户自定义样式，用于个性化设置option样式
+    customStyles: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    }
+  },
+  data: function data() {
+    return {
+      dList: this.initList()
+    };
+  },
+
+  computed: {
+    cHackList: function cHackList() {
+      var list = this.list,
+          cols = this.cols;
+
+      var remainder = list.length % cols;
+      var len = remainder ? cols - remainder : 0;
+
+      return Array.apply(null, { length: len });
+    }
+  },
+  watch: {
+    list: function list() {
+      this.dList = this.initList();
+    }
+  },
+  created: function created() {
+    // 行间距
+    this.lineSpacing = this.customStyles.lineSpacing || '12px';
+  },
+
+  methods: {
+    onSelect: function onSelect(index) {
+      var checked = this.dList[index].checked;
+      if (this.limit <= this.checkedCount && !checked) {
+        this.$emit('overLimit', this.limit);
+      } else {
+        this.updateList(index);
+        this.$emit('select', {
+          selectIndex: index,
+          checked: !checked,
+          checkedList: this.dList.filter(function (item) {
+            return item.checked;
+          })
+        });
+      }
+    },
+    initList: function initList() {
+      var single = this.single;
+      var checkedCount = 0;
+
+      var dList = this.list.map(function (item, i) {
+        var checked = item.checked,
+            disabled = item.disabled;
+
+        disabled = !!disabled;
+        // disabled为true时认为checked无效，同时单选模式下只认为第一个checked为true的为有效值
+        checked = !disabled && !!checked && (!single || checkedCount === 0);
+        if (item.checked) checkedCount += 1;
+        return _extends({}, item, {
+          checked: checked,
+          disabled: disabled
+        });
+      });
+
+      this.checkedCount = checkedCount;
+      return dList;
+    },
+    updateList: function updateList(index) {
+      var single = this.single;
+      var checkedCount = 0;
+      this.dList = this.dList.map(function (item, i) {
+        if (single) {
+          item.checked = index === i && !item.checked;
+        } else {
+          if (i === index) item.checked = !item.checked;
+        }
+        if (item.checked) checkedCount += 1;
+        return item;
+      });
+      this.checkedCount = checkedCount;
+    }
+  }
+};
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(115)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(116)
+
+/* template */
+var __vue_template__ = __webpack_require__(117)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\option.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-a962fa30"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "grid-option": {
+    "justifyContent": "center",
+    "borderTopLeftRadius": "8",
+    "borderTopRightRadius": "8",
+    "borderBottomRightRadius": "8",
+    "borderBottomLeftRadius": "8",
+    "borderWidth": "2",
+    "paddingLeft": "6",
+    "paddingRight": "6"
+  },
+  "text-title": {
+    "lines": 2,
+    "lineHeight": "30",
+    "textOverflow": "ellipsis",
+    "textAlign": "center",
+    "fontSize": "26"
+  },
+  "image-checked": {
+    "position": "absolute",
+    "right": 0,
+    "bottom": 0,
+    "width": "38",
+    "height": "34"
+  }
+}
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  props: {
+    index: {
+      type: Number,
+      default: -1
+    },
+    // 是否选中
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    // 是否可选
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    // 标题
+    title: {
+      type: String,
+      default: ''
+    },
+    width: {
+      type: String,
+      default: '166px'
+    },
+    height: {
+      type: String,
+      default: '72px'
+    },
+    // 默认 x
+    icon: {
+      type: String,
+      default: 'https://gw.alicdn.com/tfs/TB1IAByhgMPMeJjy1XdXXasrXXa-38-34.png'
+    },
+    // 正常状态文字色值
+    color: {
+      type: String,
+      default: '#3d3d3d'
+    },
+    // 选中状态文字色值
+    checkedColor: {
+      type: String,
+      default: '#3d3d3d'
+    },
+    // 不可选状态文字色值
+    disabledColor: {
+      type: String,
+      default: '#9b9b9b'
+    },
+    // 正常状态边框色值
+    borderColor: {
+      type: String,
+      default: 'transparent'
+    },
+    // 选中状态边框色值
+    checkedBorderColor: {
+      type: String,
+      default: '#ffb200'
+    },
+    // 不可选状态边框色值
+    disabledBorderColor: {
+      type: String,
+      default: 'transparent'
+    },
+    // 正常状态背景色值
+    backgroundColor: {
+      type: String,
+      default: '#f6f6f6'
+    },
+    // 选中状态背景色值
+    checkedBackgroundColor: {
+      type: String,
+      default: '#ffffff'
+    },
+    // 不可选状态背景色值
+    disabledBackgroundColor: {
+      type: String,
+      default: '#f6f6f6'
+    }
+  },
+  computed: {
+    cWrapperStyle: function cWrapperStyle() {
+      var checked = this.checked,
+          disabled = this.disabled,
+          width = this.width,
+          height = this.height,
+          borderColor = this.borderColor,
+          checkedBorderColor = this.checkedBorderColor,
+          disabledBorderColor = this.disabledBorderColor,
+          backgroundColor = this.backgroundColor,
+          checkedBackgroundColor = this.checkedBackgroundColor,
+          disabledBackgroundColor = this.disabledBackgroundColor;
+
+      return {
+        width: width,
+        height: height,
+        borderColor: disabled ? disabledBorderColor : checked ? checkedBorderColor : borderColor,
+        backgroundColor: disabled ? disabledBackgroundColor : checked ? checkedBackgroundColor : backgroundColor
+      };
+    },
+    cTitleStyle: function cTitleStyle() {
+      var checked = this.checked,
+          disabled = this.disabled,
+          color = this.color,
+          checkedColor = this.checkedColor,
+          disabledColor = this.disabledColor;
+
+      return {
+        color: disabled ? disabledColor : checked ? checkedColor : color
+      };
+    }
+  },
+  methods: {
+    onClick: function onClick() {
+      if (!this.disabled) {
+        this.$emit('select', this.index);
+      }
+    }
+  }
+};
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["grid-option"],
+    style: _vm.cWrapperStyle,
+    attrs: {
+      "accessible": true,
+      "ariaLabel": (_vm.title + "," + (_vm.checked?'已选中':'未选中'))
+    },
+    on: {
+      "click": _vm.onClick
+    }
+  }, [(_vm.title) ? _c('text', {
+    staticClass: ["text-title"],
+    style: _vm.cTitleStyle
+  }, [_vm._v(_vm._s(_vm.title))]) : _vm._e(), (_vm.checked && _vm.icon) ? _c('image', {
+    staticClass: ["image-checked"],
+    attrs: {
+      "src": _vm.icon
+    }
+  }) : _vm._e()])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["grid-select"]
+  }, [_vm._l((_vm.dList), function(item, index) {
+    return _c('option', _vm._b({
+      key: index,
+      style: {
+        marginTop: index >= _vm.cols ? _vm.lineSpacing : null
+      },
+      attrs: {
+        "index": index
+      },
+      on: {
+        "select": function($event) {
+          _vm.onSelect(index)
+        }
+      }
+    }, 'option', Object.assign({}, _vm.customStyles, item), false))
+  }), _vm._l((_vm.cHackList), function(item, index) {
+    return _c('option', _vm._b({
+      key: _vm.id + index,
+      style: {
+        opacity: 0,
+        marginTop: _vm.dList.length >= _vm.cols ? _vm.lineSpacing : null
+      }
+    }, 'option', Object.assign({}, _vm.customStyles, item), false))
+  })], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "grid-select": {
+    "paddingTop": "20",
+    "paddingRight": "20",
+    "paddingBottom": "20",
+    "paddingLeft": "20"
+  }
+}
 
 /***/ })
 /******/ ]);

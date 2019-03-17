@@ -158,7 +158,7 @@ export default {
   align-items: center;
 }
 .info-front-card {
-  width: 675px;
+  width: 680px;
   margin-top: 30px;
   background-color: #fff;
   border-radius: 10px;

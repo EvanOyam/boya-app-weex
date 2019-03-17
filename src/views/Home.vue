@@ -170,23 +170,23 @@ export default {
   margin-top: -100px;
 }
 .slider {
-  width: 675px;
+  width: 680px;
   height: 460px;
   border-radius: 16px;
 }
 .frame {
-  width: 675px;
+  width: 680px;
   height: 460px;
   border-radius: 16px;
   position: relative;
 }
 .image {
-  width: 675px;
+  width: 680px;
   height: 460px;
   border-radius: 16px;
 }
 .ad-title-box {
-  width: 675px;
+  width: 680px;
   height: 100px;
   line-height: 100px;
   flex-direction: row;
