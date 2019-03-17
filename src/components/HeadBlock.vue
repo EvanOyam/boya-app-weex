@@ -4,11 +4,23 @@
   </div>
 </template>
 <script>
+const storage = weex.requireModule('storage')
 export default {
   name: 'HeadBlock',
+  created() {
+    storage.getItem('userInfo', event => {
+      let userInfo = event.data
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        this.username = '尚未登录'
+      } else {
+        userInfo = JSON.parse(userInfo)
+        this.username = userInfo.username
+      }
+    })
+  },
   data() {
     return {
-      username: '尚未登陆'
+      username: '尚未登录'
     }
   },
   methods: {}

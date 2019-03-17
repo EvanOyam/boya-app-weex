@@ -10,7 +10,7 @@
         <input class="input"
                type="text"
                placeholder="请输入用户名"
-               autocomplete="false"
+               autocomplete="off"
                return-key-type="next"
                @input="onInputUsername" />
         <div class="input-icon">
@@ -21,7 +21,7 @@
         <input class="input"
                type="password"
                placeholder="请输入密码"
-               autocomplete="false"
+               autocomplete="off"
                return-key-type="done"
                @input="onInputPassword" />
         <div class="input-icon">
@@ -40,7 +40,7 @@
         <input class="input"
                type="text"
                placeholder="请输入用户名"
-               autocomplete="false"
+               autocomplete="off"
                return-key-type="next"
                @input="onInputUsername" />
         <div class="input-icon">
@@ -51,7 +51,7 @@
         <input class="input"
                type="password"
                placeholder="请输入密码"
-               autocomplete="false"
+               autocomplete="off"
                return-key-type="next"
                @input="onInputPassword" />
         <div class="input-icon">
@@ -62,7 +62,7 @@
         <input class="input"
                type="password"
                placeholder="确认密码"
-               autocomplete="false"
+               autocomplete="off"
                return-key-type="done"
                @input="onInputconfirm" />
         <div class="input-icon">
@@ -84,6 +84,8 @@
 <script>
 import { WxcButton } from 'weex-ui'
 const modal = weex.requireModule('modal')
+const stream = weex.requireModule('stream')
+const storage = weex.requireModule('storage')
 export default {
   name: 'Login',
   components: {
@@ -101,12 +103,38 @@ export default {
   },
   methods: {
     login() {
-      console.log('username', this.userName)
-      console.log('password', this.password)
-      modal.toast({
-        message: 'login',
-        duration: 1
-      })
+      const _this = this
+      const rawbody = {
+        username: this.userName,
+        password: this.password
+      }
+      const body = JSON.stringify(rawbody)
+      stream.fetch(
+        {
+          method: 'POST',
+          url:
+            'https://www.easy-mock.com/mock/5c8e1696c12de836b263653b/weexapi/login',
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: body
+        },
+        function(res) {
+          console.log(res.data)
+          let strData = JSON.stringify(res.data.data)
+          modal.toast({
+            message: res.data.msg,
+            duration: 1
+          })
+          if (res.data.code === 1) {
+            storage.setItem('userInfo', strData)
+            setTimeout(() => {
+              _this.$router.push('/index')
+            }, 1000)
+          }
+        }
+      )
     },
     register() {
       console.log('username', this.userName)

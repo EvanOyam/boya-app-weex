@@ -30,17 +30,12 @@
 </template>
 <script>
 import Bus from '@/mixins/bus.js'
+const storage = weex.requireModule('storage')
 export default {
   name: 'MyTabbar',
   data() {
     return {
       isActived: 0
-    }
-  },
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
     }
   },
   created() {
@@ -55,15 +50,32 @@ export default {
       Bus.$emit('handleView', 0)
     },
     gotoMe() {
-      if (this.isLogin) {
-        this.isActived = 1
-        Bus.$emit('handleView', 1)
-      } else if (!this.isLogin) {
-        Bus.$emit('handleLogin')
-      }
+      storage.getItem('userInfo', event => {
+        let userInfo = event.data
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          Bus.$emit('handleLogin')
+        } else {
+          this.isActived = 1
+          Bus.$emit('handleView', 1)
+        }
+      })
+      // if (this.isLogin) {
+      // } else if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     },
     booking() {
-      Bus.$emit('handleLogin')
+      storage.getItem('userInfo', event => {
+        let userInfo = event.data
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          Bus.$emit('handleLogin')
+        } else {
+          console.log('booking')
+        }
+      })
+      // if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     }
   }
 }

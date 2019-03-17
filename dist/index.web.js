@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -167,7 +167,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(24)
+var listToStyles = __webpack_require__(25)
 
 /*
 type StyleObject = {
@@ -501,6 +501,25 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = __webpack_require__(5);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = new _vue2.default();
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8912,10 +8931,10 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3), __webpack_require__(13).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3), __webpack_require__(14).setImmediate))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8925,16 +8944,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(4);
+var _index = __webpack_require__(27);
 
-var _vue2 = _interopRequireDefault(_vue);
+Object.defineProperty(exports, 'default', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index).default;
+  }
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = new _vue2.default();
-
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9288,7 +9310,7 @@ var Utils = {
 exports.default = Utils;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9310,7 +9332,7 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -9354,7 +9376,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -9398,7 +9420,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -9410,7 +9432,7 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(91),
   /* template */
-  __webpack_require__(92),
+  __webpack_require__(93),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -9442,7 +9464,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9452,7 +9474,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(108);
+var _index = __webpack_require__(109);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -9464,25 +9486,25 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _vue = __webpack_require__(4);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _weexVueRender = __webpack_require__(16);
+var _weexVueRender = __webpack_require__(17);
 
 var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 
-var _getImg = __webpack_require__(17);
+var _getImg = __webpack_require__(18);
 
 var _getImg2 = _interopRequireDefault(_getImg);
 
-var _getIcon = __webpack_require__(18);
+var _getIcon = __webpack_require__(19);
 
 var _getIcon2 = _interopRequireDefault(_getIcon);
 
@@ -9493,20 +9515,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //全局引入图片路径处理方法
 _vue2.default.prototype.$getImg = _getImg2.default;
 _vue2.default.prototype.$getIcon = _getIcon2.default;
-
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(19),
+var _require = __webpack_require__(20),
     router = _require.router;
 
-var App = __webpack_require__(126);
+var App = __webpack_require__(132);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -9562,7 +9583,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(14);
+__webpack_require__(15);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -9576,7 +9597,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -9766,10 +9787,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(16)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9959,7 +9980,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20701,7 +20722,7 @@ console.log('START WEEX VUE RENDER: 1.0.36, Build 2018-12-29 17:52.');
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20734,7 +20755,7 @@ var getImg = function getImg(imgName) {
 exports.default = getImg;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20761,7 +20782,7 @@ var getIcon = function getIcon() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')";
   } else {
-    url = "url('http://at.alicdn.com/t/font_1068180_72sxq1l9k0l.ttf')";
+    url = "url('http://at.alicdn.com/t/font_1068180_1olc3i0cqjt.ttf')";
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
@@ -20773,7 +20794,7 @@ var getIcon = function getIcon() {
 exports.default = getIcon;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20784,15 +20805,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.router = undefined;
 
-var _vue = __webpack_require__(4);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(20);
+var _vueRouter = __webpack_require__(21);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Welcome = __webpack_require__(21);
+var _Welcome = __webpack_require__(22);
 
 var _Welcome2 = _interopRequireDefault(_Welcome);
 
@@ -20808,11 +20829,11 @@ var _Index = __webpack_require__(54);
 
 var _Index2 = _interopRequireDefault(_Index);
 
-var _Test = __webpack_require__(121);
+var _Test = __webpack_require__(122);
 
 var _Test2 = _interopRequireDefault(_Test);
 
-var _Login = __webpack_require__(134);
+var _Login = __webpack_require__(127);
 
 var _Login2 = _interopRequireDefault(_Login);
 
@@ -20852,7 +20873,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23478,17 +23499,17 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(22)
+  __webpack_require__(23)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(25),
+  __webpack_require__(26),
   /* template */
   __webpack_require__(33),
   /* styles */
@@ -23522,13 +23543,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(23);
+var content = __webpack_require__(24);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23548,7 +23569,7 @@ if(false) {
 }
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -23562,7 +23583,7 @@ exports.push([module.i, "\n.welcome-wrapper[data-v-636c3824] {\r\n  position: ab
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 /**
@@ -23595,7 +23616,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23605,7 +23626,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(26);
+var _wxcButton = __webpack_require__(6);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -23652,28 +23673,6 @@ exports.default = {
 //
 //
 //
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _index = __webpack_require__(27);
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_index).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 /* 27 */
@@ -24305,7 +24304,7 @@ var _type = __webpack_require__(43);
 
 var _type2 = _interopRequireDefault(_type);
 
-var _utils = __webpack_require__(6);
+var _utils = __webpack_require__(7);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -25405,7 +25404,7 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(57),
   /* template */
-  __webpack_require__(120),
+  __webpack_require__(121),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25491,15 +25490,15 @@ var _Home = __webpack_require__(58);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _MyTabBar = __webpack_require__(99);
+var _MyTabBar = __webpack_require__(100);
 
 var _MyTabBar2 = _interopRequireDefault(_MyTabBar);
 
-var _Me = __webpack_require__(104);
+var _Me = __webpack_require__(105);
 
 var _Me2 = _interopRequireDefault(_Me);
 
-var _bus = __webpack_require__(5);
+var _bus = __webpack_require__(4);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -25512,10 +25511,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 
 var modal = weex.requireModule('modal');
-// const storage = weex.requireModule('storage')
 exports.default = {
   name: 'Index',
   components: {
@@ -25531,20 +25528,21 @@ exports.default = {
       _this2.setView(view);
     });
     _bus2.default.$on('handleLogin', function () {
-      if (_this2.isLogin === false) {
-        modal.alert({
-          message: '请先登录！',
-          okTitle: '确认'
-        }, function () {
-          _this.$router.push('/login');
-        });
-      }
+      modal.alert({
+        message: '请先登录！',
+        okTitle: '确认'
+      }, function () {
+        _this.$router.push('/login');
+      });
     });
+  },
+  beforeDestroy: function beforeDestroy() {
+    console.log('destroy');
+    _bus2.default.$off('handleLogin');
   },
   data: function data() {
     return {
-      viewComponent: 'Home',
-      isLogin: false
+      viewComponent: 'Home'
     };
   },
 
@@ -25556,14 +25554,6 @@ exports.default = {
         this.viewComponent = 'Me';
       }
     }
-    // 打开应用后，首先发送请求获取用户信息
-    // 检测是否有token，
-    // setUserInfo() {
-    //   storage.setItem('username', 'ChenFaZhi', event => {
-    //     console.log('set success')
-    //   })
-    // }
-
   }
 };
 
@@ -25581,7 +25571,7 @@ var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(63),
   /* template */
-  __webpack_require__(98),
+  __webpack_require__(99),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -25707,25 +25697,24 @@ var _wxcPopup = __webpack_require__(64);
 
 var _wxcPopup2 = _interopRequireDefault(_wxcPopup);
 
-var _TopBar = __webpack_require__(8);
+var _TopBar = __webpack_require__(9);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(9);
+var _HeadBlock = __webpack_require__(10);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(10);
+var _MyCard = __webpack_require__(11);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-var _MessageCard = __webpack_require__(93);
+var _MessageCard = __webpack_require__(94);
 
 var _MessageCard2 = _interopRequireDefault(_MessageCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
 //
 //
 //
@@ -25787,12 +25776,6 @@ exports.default = {
     MyCard: _MyCard2.default,
     MessageCard: _MessageCard2.default,
     WxcPopup: _wxcPopup2.default
-  },
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
   },
   data: function data() {
     return {
@@ -25974,7 +25957,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _wxcOverlay = __webpack_require__(7);
+var _wxcOverlay = __webpack_require__(8);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -26546,7 +26529,7 @@ var _wxcMinibar = __webpack_require__(78);
 
 var _wxcMinibar2 = _interopRequireDefault(_wxcMinibar);
 
-var _bus = __webpack_require__(5);
+var _bus = __webpack_require__(4);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -27060,11 +27043,25 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+var storage = weex.requireModule('storage');
 exports.default = {
   name: 'HeadBlock',
+  created: function created() {
+    var _this = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        _this.username = '尚未登录';
+      } else {
+        userInfo = JSON.parse(userInfo);
+        _this.username = userInfo.username;
+      }
+    });
+  },
   data: function data() {
     return {
-      username: '尚未登陆'
+      username: '尚未登录'
     };
   },
 
@@ -27147,7 +27144,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(5);
+var _bus = __webpack_require__(4);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -27174,15 +27171,22 @@ var storage = weex.requireModule('storage'); //
 
 exports.default = {
   name: 'MyCard',
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
+  created: function created() {
+    var _this = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        console.log('unlogin');
+      } else {
+        _this.userInfo = JSON.parse(userInfo);
+        _this.isLogin = true;
+      }
+    });
   },
-  created: function created() {},
   data: function data() {
     return {
+      isLogin: false,
       userInfo: {},
       cardPortraitSrc: this.$getImg('portrait.jpg')
     };
@@ -27190,20 +27194,21 @@ exports.default = {
 
   methods: {
     login: function login() {
-      _bus2.default.$emit('handleLogin');
-    },
-    getUserInfo: function getUserInfo() {
-      var _this = this;
       storage.getItem('userInfo', function (event) {
-        var userInfo = JSON.parse(event.data);
-        _this.userInfo = userInfo;
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          console.log(userInfo);
+        }
       });
     }
   }
 };
 
 /***/ }),
-/* 92 */
+/* 92 */,
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27268,19 +27273,19 @@ if (false) {
 }
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(94)
+  __webpack_require__(95)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(96),
-  /* template */
   __webpack_require__(97),
+  /* template */
+  __webpack_require__(98),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -27312,13 +27317,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(95);
+var content = __webpack_require__(96);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27338,7 +27343,7 @@ if(false) {
 }
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -27352,7 +27357,7 @@ exports.push([module.i, "\n.front-card[data-v-a3f107be] {\r\n  width: 9rem;\r\n 
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27449,7 +27454,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27535,7 +27540,7 @@ if (false) {
 }
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27549,9 +27554,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {}
   }, [_c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
     staticClass: "home-card",
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
+    attrs: {}
   }), _vm._v(" "), _c('div', {
     staticClass: "ad-card-box weex-ct weex-div",
     attrs: {
@@ -27683,19 +27686,19 @@ if (false) {
 }
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(100)
+  __webpack_require__(101)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(102),
-  /* template */
   __webpack_require__(103),
+  /* template */
+  __webpack_require__(104),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -27727,13 +27730,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(102);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27753,7 +27756,7 @@ if(false) {
 }
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -27767,7 +27770,7 @@ exports.push([module.i, "\n.my-tab-bar-wrap[data-v-ed9ca2e0] {\r\n  position: fi
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27777,11 +27780,42 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(5);
+var _bus = __webpack_require__(4);
 
 var _bus2 = _interopRequireDefault(_bus);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var storage = weex.requireModule('storage'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'MyTabbar',
@@ -27789,13 +27823,6 @@ exports.default = {
     return {
       isActived: 0
     };
-  },
-
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
   },
   created: function created() {
     var _this = this;
@@ -27812,50 +27839,40 @@ exports.default = {
       _bus2.default.$emit('handleView', 0);
     },
     gotoMe: function gotoMe() {
-      if (this.isLogin) {
-        this.isActived = 1;
-        _bus2.default.$emit('handleView', 1);
-      } else if (!this.isLogin) {
-        _bus2.default.$emit('handleLogin');
-      }
+      var _this2 = this;
+
+      storage.getItem('userInfo', function (event) {
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          _this2.isActived = 1;
+          _bus2.default.$emit('handleView', 1);
+        }
+      });
+      // if (this.isLogin) {
+      // } else if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     },
     booking: function booking() {
-      _bus2.default.$emit('handleLogin');
+      storage.getItem('userInfo', function (event) {
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          console.log('booking');
+        }
+      });
+      // if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27973,19 +27990,19 @@ if (false) {
 }
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(105)
+  __webpack_require__(106)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(107),
+  __webpack_require__(108),
   /* template */
-  __webpack_require__(119),
+  __webpack_require__(120),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -28017,13 +28034,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(106);
+var content = __webpack_require__(107);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28043,7 +28060,7 @@ if(false) {
 }
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -28057,7 +28074,7 @@ exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28067,23 +28084,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcMask = __webpack_require__(11);
+var _wxcMask = __webpack_require__(12);
 
 var _wxcMask2 = _interopRequireDefault(_wxcMask);
 
-var _wxcCell = __webpack_require__(113);
+var _wxcCell = __webpack_require__(114);
 
 var _wxcCell2 = _interopRequireDefault(_wxcCell);
 
-var _TopBar = __webpack_require__(8);
+var _TopBar = __webpack_require__(9);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(9);
+var _HeadBlock = __webpack_require__(10);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(10);
+var _MyCard = __webpack_require__(11);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -28214,19 +28231,19 @@ exports.default = {
 //
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(109)
+  __webpack_require__(110)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(111),
-  /* template */
   __webpack_require__(112),
+  /* template */
+  __webpack_require__(113),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -28258,13 +28275,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(110);
+var content = __webpack_require__(111);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28284,7 +28301,7 @@ if(false) {
 }
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -28298,7 +28315,7 @@ exports.push([module.i, "\n.container[data-v-2b3d9f60] {\n  position: fixed;\n  
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28312,7 +28329,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _wxcOverlay = __webpack_require__(7);
+var _wxcOverlay = __webpack_require__(8);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -28557,7 +28574,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28626,7 +28643,7 @@ if (false) {
 }
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28636,7 +28653,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(114);
+var _index = __webpack_require__(115);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -28648,19 +28665,19 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(115)
+  __webpack_require__(116)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(117),
-  /* template */
   __webpack_require__(118),
+  /* template */
+  __webpack_require__(119),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -28692,13 +28709,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(116);
+var content = __webpack_require__(117);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28718,7 +28735,7 @@ if(false) {
 }
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -28732,7 +28749,7 @@ exports.push([module.i, "\n.wxc-cell[data-v-71a90656] {\n  /*height: 100px;*/\n 
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28742,7 +28759,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(6);
+var _utils = __webpack_require__(7);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -28917,7 +28934,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28987,7 +29004,7 @@ if (false) {
 }
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29117,7 +29134,7 @@ if (false) {
 }
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29128,14 +29145,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c(_vm.viewComponent, {
     tag: "component",
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
-  }), _vm._v(" "), _c('MyTabBar', {
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
-  })], 1)
+    attrs: {}
+  }), _vm._v(" "), _c('MyTabBar')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -29146,19 +29157,19 @@ if (false) {
 }
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(122)
+  __webpack_require__(123)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(124),
-  /* template */
   __webpack_require__(125),
+  /* template */
+  __webpack_require__(126),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -29190,13 +29201,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(123);
+var content = __webpack_require__(124);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -29216,7 +29227,7 @@ if(false) {
 }
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -29230,7 +29241,7 @@ exports.push([module.i, "\n.outter-box[data-v-d8666894] {\r\n  width: 10rem;\r\n
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29240,17 +29251,66 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcMask = __webpack_require__(11);
+var _wxcMask = __webpack_require__(12);
 
 var _wxcMask2 = _interopRequireDefault(_wxcMask);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var storage = weex.requireModule('storage'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
   components: { WxcMask: _wxcMask2.default },
+  created: function created() {
+    var _this = this;
+    storage.getItem('userInfo', function (event) {
+      _this.userInfo = event.data;
+    });
+  },
   data: function data() {
     return {
-      show: false
+      show: false,
+      userInfo: 'init'
     };
   },
 
@@ -29263,51 +29323,10 @@ exports.default = {
       this.show = false;
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29365,7 +29384,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("\n        与 Web App、HTML5 App 或 hybrid App 不同，您可以使用 Weex 构建一个真正的原生应用。更贴心的是你的代码只需使用 HTML、CSS、JavaScript\n        可以构建原生应用，上手非常简单。但实际上，应用的底层是 Objective-C 或 Java， 同时，Weex 提供很多 native 组件或模块供开发人员使用。\n      ")])])])], 1)
+  }, [_vm._v("\n        " + _vm._s(_vm.userInfo) + "\n      ")])])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -29376,19 +29395,534 @@ if (false) {
 }
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(127)
+  __webpack_require__(128)
 }
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(129),
-  /* template */
   __webpack_require__(130),
+  /* template */
+  __webpack_require__(131),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-6f6bed16",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6f6bed16", Component.options)
+  } else {
+    hotAPI.reload("data-v-6f6bed16", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(129);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("482488b1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6f6bed16\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6f6bed16\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.login-wrapper[data-v-6f6bed16] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  flex-direction: column;\r\n  align-items: stretch;\n}\n.login-wrapper-top[data-v-6f6bed16] {\r\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#126d40), to(#116f77));\r\n  background-image: -webkit-linear-gradient(top, #126d40, #116f77);\r\n  background-image: -o-linear-gradient(top, #126d40, #116f77);\r\n  background-image: linear-gradient(to bottom, #126d40, #116f77);\r\n  height: 6.133333rem;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.login-wrapper-bottom[data-v-6f6bed16] {\r\n  background-color: #e6efea;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.login-title-zh[data-v-6f6bed16] {\r\n  font-weight: bold;\r\n  color: #e6efea;\r\n  font-size: 1.28rem;\n}\n.login-title-en[data-v-6f6bed16] {\r\n  color: #e6efea;\r\n  font-size: 0.96rem;\r\n  margin-bottom: 1.066667rem;\n}\n.login-logo[data-v-6f6bed16] {\r\n  position: absolute;\r\n  width: 3.466667rem;\r\n  height: 3.466667rem;\r\n  left: 5rem;\r\n  margin-left: -1.733333rem;\r\n  top: 6.133333rem;\r\n  margin-top: -1.733333rem;\n}\n.input[data-v-6f6bed16] {\r\n  height: 1.466667rem;\r\n  width: 9.36rem;\r\n  padding: 0.133333rem 0.266667rem 0.133333rem 1.146667rem;\r\n  border-radius: 0.08rem;\n}\n.input-box[data-v-6f6bed16] {\r\n  height: 1.466667rem;\r\n  width: 9.36rem;\r\n  margin-bottom: 0.266667rem;\r\n  position: relative;\r\n  overflow: hidden;\n}\n.input-icon[data-v-6f6bed16] {\r\n  width: 0.933333rem;\r\n  height: 0.933333rem;\r\n  position: absolute;\r\n  left: 0.16rem;\r\n  top: 0.733333rem;\r\n  margin-top: -0.466667rem;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.iconfont[data-v-6f6bed16] {\r\n  font-family: iconfont;\n}\n.icon[data-v-6f6bed16] {\r\n  font-size: 0.666667rem;\r\n  text-align: center;\r\n  color: #666;\n}\n.change-to-register[data-v-6f6bed16] {\r\n  position: absolute;\r\n  bottom: 0.4rem;\r\n  right: 0.4rem;\r\n  font-size: 0.4rem;\r\n  color: #19be6b;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _wxcButton = __webpack_require__(6);
+
+var _wxcButton2 = _interopRequireDefault(_wxcButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var modal = weex.requireModule('modal'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var stream = weex.requireModule('stream');
+var storage = weex.requireModule('storage');
+exports.default = {
+  name: 'Login',
+  components: {
+    WxcButton: _wxcButton2.default
+  },
+  data: function data() {
+    return {
+      logoSrc: this.$getImg('logo2.png'),
+      formText: '注册用户',
+      formType: 'login',
+      userName: '',
+      password: '',
+      comfirmPassword: ''
+    };
+  },
+
+  methods: {
+    login: function login() {
+      var _this = this;
+      var rawbody = {
+        username: this.userName,
+        password: this.password
+      };
+      var body = JSON.stringify(rawbody);
+      stream.fetch({
+        method: 'POST',
+        url: 'https://www.easy-mock.com/mock/5c8e1696c12de836b263653b/weexapi/login',
+        type: 'json',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: body
+      }, function (res) {
+        console.log(res.data);
+        var strData = JSON.stringify(res.data.data);
+        modal.toast({
+          message: res.data.msg,
+          duration: 1
+        });
+        if (res.data.code === 1) {
+          storage.setItem('userInfo', strData);
+          setTimeout(function () {
+            _this.$router.push('/index');
+          }, 1000);
+        }
+      });
+    },
+    register: function register() {
+      console.log('username', this.userName);
+      console.log('password', this.password);
+      console.log('comfirmPassword', this.comfirmPassword);
+      modal.toast({
+        message: 'register',
+        duration: 1
+      });
+    },
+    onInputUsername: function onInputUsername(e) {
+      this.userName = e.value;
+    },
+    onInputPassword: function onInputPassword(e) {
+      this.password = e.value;
+    },
+    onInputconfirm: function onInputconfirm(e) {
+      this.comfirmPassword = e.value;
+    },
+    changeForm: function changeForm() {
+      if (this.formType === 'login') {
+        this.formText = '返回登录';
+        this.formType = 'register';
+      } else {
+        this.formText = '注册用户';
+        this.formType = 'login';
+      }
+    }
+  }
+};
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "login-wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "login-wrapper-top weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "login-title-zh weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("伯雅音乐")]), _vm._v(" "), _c('p', {
+    staticClass: "login-title-en weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Boya Music")])]), _vm._v(" "), (_vm.formType === 'login') ? _c('div', {
+    staticClass: "login-wrapper-bottom weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "input-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入用户名",
+      "autocomplete": "off",
+      "return-key-type": "next",
+      "data-evt-input": ""
+    },
+    nativeOn: {
+      "input": function($event) {
+        $event.stopPropagation();
+        return _vm.onInputUsername($event)
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "input-icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont icon weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
+    staticClass: "input-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "请输入密码",
+      "autocomplete": "off",
+      "return-key-type": "done",
+      "data-evt-input": ""
+    },
+    nativeOn: {
+      "input": function($event) {
+        $event.stopPropagation();
+        return _vm.onInputPassword($event)
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "input-icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont icon weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])]), _vm._v(" "), _c('wxc-button', {
+    attrs: {
+      "text": "登录",
+      "type": "green",
+      "btnStyle": {
+        height: '110px',
+        marginBottom: '20px'
+      },
+      "textStyle": {
+        fontSize: '40px',
+        fontWeight: 'bold',
+        color: '#E6EFEA'
+      },
+      "data-evt-wxcButtonClicked": ""
+    },
+    on: {
+      "wxcButtonClicked": _vm.login
+    }
+  })], 1) : _vm._e(), _vm._v(" "), (_vm.formType === 'register') ? _c('div', {
+    staticClass: "login-wrapper-bottom weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: "input-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入用户名",
+      "autocomplete": "off",
+      "return-key-type": "next",
+      "data-evt-input": ""
+    },
+    nativeOn: {
+      "input": function($event) {
+        $event.stopPropagation();
+        return _vm.onInputUsername($event)
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "input-icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont icon weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
+    staticClass: "input-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "请输入密码",
+      "autocomplete": "off",
+      "return-key-type": "next",
+      "data-evt-input": ""
+    },
+    nativeOn: {
+      "input": function($event) {
+        $event.stopPropagation();
+        return _vm.onInputPassword($event)
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "input-icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont icon weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
+    staticClass: "input-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "确认密码",
+      "autocomplete": "off",
+      "return-key-type": "done",
+      "data-evt-input": ""
+    },
+    nativeOn: {
+      "input": function($event) {
+        $event.stopPropagation();
+        return _vm.onInputconfirm($event)
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "input-icon weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "iconfont icon weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("")])])]), _vm._v(" "), _c('wxc-button', {
+    attrs: {
+      "text": "注册",
+      "type": "green",
+      "btnStyle": {
+        height: '110px',
+        marginBottom: '20px'
+      },
+      "textStyle": {
+        fontSize: '40px',
+        fontWeight: 'bold',
+        color: '#E6EFEA'
+      },
+      "data-evt-wxcButtonClicked": ""
+    },
+    on: {
+      "wxcButtonClicked": _vm.register
+    }
+  })], 1) : _vm._e(), _vm._v(" "), _c('p', {
+    staticClass: "change-to-register weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.changeForm($event)
+      }
+    }
+  }, [_vm._v(_vm._s(_vm.formText))]), _vm._v(" "), _c('figure', {
+    staticClass: "login-logo weex-el weex-image",
+    attrs: {
+      "src": _vm.logoSrc,
+      "data-img-src": _vm.logoSrc,
+      "weex-type": "image"
+    }
+  })])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6f6bed16", module.exports)
+  }
+}
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(133)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(135),
+  /* template */
+  __webpack_require__(136),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -29420,13 +29954,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 127 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(128);
+var content = __webpack_require__(134);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -29446,7 +29980,7 @@ if(false) {
 }
 
 /***/ }),
-/* 128 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -29460,7 +29994,7 @@ exports.push([module.i, "\n.iconfont {\r\n  font-family: iconfont;\n}\r\n", ""])
 
 
 /***/ }),
-/* 129 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29498,7 +30032,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 130 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29514,214 +30048,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-65db549f", module.exports)
-  }
-}
-
-/***/ }),
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(135)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(137),
-  /* template */
-  __webpack_require__(138),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-6f6bed16",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6f6bed16", Component.options)
-  } else {
-    hotAPI.reload("data-v-6f6bed16", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(136);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("482488b1", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6f6bed16\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6f6bed16\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.login-wrapper[data-v-6f6bed16] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  flex-direction: column;\r\n  align-items: stretch;\n}\n.login-wrapper-top[data-v-6f6bed16] {\r\n  background-image: -webkit-gradient(linear, left top, left bottom, from(#126d40), to(#116f77));\r\n  background-image: -webkit-linear-gradient(top, #126d40, #116f77);\r\n  background-image: -o-linear-gradient(top, #126d40, #116f77);\r\n  background-image: linear-gradient(to bottom, #126d40, #116f77);\r\n  height: 6.133333rem;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.login-wrapper-bottom[data-v-6f6bed16] {\r\n  background-color: #e6efea;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.login-title-zh[data-v-6f6bed16] {\r\n  font-weight: bold;\r\n  color: #e6efea;\r\n  font-size: 1.28rem;\n}\n.login-title-en[data-v-6f6bed16] {\r\n  color: #e6efea;\r\n  font-size: 0.96rem;\r\n  margin-bottom: 1.066667rem;\n}\n.login-logo[data-v-6f6bed16] {\r\n  position: absolute;\r\n  width: 3.466667rem;\r\n  height: 3.466667rem;\r\n  left: 5rem;\r\n  margin-left: -1.733333rem;\r\n  top: 6.133333rem;\r\n  margin-top: -1.733333rem;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _wxcButton = __webpack_require__(26);
-
-var _wxcButton2 = _interopRequireDefault(_wxcButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var modal = weex.requireModule('modal'); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'Login',
-  components: {
-    WxcButton: _wxcButton2.default
-  },
-  data: function data() {
-    return {
-      logoSrc: this.$getImg('logo2.png')
-    };
-  },
-
-  methods: {
-    login: function login() {
-      modal.toast({
-        message: 'login',
-        duration: 0.3
-      });
-    }
-  }
-};
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "login-wrapper weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('div', {
-    staticClass: "login-wrapper-top weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "login-title-zh weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("伯雅音乐")]), _vm._v(" "), _c('p', {
-    staticClass: "login-title-en weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("Boya Music")])]), _vm._v(" "), _c('div', {
-    staticClass: "login-wrapper-bottom weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('wxc-button', {
-    attrs: {
-      "text": "登录",
-      "type": "green",
-      "btnStyle": {
-        height: '110px',
-        marginBottom: '20px'
-      },
-      "textStyle": {
-        fontSize: '40px',
-        fontWeight: 'bold',
-        color: '#E6EFEA'
-      },
-      "data-evt-wxcButtonClicked": ""
-    },
-    on: {
-      "wxcButtonClicked": _vm.login
-    }
-  })], 1), _vm._v(" "), _c('figure', {
-    staticClass: "login-logo weex-el weex-image",
-    attrs: {
-      "src": _vm.logoSrc,
-      "data-img-src": _vm.logoSrc,
-      "weex-type": "image"
-    }
-  })])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6f6bed16", module.exports)
   }
 }
 

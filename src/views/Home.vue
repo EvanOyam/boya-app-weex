@@ -3,8 +3,7 @@
     <scroller class="scroller">
       <TopBar></TopBar>
       <HeadBlock></HeadBlock>
-      <MyCard class="home-card"
-              :isLogin="isLogin"></MyCard>
+      <MyCard class="home-card"></MyCard>
       <div class="ad-card-box">
         <div class="ad-title-box">
           <div>
@@ -65,12 +64,6 @@ export default {
     MyCard,
     MessageCard,
     WxcPopup
-  },
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
   },
   data() {
     return {

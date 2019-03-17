@@ -1,9 +1,8 @@
 <template>
   <!-- 系统主页面 -->
   <div class="index-wrap">
-    <component :is="viewComponent"
-               :isLogin="isLogin"></component>
-    <MyTabBar :isLogin="isLogin"></MyTabBar>
+    <component :is="viewComponent"></component>
+    <MyTabBar></MyTabBar>
   </div>
 </template>
 <script>
@@ -12,7 +11,6 @@ import MyTabBar from '@/components/MyTabBar'
 import Me from '@/views/Me'
 import Bus from '@/mixins/bus.js'
 const modal = weex.requireModule('modal')
-// const storage = weex.requireModule('storage')
 export default {
   name: 'Index',
   components: {
@@ -26,17 +24,15 @@ export default {
       this.setView(view)
     })
     Bus.$on('handleLogin', () => {
-      if (this.isLogin === false) {
-        modal.alert(
-          {
-            message: '请先登录！',
-            okTitle: '确认'
-          },
-          function() {
-            _this.$router.push('/login')
-          }
-        )
-      }
+      modal.alert(
+        {
+          message: '请先登录！',
+          okTitle: '确认'
+        },
+        function() {
+          _this.$router.push('/login')
+        }
+      )
     })
   },
   beforeDestroy() {
@@ -45,8 +41,7 @@ export default {
   },
   data() {
     return {
-      viewComponent: 'Home',
-      isLogin: false
+      viewComponent: 'Home'
     }
   },
   methods: {
@@ -57,13 +52,6 @@ export default {
         this.viewComponent = 'Me'
       }
     }
-    // 打开应用后，首先发送请求获取用户信息
-    // 检测是否有token，
-    // setUserInfo() {
-    //   storage.setItem('username', 'ChenFaZhi', event => {
-    //     console.log('set success')
-    //   })
-    // }
   }
 }
 </script>

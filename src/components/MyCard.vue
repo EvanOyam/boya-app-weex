@@ -21,28 +21,33 @@ import Bus from '@/mixins/bus.js'
 const storage = weex.requireModule('storage')
 export default {
   name: 'MyCard',
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
+  created() {
+    storage.getItem('userInfo', event => {
+      let userInfo = event.data
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        console.log('unlogin')
+      } else {
+        this.userInfo = JSON.parse(userInfo)
+        this.isLogin = true
+      }
+    })
   },
-  created() {},
   data() {
     return {
+      isLogin: false,
       userInfo: {},
       cardPortraitSrc: this.$getImg('portrait.jpg')
     }
   },
   methods: {
     login() {
-      Bus.$emit('handleLogin')
-    },
-    getUserInfo() {
-      const _this = this
       storage.getItem('userInfo', event => {
-        const userInfo = JSON.parse(event.data)
-        _this.userInfo = userInfo
+        let userInfo = event.data
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          Bus.$emit('handleLogin')
+        } else {
+          console.log(userInfo)
+        }
       })
     }
   }

@@ -5,7 +5,6 @@ import getImg from '@/mixins/getImg'
 import getIcon from '@/mixins/getIcon'
 Vue.prototype.$getImg = getImg
 Vue.prototype.$getIcon = getIcon
-
 /* weex initialized here, please do not move this line */
 const { router } = require('./router')
 const App = require('@/index.vue')

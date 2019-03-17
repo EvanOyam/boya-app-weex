@@ -585,7 +585,7 @@ __vue_styles__.push(__webpack_require__(67)
 __vue_exports__ = __webpack_require__(68)
 
 /* template */
-var __vue_template__ = __webpack_require__(69)
+var __vue_template__ = __webpack_require__(70)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -625,7 +625,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(82);
+var _index = __webpack_require__(83);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -658,13 +658,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //全局引入图片路径处理方法
 Vue.prototype.$getImg = _getImg2.default;
 Vue.prototype.$getIcon = _getIcon2.default;
-
 /* weex initialized here, please do not move this line */
 
 var _require = __webpack_require__(11),
     router = _require.router;
 
-var App = __webpack_require__(101);
+var App = __webpack_require__(102);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -773,11 +772,11 @@ var _Index = __webpack_require__(39);
 
 var _Index2 = _interopRequireDefault(_Index);
 
-var _Test = __webpack_require__(93);
+var _Test = __webpack_require__(94);
 
 var _Test2 = _interopRequireDefault(_Test);
 
-var _Login = __webpack_require__(97);
+var _Login = __webpack_require__(98);
 
 var _Login2 = _interopRequireDefault(_Login);
 
@@ -5220,7 +5219,7 @@ __vue_styles__.push(__webpack_require__(40)
 __vue_exports__ = __webpack_require__(41)
 
 /* template */
-var __vue_template__ = __webpack_require__(92)
+var __vue_template__ = __webpack_require__(93)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -5278,11 +5277,11 @@ var _Home = __webpack_require__(42);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _MyTabBar = __webpack_require__(75);
+var _MyTabBar = __webpack_require__(76);
 
 var _MyTabBar2 = _interopRequireDefault(_MyTabBar);
 
-var _Me = __webpack_require__(79);
+var _Me = __webpack_require__(80);
 
 var _Me2 = _interopRequireDefault(_Me);
 
@@ -5299,10 +5298,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 
 var modal = weex.requireModule('modal');
-// const storage = weex.requireModule('storage')
 exports.default = {
   name: 'Index',
   components: {
@@ -5318,14 +5315,12 @@ exports.default = {
       _this2.setView(view);
     });
     _bus2.default.$on('handleLogin', function () {
-      if (_this2.isLogin === false) {
-        modal.alert({
-          message: '请先登录！',
-          okTitle: '确认'
-        }, function () {
-          _this.$router.push('/login');
-        });
-      }
+      modal.alert({
+        message: '请先登录！',
+        okTitle: '确认'
+      }, function () {
+        _this.$router.push('/login');
+      });
     });
   },
   beforeDestroy: function beforeDestroy() {
@@ -5334,8 +5329,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      viewComponent: 'Home',
-      isLogin: false
+      viewComponent: 'Home'
     };
   },
 
@@ -5347,14 +5341,6 @@ exports.default = {
         this.viewComponent = 'Me';
       }
     }
-    // 打开应用后，首先发送请求获取用户信息
-    // 检测是否有token，
-    // setUserInfo() {
-    //   storage.setItem('username', 'ChenFaZhi', event => {
-    //     console.log('set success')
-    //   })
-    // }
-
   }
 };
 
@@ -5375,7 +5361,7 @@ __vue_styles__.push(__webpack_require__(44)
 __vue_exports__ = __webpack_require__(45)
 
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(75)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -5559,13 +5545,12 @@ var _MyCard = __webpack_require__(6);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
-var _MessageCard = __webpack_require__(70);
+var _MessageCard = __webpack_require__(71);
 
 var _MessageCard2 = _interopRequireDefault(_MessageCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
 //
 //
 //
@@ -5627,12 +5612,6 @@ exports.default = {
     MyCard: _MyCard2.default,
     MessageCard: _MessageCard2.default,
     WxcPopup: _wxcPopup2.default
-  },
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
   },
   data: function data() {
     return {
@@ -15136,11 +15115,25 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+var storage = weex.requireModule('storage');
 exports.default = {
   name: 'HeadBlock',
+  created: function created() {
+    var _this = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        _this.username = '尚未登录';
+      } else {
+        userInfo = JSON.parse(userInfo);
+        _this.username = userInfo.username;
+      }
+    });
+  },
   data: function data() {
     return {
-      username: '尚未登陆'
+      username: '尚未登录'
     };
   },
 
@@ -15267,15 +15260,22 @@ var storage = weex.requireModule('storage'); //
 
 exports.default = {
   name: 'MyCard',
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
+  created: function created() {
+    var _this = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        console.log('unlogin');
+      } else {
+        _this.userInfo = JSON.parse(userInfo);
+        _this.isLogin = true;
+      }
+    });
   },
-  created: function created() {},
   data: function data() {
     return {
+      isLogin: false,
       userInfo: {},
       cardPortraitSrc: this.$getImg('portrait.jpg')
     };
@@ -15283,20 +15283,21 @@ exports.default = {
 
   methods: {
     login: function login() {
-      _bus2.default.$emit('handleLogin');
-    },
-    getUserInfo: function getUserInfo() {
-      var _this = this;
       storage.getItem('userInfo', function (event) {
-        var userInfo = JSON.parse(event.data);
-        _this.userInfo = userInfo;
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          console.log(userInfo);
+        }
       });
     }
   }
 };
 
 /***/ }),
-/* 69 */
+/* 69 */,
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15327,21 +15328,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(71)
+__vue_styles__.push(__webpack_require__(72)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(72)
+__vue_exports__ = __webpack_require__(73)
 
 /* template */
-var __vue_template__ = __webpack_require__(73)
+var __vue_template__ = __webpack_require__(74)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -15371,7 +15372,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -15466,7 +15467,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15563,7 +15564,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15596,7 +15597,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15605,10 +15606,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('scroller', {
     staticClass: ["scroller"]
   }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
-    staticClass: ["home-card"],
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
+    staticClass: ["home-card"]
   }), _c('div', {
     staticClass: ["ad-card-box"]
   }, [_c('div', {
@@ -15681,21 +15679,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(76)
+__vue_styles__.push(__webpack_require__(77)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(77)
+__vue_exports__ = __webpack_require__(78)
 
 /* template */
-var __vue_template__ = __webpack_require__(78)
+var __vue_template__ = __webpack_require__(79)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -15725,7 +15723,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -15801,7 +15799,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15817,19 +15815,43 @@ var _bus2 = _interopRequireDefault(_bus);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var storage = weex.requireModule('storage'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
   name: 'MyTabbar',
   data: function data() {
     return {
       isActived: 0
     };
-  },
-
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
   },
   created: function created() {
     var _this = this;
@@ -15846,50 +15868,40 @@ exports.default = {
       _bus2.default.$emit('handleView', 0);
     },
     gotoMe: function gotoMe() {
-      if (this.isLogin) {
-        this.isActived = 1;
-        _bus2.default.$emit('handleView', 1);
-      } else if (!this.isLogin) {
-        _bus2.default.$emit('handleLogin');
-      }
+      var _this2 = this;
+
+      storage.getItem('userInfo', function (event) {
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          _this2.isActived = 1;
+          _bus2.default.$emit('handleView', 1);
+        }
+      });
+      // if (this.isLogin) {
+      // } else if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     },
     booking: function booking() {
-      _bus2.default.$emit('handleLogin');
+      storage.getItem('userInfo', function (event) {
+        var userInfo = event.data;
+        if (userInfo === 'undefined' || userInfo === undefined) {
+          _bus2.default.$emit('handleLogin');
+        } else {
+          console.log('booking');
+        }
+      });
+      // if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15939,21 +15951,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(80)
+__vue_styles__.push(__webpack_require__(81)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(81)
+__vue_exports__ = __webpack_require__(82)
 
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(92)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -15983,7 +15995,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16052,7 +16064,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16066,7 +16078,7 @@ var _wxcMask = __webpack_require__(7);
 
 var _wxcMask2 = _interopRequireDefault(_wxcMask);
 
-var _wxcCell = __webpack_require__(86);
+var _wxcCell = __webpack_require__(87);
 
 var _wxcCell2 = _interopRequireDefault(_wxcCell);
 
@@ -16209,21 +16221,21 @@ exports.default = {
 //
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(83)
+__vue_styles__.push(__webpack_require__(84)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(84)
+__vue_exports__ = __webpack_require__(85)
 
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(86)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -16253,7 +16265,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16283,7 +16295,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16542,7 +16554,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16585,7 +16597,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16595,7 +16607,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(87);
+var _index = __webpack_require__(88);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -16607,21 +16619,21 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(88)
+__vue_styles__.push(__webpack_require__(89)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(89)
+__vue_exports__ = __webpack_require__(90)
 
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(91)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -16651,7 +16663,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16714,7 +16726,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16899,7 +16911,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16934,7 +16946,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17032,41 +17044,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["index-wrap"]
   }, [_c(_vm.viewComponent, {
-    tag: "component",
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
-  }), _c('MyTabBar', {
-    attrs: {
-      "isLogin": _vm.isLogin
-    }
-  })], 1)
+    tag: "component"
+  }), _c('MyTabBar')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(94)
+__vue_styles__.push(__webpack_require__(95)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(95)
+__vue_exports__ = __webpack_require__(96)
 
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(97)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -17096,7 +17101,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -17115,7 +17120,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17131,11 +17136,60 @@ var _wxcMask2 = _interopRequireDefault(_wxcMask);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var storage = weex.requireModule('storage'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
   components: { WxcMask: _wxcMask2.default },
+  created: function created() {
+    var _this = this;
+    storage.getItem('userInfo', function (event) {
+      _this.userInfo = event.data;
+    });
+  },
   data: function data() {
     return {
-      show: false
+      show: false,
+      userInfo: 'init'
     };
   },
 
@@ -17148,51 +17202,10 @@ exports.default = {
       this.show = false;
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17226,26 +17239,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["title"]
   }, [_vm._v("Weex帮助你构建原生应用")])]), _c('text', {
     staticClass: ["content-text"]
-  }, [_vm._v("\n        与 Web App、HTML5 App 或 hybrid App 不同，您可以使用 Weex 构建一个真正的原生应用。更贴心的是你的代码只需使用 HTML、CSS、JavaScript\n        可以构建原生应用，上手非常简单。但实际上，应用的底层是 Objective-C 或 Java， 同时，Weex 提供很多 native 组件或模块供开发人员使用。\n      ")])])])], 1)
+  }, [_vm._v("\n        " + _vm._s(_vm.userInfo) + "\n      ")])])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(98)
+__vue_styles__.push(__webpack_require__(99)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(99)
+__vue_exports__ = __webpack_require__(100)
 
 /* template */
-var __vue_template__ = __webpack_require__(100)
+var __vue_template__ = __webpack_require__(101)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -17275,7 +17288,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -17368,7 +17381,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17468,6 +17481,8 @@ var modal = weex.requireModule('modal'); //
 //
 //
 
+var stream = weex.requireModule('stream');
+var storage = weex.requireModule('storage');
 exports.default = {
   name: 'Login',
   components: {
@@ -17486,11 +17501,33 @@ exports.default = {
 
   methods: {
     login: function login() {
-      console.log('username', this.userName);
-      console.log('password', this.password);
-      modal.toast({
-        message: 'login',
-        duration: 1
+      var _this = this;
+      var rawbody = {
+        username: this.userName,
+        password: this.password
+      };
+      var body = JSON.stringify(rawbody);
+      stream.fetch({
+        method: 'POST',
+        url: 'https://www.easy-mock.com/mock/5c8e1696c12de836b263653b/weexapi/login',
+        type: 'json',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: body
+      }, function (res) {
+        console.log(res.data);
+        var strData = JSON.stringify(res.data.data);
+        modal.toast({
+          message: res.data.msg,
+          duration: 1
+        });
+        if (res.data.code === 1) {
+          storage.setItem('userInfo', strData);
+          setTimeout(function () {
+            _this.$router.push('/index');
+          }, 1000);
+        }
       });
     },
     register: function register() {
@@ -17524,7 +17561,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17539,7 +17576,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "placeholder": "请输入用户名",
-      "autocomplete": "false",
+      "autocomplete": "off",
       "returnKeyType": "next"
     },
     on: {
@@ -17552,7 +17589,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "password",
       "placeholder": "请输入密码",
-      "autocomplete": "false",
+      "autocomplete": "off",
       "returnKeyType": "done"
     },
     on: {
@@ -17584,7 +17621,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "placeholder": "请输入用户名",
-      "autocomplete": "false",
+      "autocomplete": "off",
       "returnKeyType": "next"
     },
     on: {
@@ -17597,7 +17634,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "password",
       "placeholder": "请输入密码",
-      "autocomplete": "false",
+      "autocomplete": "off",
       "returnKeyType": "next"
     },
     on: {
@@ -17610,7 +17647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "password",
       "placeholder": "确认密码",
-      "autocomplete": "false",
+      "autocomplete": "off",
       "returnKeyType": "done"
     },
     on: {
@@ -17686,21 +17723,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(102)
+__vue_styles__.push(__webpack_require__(103)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(103)
+__vue_exports__ = __webpack_require__(104)
 
 /* template */
-var __vue_template__ = __webpack_require__(104)
+var __vue_template__ = __webpack_require__(105)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -17730,7 +17767,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -17740,7 +17777,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17778,7 +17815,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
