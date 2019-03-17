@@ -15,8 +15,45 @@
                   :cell-style="cellStyle"
                   :has-arrow="true"
                   v-for="(item,index) in messageList"
+                  @wxcCellClicked="openMask"
                   :key="index"></wxc-cell>
       </div>
+      <wxc-mask border-radius="30"
+                mask-bg-color='#e6efea'
+                :show-close="true"
+                :show="show"
+                :has-animation="false"
+                @wxcMaskSetHidden="wxcMaskSetHidden">
+        <div class="content"
+             v-if="maskType === 'course'">
+          <text class="mask-title">{{maskInfo.title}}</text>
+          <wxc-cell label="时间"
+                    :title="maskInfo.time"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="老师"
+                    :title="maskInfo.teacher"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="课室"
+                    :title="maskInfo.classroom"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="当前课时"
+                    :title="`第${maskInfo.courseNum}节课`"
+                    :cell-style="cellStyle"></wxc-cell>
+        </div>
+        <div class="content"
+             v-if="maskType === 'practice'">
+          <text class="mask-title">{{maskInfo.title}}</text>
+          <wxc-cell label="开始时间"
+                    :title="maskInfo.time"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="结束时间"
+                    :title="maskInfo.time"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="琴房"
+                    :title="maskInfo.classroom"
+                    :cell-style="cellStyle"></wxc-cell>
+        </div>
+      </wxc-mask>
     </scroller>
   </div>
 </template>
@@ -24,17 +61,27 @@
 import TopBar from '@/components/TopBar'
 import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
-import { WxcCell } from 'weex-ui'
+import { WxcCell, WxcMask } from 'weex-ui'
 export default {
   name: 'Me',
   components: {
     TopBar,
     HeadBlock,
     MyCard,
-    WxcCell
+    WxcCell,
+    WxcMask
   },
   data() {
     return {
+      show: false,
+      maskType: 'course',
+      maskInfo: {
+        title: '吉他大班课程',
+        time: new Date().toLocaleString(),
+        teacher: 'Evan',
+        courseNum: 6,
+        classroom: '207'
+      },
       cellStyle: {
         marginLeft: '20px',
         marginRight: '20px'
@@ -78,7 +125,14 @@ export default {
       ]
     }
   },
-  methods: {}
+  methods: {
+    openMask(e) {
+      this.show = true
+    },
+    wxcMaskSetHidden() {
+      this.show = false
+    }
+  }
 }
 </script>
 <style scoped>
@@ -121,5 +175,24 @@ export default {
 .bar-title {
   font-size: 32px;
   color: #fff;
+}
+.content {
+  height: 700px;
+  width: 640px;
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-left: 31px;
+  margin-top: 50px;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+.mask-title {
+  font-size: 50px;
+  color: #666;
+  font-weight: bold;
+  text-align: center;
+  /* margin-top: 60px; */
+  /* margin-bottom: 20px; */
 }
 </style>

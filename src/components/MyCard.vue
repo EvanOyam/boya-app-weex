@@ -1,31 +1,51 @@
 <template>
-  <div class="my-card">
+  <div class="my-card"
+       @click="login">
     <div class="front-card">
       <image class="card-portrait"
              :src="cardPortraitSrc"></image>
       <div class="login-text-box"
-           v-if="username !== '请先登录'">
-        <text class="login-username">{{username}}</text>
-        <text class="login-introduction">{{introduction}}</text>
+           v-if="isLogin === true">
+        <text class="login-username">{{userInfo.username}}</text>
+        <text class="login-introduction">{{userInfo.introduction}}</text>
       </div>
       <div class="unlogin-text-box"
-           v-if="username === '请先登录'">
-        <text class="unlogin-username">{{username}}</text>
+           v-if="isLogin === false">
+        <text class="unlogin-username">尚未登录</text>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Bus from '@/mixins/bus.js'
+const storage = weex.requireModule('storage')
 export default {
   name: 'MyCard',
+  props: {
+    isLogin: {
+      type: Boolean,
+      default: false
+    }
+  },
+  created() {},
   data() {
     return {
-      username: '请先登录',
-      introduction: '大家好，我叫陈发枝，可以叫我fat guy，我喜欢看大仙',
+      userInfo: {},
       cardPortraitSrc: this.$getImg('portrait.jpg')
     }
   },
-  methods: {}
+  methods: {
+    login() {
+      Bus.$emit('handleLogin')
+    },
+    getUserInfo() {
+      const _this = this
+      storage.getItem('userInfo', event => {
+        const userInfo = JSON.parse(event.data)
+        _this.userInfo = userInfo
+      })
+    }
+  }
 }
 </script>
 

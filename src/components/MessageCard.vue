@@ -1,5 +1,6 @@
 <template>
-  <div class="message-card">
+  <div class="message-card"
+       @click="openBottomPopup">
     <div class="card-shadow">
       <div class="front-card">
         <div class="logo-box"
@@ -49,10 +50,14 @@ export default {
   },
   data() {
     return {
-      backgroundColor: 'red'
+      backgroundColor: ''
     }
   },
-  methods: {},
+  methods: {
+    openBottomPopup() {
+      this.$emit('openBottomPopup')
+    }
+  },
   computed: {
     handleIconType() {
       const _this = this

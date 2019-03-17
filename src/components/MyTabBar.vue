@@ -20,7 +20,8 @@
                 :class="[isActived === 1 ? 'active' : '']">我的</text></div>
       </div>
     </div>
-    <div class="booking-btn-outer">
+    <div class="booking-btn-outer"
+         @click="booking">
       <div class="booking-btn-inner">
         <text class="iconfont iconText">&#xe782;</text>
       </div>
@@ -36,6 +37,12 @@ export default {
       isActived: 0
     }
   },
+  props: {
+    isLogin: {
+      type: Boolean,
+      default: false
+    }
+  },
   created() {
     this.$getIcon()
     Bus.$on('topBarLeftClick', () => {
@@ -48,8 +55,15 @@ export default {
       Bus.$emit('handleView', 0)
     },
     gotoMe() {
-      this.isActived = 1
-      Bus.$emit('handleView', 1)
+      if (this.isLogin) {
+        this.isActived = 1
+        Bus.$emit('handleView', 1)
+      } else if (!this.isLogin) {
+        Bus.$emit('handleLogin')
+      }
+    },
+    booking() {
+      Bus.$emit('handleLogin')
     }
   }
 }
