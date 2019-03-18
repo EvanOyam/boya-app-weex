@@ -16,7 +16,7 @@ const getIcon = function() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')"
   } else {
-    url = "url('http://at.alicdn.com/t/font_1068180_1olc3i0cqjt.ttf')"
+    url = "url('//at.alicdn.com/t/font_1068180_zc7lw2l7jma.ttf')"
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
