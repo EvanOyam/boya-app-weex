@@ -16,7 +16,7 @@
  -->
 <resources>
   <string name="app_name">BOYA</string>
-  <string name="dummy_content">WEEX\nPLAYGROUND</string>
+  <string name="dummy_content">Boya Music</string>
   <string name="capture_qrcode_prompt">请将条码置于取景框内扫描</string>
   <string name="cpu_not_support_tip">对不起,您当前的设备是X86架构.\n我们只支持ARM架构的设备!</string>
   <string name="index_tip">网络错误!</string>

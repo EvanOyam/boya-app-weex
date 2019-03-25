@@ -11,7 +11,7 @@
       </div>
       <div class="unlogin-text-box"
            v-if="isLogin === false">
-        <text class="unlogin-username">尚未登录</text>
+        <text class="unlogin-username">{{userInfo.username}}</text>
       </div>
     </div>
   </div>
@@ -25,6 +25,9 @@ export default {
     storage.getItem('userInfo', event => {
       let userInfo = event.data
       if (userInfo === 'undefined' || userInfo === undefined) {
+        this.userInfo = {
+          username: '尚未登录'
+        }
         console.log('unlogin')
       } else {
         this.userInfo = JSON.parse(userInfo)

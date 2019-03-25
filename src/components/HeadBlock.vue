@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      username: '尚未登录'
+      username: ''
     }
   },
   methods: {}

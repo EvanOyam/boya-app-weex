@@ -2,6 +2,9 @@
   <!-- 系统主页面 -->
   <div class="index-wrap">
     <component :is="viewComponent"></component>
+    <TopBar></TopBar>
+    <HeadBlock></HeadBlock>
+    <MyCard class="index-my-card"></MyCard>
     <MyTabBar></MyTabBar>
   </div>
 </template>
@@ -10,13 +13,19 @@ import Home from '@/views/Home'
 import MyTabBar from '@/components/MyTabBar'
 import Me from '@/views/Me'
 import Bus from '@/mixins/bus.js'
+import MyCard from '@/components/MyCard'
+import TopBar from '@/components/TopBar'
+import HeadBlock from '@/components/HeadBlock'
 const modal = weex.requireModule('modal')
 export default {
   name: 'Index',
   components: {
     Home,
     Me,
-    MyTabBar
+    MyTabBar,
+    MyCard,
+    TopBar,
+    HeadBlock
   },
   created() {
     const _this = this
@@ -62,5 +71,10 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+  align-items: center;
+  background-color: #e6efea;
+}
+.index-my-card {
+  margin-top: -100px;
 }
 </style>

@@ -1,9 +1,6 @@
 <template>
   <div class="home-wrapper">
     <scroller class="scroller">
-      <TopBar></TopBar>
-      <HeadBlock></HeadBlock>
-      <MyCard class="home-card"></MyCard>
       <div class="ad-card-box">
         <div class="ad-title-box">
           <div>
@@ -123,7 +120,8 @@ export default {
   },
   methods: {
     gotoTest() {
-      this.$router.push('/test')
+      // this.$router.push('/test')
+      console.log('gotoTest')
     },
     showPopup(i) {
       this.popupTitle = this.messageList[i].cardTextTitle
@@ -161,13 +159,11 @@ export default {
 }
 .home-wrapper {
   position: absolute;
-  top: 0;
+  top: 466px;
   left: 0;
   right: 0;
   bottom: 0;
-}
-.home-card {
-  margin-top: -100px;
+  background-color: #e6efea;
 }
 .slider {
   width: 680px;
@@ -192,7 +188,6 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 26px;
 }
 .ad-card-title {
   font-size: 38px;

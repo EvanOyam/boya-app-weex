@@ -3,14 +3,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:id="@+id/container"
-             android:background="#0099cc"
+             android:background="#54ad7b"
              tools:context="com.alibaba.weex.com.alibaba.app.SplashActivity">
 
     <TextView android:id="@+id/fullscreen_content"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:keepScreenOn="true"
-              android:textColor="#33b5e5"
+              android:textColor="#E6EFEA"
               android:textStyle="bold"
               android:textSize="50sp"
               android:gravity="center"

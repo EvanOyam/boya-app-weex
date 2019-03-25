@@ -503,6 +503,50 @@ module.exports = g;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(76)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(78),
+  /* template */
+  __webpack_require__(85),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-42079584",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] TopBar.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-42079584", Component.options)
+  } else {
+    hotAPI.reload("data-v-42079584", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -510,7 +554,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(5);
+var _vue = __webpack_require__(7);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -519,7 +563,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = new _vue2.default();
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(86)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(88),
+  /* template */
+  __webpack_require__(89),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-17aa6c77",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] HeadBlock.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-17aa6c77", Component.options)
+  } else {
+    hotAPI.reload("data-v-17aa6c77", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8934,95 +9022,51 @@ if (inBrowser) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3), __webpack_require__(15).setImmediate))
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(76)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(78),
-  /* template */
-  __webpack_require__(85),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-42079584",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] TopBar.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-42079584", Component.options)
-  } else {
-    hotAPI.reload("data-v-42079584", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(86)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(88),
-  /* template */
-  __webpack_require__(89),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-17aa6c77",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] HeadBlock.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-17aa6c77", Component.options)
-  } else {
-    hotAPI.reload("data-v-17aa6c77", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(90)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(92),
+  /* template */
+  __webpack_require__(93),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-bf89923c",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] MyCard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-bf89923c", Component.options)
+  } else {
+    hotAPI.reload("data-v-bf89923c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9044,7 +9088,7 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9398,7 +9442,7 @@ var Utils = {
 exports.default = Utils;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9418,50 +9462,6 @@ Object.defineProperty(exports, 'default', {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(90)
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(92),
-  /* template */
-  __webpack_require__(93),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-bf89923c",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] MyCard.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bf89923c", Component.options)
-  } else {
-    hotAPI.reload("data-v-bf89923c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
 
 /***/ }),
 /* 12 */
@@ -9514,7 +9514,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 "use strict";
 
 
-var _vue = __webpack_require__(5);
+var _vue = __webpack_require__(7);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -20827,7 +20827,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.router = undefined;
 
-var _vue = __webpack_require__(5);
+var _vue = __webpack_require__(7);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -23657,7 +23657,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(8);
+var _wxcButton = __webpack_require__(9);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -24335,7 +24335,7 @@ var _type = __webpack_require__(44);
 
 var _type2 = _interopRequireDefault(_type);
 
-var _utils = __webpack_require__(9);
+var _utils = __webpack_require__(10);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -25501,7 +25501,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.index-wrap[data-v-02bb3344] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.index-wrap[data-v-02bb3344] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  align-items: center;\r\n  background-color: #e6efea;\n}\n.index-my-card[data-v-02bb3344] {\r\n  margin-top: -1.333333rem;\n}\r\n", ""]);
 
 // exports
 
@@ -25529,12 +25529,27 @@ var _Me = __webpack_require__(105);
 
 var _Me2 = _interopRequireDefault(_Me);
 
-var _bus = __webpack_require__(4);
+var _bus = __webpack_require__(5);
 
 var _bus2 = _interopRequireDefault(_bus);
 
+var _MyCard = __webpack_require__(8);
+
+var _MyCard2 = _interopRequireDefault(_MyCard);
+
+var _TopBar = __webpack_require__(4);
+
+var _TopBar2 = _interopRequireDefault(_TopBar);
+
+var _HeadBlock = __webpack_require__(6);
+
+var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var modal = weex.requireModule('modal'); //
+//
+//
 //
 //
 //
@@ -25543,13 +25558,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-var modal = weex.requireModule('modal');
 exports.default = {
   name: 'Index',
   components: {
     Home: _Home2.default,
     Me: _Me2.default,
-    MyTabBar: _MyTabBar2.default
+    MyTabBar: _MyTabBar2.default,
+    MyCard: _MyCard2.default,
+    TopBar: _TopBar2.default,
+    HeadBlock: _HeadBlock2.default
   },
   created: function created() {
     var _this2 = this;
@@ -25708,7 +25725,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.scroller[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\n}\n.home-card[data-v-89a6e4fa] {\r\n  margin-top: -1.333333rem;\n}\n.slider[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.frame[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\r\n  position: relative;\n}\n.image[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.ad-title-box[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 1.333333rem;\r\n  line-height: 1.333333rem;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-top: 0.346667rem;\n}\n.ad-card-title[data-v-89a6e4fa] {\r\n  font-size: 0.506667rem;\r\n  font-weight: bold;\r\n  color: #333;\n}\n.ad-card-more[data-v-89a6e4fa] {\r\n  color: #6e8ca0;\r\n  font-size: 0.426667rem;\n}\n.home-message-card[data-v-89a6e4fa] {\r\n  margin-bottom: 0.133333rem;\n}\n.clearBox[data-v-89a6e4fa] {\r\n  width: 10rem;\r\n  height: 2.666667rem;\n}\n.ad-card-box[data-v-89a6e4fa] {\r\n  margin-bottom: 0.533333rem;\n}\n.msg-popup-content[data-v-89a6e4fa] {\r\n  height: 5.333333rem;\r\n  width: 9.066667rem;\r\n  background-color: rgba(255, 255, 255, 0.7);\r\n  border-radius: 0.133333rem;\r\n  margin-top: 0.666667rem;\r\n  margin-left: 0.466667rem;\r\n  padding: 0.533333rem 0.266667rem 0.266667rem 0.4rem;\n}\n.msg-popup-desc[data-v-89a6e4fa] {\r\n  color: #666;\r\n  font-size: 0.4rem;\r\n  margin-top: 0.4rem;\n}\n.msg-popup-title[data-v-89a6e4fa] {\r\n  color: #666;\r\n  font-size: 0.533333rem;\r\n  font-weight: bold;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  lines: 1;\n}\n.msg-popup-time[data-v-89a6e4fa] {\r\n  color: #999;\r\n  font-size: 0.373333rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.scroller[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.home-wrapper[data-v-89a6e4fa] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #e6efea;\n}\n.slider[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.frame[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\r\n  position: relative;\n}\n.image[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 6.133333rem;\r\n  border-radius: 0.213333rem;\n}\n.ad-title-box[data-v-89a6e4fa] {\r\n  width: 9.066667rem;\r\n  height: 1.333333rem;\r\n  line-height: 1.333333rem;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  justify-content: space-between;\n}\n.ad-card-title[data-v-89a6e4fa] {\r\n  font-size: 0.506667rem;\r\n  font-weight: bold;\r\n  color: #333;\n}\n.ad-card-more[data-v-89a6e4fa] {\r\n  color: #6e8ca0;\r\n  font-size: 0.426667rem;\n}\n.home-message-card[data-v-89a6e4fa] {\r\n  margin-bottom: 0.133333rem;\n}\n.clearBox[data-v-89a6e4fa] {\r\n  width: 10rem;\r\n  height: 2.666667rem;\n}\n.ad-card-box[data-v-89a6e4fa] {\r\n  margin-bottom: 0.533333rem;\n}\n.msg-popup-content[data-v-89a6e4fa] {\r\n  height: 5.333333rem;\r\n  width: 9.066667rem;\r\n  background-color: rgba(255, 255, 255, 0.7);\r\n  border-radius: 0.133333rem;\r\n  margin-top: 0.666667rem;\r\n  margin-left: 0.466667rem;\r\n  padding: 0.533333rem 0.266667rem 0.266667rem 0.4rem;\n}\n.msg-popup-desc[data-v-89a6e4fa] {\r\n  color: #666;\r\n  font-size: 0.4rem;\r\n  margin-top: 0.4rem;\n}\n.msg-popup-title[data-v-89a6e4fa] {\r\n  color: #666;\r\n  font-size: 0.533333rem;\r\n  font-weight: bold;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  lines: 1;\n}\n.msg-popup-time[data-v-89a6e4fa] {\r\n  color: #999;\r\n  font-size: 0.373333rem;\n}\r\n", ""]);
 
 // exports
 
@@ -25728,15 +25745,15 @@ var _wxcPopup = __webpack_require__(65);
 
 var _wxcPopup2 = _interopRequireDefault(_wxcPopup);
 
-var _TopBar = __webpack_require__(6);
+var _TopBar = __webpack_require__(4);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(7);
+var _HeadBlock = __webpack_require__(6);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(11);
+var _MyCard = __webpack_require__(8);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -25746,9 +25763,6 @@ var _MessageCard2 = _interopRequireDefault(_MessageCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
 //
 //
 //
@@ -25851,7 +25865,8 @@ exports.default = {
 
   methods: {
     gotoTest: function gotoTest() {
-      this.$router.push('/test');
+      // this.$router.push('/test')
+      console.log('gotoTest');
     },
     showPopup: function showPopup(i) {
       this.popupTitle = this.messageList[i].cardTextTitle;
@@ -25988,7 +26003,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _wxcOverlay = __webpack_require__(10);
+var _wxcOverlay = __webpack_require__(11);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -26560,7 +26575,7 @@ var _wxcMinibar = __webpack_require__(79);
 
 var _wxcMinibar2 = _interopRequireDefault(_wxcMinibar);
 
-var _bus = __webpack_require__(4);
+var _bus = __webpack_require__(5);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -27092,7 +27107,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      username: '尚未登录'
+      username: ''
     };
   },
 
@@ -27175,7 +27190,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(4);
+var _bus = __webpack_require__(5);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -27208,6 +27223,9 @@ exports.default = {
     storage.getItem('userInfo', function (event) {
       var userInfo = event.data;
       if (userInfo === 'undefined' || userInfo === undefined) {
+        _this.userInfo = {
+          username: '尚未登录'
+        };
         console.log('unlogin');
       } else {
         _this.userInfo = JSON.parse(userInfo);
@@ -27292,7 +27310,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("尚未登录")])]) : _vm._e()])])
+  }, [_vm._v(_vm._s(_vm.userInfo.username))])]) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -27582,10 +27600,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('scroller', {
     staticClass: "scroller",
     attrs: {}
-  }, [_c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
-    staticClass: "home-card",
-    attrs: {}
-  }), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "ad-card-box weex-ct weex-div",
     attrs: {
       "weex-type": "div"
@@ -27810,7 +27825,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(4);
+var _bus = __webpack_require__(5);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -28100,7 +28115,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\n}\n.home-card[data-v-1c16d688] {\r\n  margin-top: -1.333333rem;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  margin-top: 0.4rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\r\n  margin-bottom: 2.666667rem;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.666667rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  /* margin-top: 60px; */\r\n  /* margin-bottom: 20px; */\n}\r\n", ""]);
+exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\r\n  margin-bottom: 2.666667rem;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.666667rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  /* margin-top: 60px; */\r\n  /* margin-bottom: 20px; */\n}\r\n", ""]);
 
 // exports
 
@@ -28124,15 +28139,15 @@ var _wxcCell = __webpack_require__(13);
 
 var _wxcCell2 = _interopRequireDefault(_wxcCell);
 
-var _TopBar = __webpack_require__(6);
+var _TopBar = __webpack_require__(4);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(7);
+var _HeadBlock = __webpack_require__(6);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(11);
+var _MyCard = __webpack_require__(8);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -28150,12 +28165,9 @@ exports.default = {
   data: function data() {
     return {
       show: false,
-      maskType: 'course',
       maskInfo: {
-        title: '吉他大班课程',
-        time: new Date().toLocaleString(),
-        teacher: 'Evan',
-        courseNum: 6,
+        startTime: new Date().toLocaleString(),
+        endTime: new Date().toLocaleString(),
         classroom: '207'
       },
       cellStyle: {
@@ -28163,32 +28175,25 @@ exports.default = {
         marginRight: '20px'
       },
       messageList: [{
-        label: '课程信息',
-        title: '吉他大班课程',
+        title: '207琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '预约消息',
-        title: '琴房预约消息',
+        title: '210琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '课程信息',
-        title: '尤克里里一对一课程',
+        title: '207琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '课程信息',
-        title: '尤克里里一对一课程',
+        title: '222琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '课程信息',
-        title: '尤克里里一对一课程',
+        title: '207琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '课程信息',
-        title: '尤克里里一对一课程',
+        title: '201琴房预约消息',
         desc: new Date().toLocaleDateString()
       }, {
-        label: '预约消息',
-        title: '琴房预约消息',
+        title: '202琴房预约消息',
         desc: new Date().toLocaleDateString()
       }]
     };
@@ -28203,26 +28208,6 @@ exports.default = {
     }
   }
 }; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -28361,7 +28346,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _wxcOverlay = __webpack_require__(10);
+var _wxcOverlay = __webpack_require__(11);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -28769,7 +28754,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(9);
+var _utils = __webpack_require__(10);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -29026,10 +29011,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('scroller', {
     staticClass: "scroller",
     attrs: {}
-  }, [_c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
-    staticClass: "home-card",
-    attrs: {}
-  }), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "info-front-card weex-ct weex-div",
     attrs: {
       "weex-type": "div"
@@ -29048,7 +29030,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('wxc-cell', {
       key: index,
       attrs: {
-        "label": item.label,
+        "label": "预约消息",
         "title": item.title,
         "desc": item.desc,
         "cell-style": _vm.cellStyle,
@@ -29062,7 +29044,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 2), _vm._v(" "), _c('wxc-mask', {
     attrs: {
       "border-radius": "30",
-      "mask-bg-color": "#e6efea",
+      "mask-bg-color": "#fff",
       "show-close": true,
       "show": _vm.show,
       "has-animation": false,
@@ -29071,7 +29053,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcMaskSetHidden": _vm.wxcMaskSetHidden
     }
-  }, [(_vm.maskType === 'course') ? _c('div', {
+  }, [_c('div', {
     staticClass: "content weex-ct weex-div",
     attrs: {
       "weex-type": "div"
@@ -29081,50 +29063,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(_vm._s(_vm.maskInfo.title))]), _vm._v(" "), _c('wxc-cell', {
-    attrs: {
-      "label": "时间",
-      "title": _vm.maskInfo.time,
-      "cell-style": _vm.cellStyle
-    }
-  }), _vm._v(" "), _c('wxc-cell', {
-    attrs: {
-      "label": "老师",
-      "title": _vm.maskInfo.teacher,
-      "cell-style": _vm.cellStyle
-    }
-  }), _vm._v(" "), _c('wxc-cell', {
-    attrs: {
-      "label": "课室",
-      "title": _vm.maskInfo.classroom,
-      "cell-style": _vm.cellStyle
-    }
-  }), _vm._v(" "), _c('wxc-cell', {
-    attrs: {
-      "label": "当前课时",
-      "title": ("第" + (_vm.maskInfo.courseNum) + "节课"),
-      "cell-style": _vm.cellStyle
-    }
-  })], 1) : _vm._e(), _vm._v(" "), (_vm.maskType === 'practice') ? _c('div', {
-    staticClass: "content weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "mask-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.maskInfo.title))]), _vm._v(" "), _c('wxc-cell', {
+  }, [_vm._v("琴房预约消息")]), _vm._v(" "), _c('wxc-cell', {
     attrs: {
       "label": "开始时间",
-      "title": _vm.maskInfo.time,
+      "title": _vm.maskInfo.startTime,
       "cell-style": _vm.cellStyle
     }
   }), _vm._v(" "), _c('wxc-cell', {
     attrs: {
       "label": "结束时间",
-      "title": _vm.maskInfo.time,
+      "title": _vm.maskInfo.endTime,
       "cell-style": _vm.cellStyle
     }
   }), _vm._v(" "), _c('wxc-cell', {
@@ -29133,7 +29081,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "title": _vm.maskInfo.classroom,
       "cell-style": _vm.cellStyle
     }
-  })], 1) : _vm._e()])], 1)], 1)
+  })], 1)])], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -29155,6 +29103,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c(_vm.viewComponent, {
     tag: "component",
+    attrs: {}
+  }), _vm._v(" "), _c('TopBar'), _vm._v(" "), _c('HeadBlock'), _vm._v(" "), _c('MyCard', {
+    staticClass: "index-my-card",
     attrs: {}
   }), _vm._v(" "), _c('MyTabBar')], 1)
 },staticRenderFns: []}
@@ -29499,7 +29450,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(8);
+var _wxcButton = __webpack_require__(9);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -30022,11 +29973,11 @@ var _wxcGridSelect = __webpack_require__(135);
 
 var _wxcGridSelect2 = _interopRequireDefault(_wxcGridSelect);
 
-var _TopBar = __webpack_require__(6);
+var _TopBar = __webpack_require__(4);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _HeadBlock = __webpack_require__(7);
+var _HeadBlock = __webpack_require__(6);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 

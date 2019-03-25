@@ -69,25 +69,6 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _vue = __webpack_require__(63);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = new _vue2.default();
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
@@ -127,6 +108,25 @@ if (typeof __register_static_styles__ === "function") {
 
 module.exports = __vue_exports__
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = __webpack_require__(63);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = new _vue2.default();
 
 /***/ }),
 /* 2 */
@@ -176,6 +176,50 @@ module.exports = __vue_exports__
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(68)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(69)
+
+/* template */
+var __vue_template__ = __webpack_require__(70)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-4ea34e28"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -195,7 +239,7 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -549,7 +593,7 @@ var Utils = {
 exports.default = Utils;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -569,50 +613,6 @@ Object.defineProperty(exports, 'default', {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(68)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(69)
-
-/* template */
-var __vue_template__ = __webpack_require__(70)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-4ea34e28"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
 
 /***/ }),
 /* 7 */
@@ -3576,7 +3576,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(3);
+var _wxcButton = __webpack_require__(4);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -4193,7 +4193,7 @@ var _type = __webpack_require__(30);
 
 var _type2 = _interopRequireDefault(_type);
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -5290,7 +5290,12 @@ module.exports = {
     "top": 0,
     "bottom": 0,
     "left": 0,
-    "right": 0
+    "right": 0,
+    "alignItems": "center",
+    "backgroundColor": "#e6efea"
+  },
+  "index-my-card": {
+    "marginTop": "-100"
   }
 }
 
@@ -5317,12 +5322,27 @@ var _Me = __webpack_require__(80);
 
 var _Me2 = _interopRequireDefault(_Me);
 
-var _bus = __webpack_require__(0);
+var _bus = __webpack_require__(1);
 
 var _bus2 = _interopRequireDefault(_bus);
 
+var _MyCard = __webpack_require__(3);
+
+var _MyCard2 = _interopRequireDefault(_MyCard);
+
+var _TopBar = __webpack_require__(0);
+
+var _TopBar2 = _interopRequireDefault(_TopBar);
+
+var _HeadBlock = __webpack_require__(2);
+
+var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var modal = weex.requireModule('modal'); //
+//
+//
 //
 //
 //
@@ -5331,13 +5351,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-var modal = weex.requireModule('modal');
 exports.default = {
   name: 'Index',
   components: {
     Home: _Home2.default,
     Me: _Me2.default,
-    MyTabBar: _MyTabBar2.default
+    MyTabBar: _MyTabBar2.default,
+    MyCard: _MyCard2.default,
+    TopBar: _TopBar2.default,
+    HeadBlock: _HeadBlock2.default
   },
   created: function created() {
     var _this2 = this;
@@ -5454,13 +5476,11 @@ module.exports = {
   },
   "home-wrapper": {
     "position": "absolute",
-    "top": 0,
+    "top": "466",
     "left": 0,
     "right": 0,
-    "bottom": 0
-  },
-  "home-card": {
-    "marginTop": "-100"
+    "bottom": 0,
+    "backgroundColor": "#e6efea"
   },
   "slider": {
     "width": "680",
@@ -5493,8 +5513,7 @@ module.exports = {
     "lineHeight": "100",
     "flexDirection": "row",
     "alignItems": "center",
-    "justifyContent": "space-between",
-    "marginTop": "26"
+    "justifyContent": "space-between"
   },
   "ad-card-title": {
     "fontSize": "38",
@@ -5565,7 +5584,7 @@ var _wxcPopup = __webpack_require__(47);
 
 var _wxcPopup2 = _interopRequireDefault(_wxcPopup);
 
-var _TopBar = __webpack_require__(1);
+var _TopBar = __webpack_require__(0);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
@@ -5573,7 +5592,7 @@ var _HeadBlock = __webpack_require__(2);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(6);
+var _MyCard = __webpack_require__(3);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -5583,9 +5602,6 @@ var _MessageCard2 = _interopRequireDefault(_MessageCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
 //
 //
 //
@@ -5812,7 +5828,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _wxcOverlay = __webpack_require__(5);
+var _wxcOverlay = __webpack_require__(6);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -6285,7 +6301,7 @@ var _wxcMinibar = __webpack_require__(58);
 
 var _wxcMinibar2 = _interopRequireDefault(_wxcMinibar);
 
-var _bus = __webpack_require__(0);
+var _bus = __webpack_require__(1);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -15165,7 +15181,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      username: '尚未登录'
+      username: ''
     };
   },
 
@@ -15265,7 +15281,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(0);
+var _bus = __webpack_require__(1);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -15298,6 +15314,9 @@ exports.default = {
     storage.getItem('userInfo', function (event) {
       var userInfo = event.data;
       if (userInfo === 'undefined' || userInfo === undefined) {
+        _this.userInfo = {
+          username: '尚未登录'
+        };
         console.log('unlogin');
       } else {
         _this.userInfo = JSON.parse(userInfo);
@@ -15354,7 +15373,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["unlogin-text-box"]
   }, [_c('text', {
     staticClass: ["unlogin-username"]
-  }, [_vm._v("尚未登录")])]) : _vm._e()])])
+  }, [_vm._v(_vm._s(_vm.userInfo.username))])]) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -15636,9 +15655,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["home-wrapper"]
   }, [_c('scroller', {
     staticClass: ["scroller"]
-  }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
-    staticClass: ["home-card"]
-  }), _c('div', {
+  }, [_c('div', {
     staticClass: ["ad-card-box"]
   }, [_c('div', {
     staticClass: ["ad-title-box"]
@@ -15840,7 +15857,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _bus = __webpack_require__(0);
+var _bus = __webpack_require__(1);
 
 var _bus2 = _interopRequireDefault(_bus);
 
@@ -16034,14 +16051,11 @@ module.exports = __vue_exports__
 module.exports = {
   "me-wrap": {
     "position": "absolute",
-    "top": 0,
+    "top": "466",
     "bottom": 0,
     "right": 0,
     "left": 0,
     "backgroundColor": "#e6efea"
-  },
-  "home-card": {
-    "marginTop": "-100"
   },
   "scroller": {
     "position": "absolute",
@@ -16055,7 +16069,6 @@ module.exports = {
   },
   "info-front-card": {
     "width": "680",
-    "marginTop": "30",
     "backgroundColor": "#ffffff",
     "borderTopLeftRadius": "10",
     "borderTopRightRadius": "10",
@@ -16115,7 +16128,7 @@ var _wxcCell = __webpack_require__(8);
 
 var _wxcCell2 = _interopRequireDefault(_wxcCell);
 
-var _TopBar = __webpack_require__(1);
+var _TopBar = __webpack_require__(0);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
@@ -16123,7 +16136,7 @@ var _HeadBlock = __webpack_require__(2);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(6);
+var _MyCard = __webpack_require__(3);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -16194,9 +16207,6 @@ exports.default = {
     }
   }
 }; //
-//
-//
-//
 //
 //
 //
@@ -16342,7 +16352,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _wxcOverlay = __webpack_require__(5);
+var _wxcOverlay = __webpack_require__(6);
 
 var _wxcOverlay2 = _interopRequireDefault(_wxcOverlay);
 
@@ -16747,7 +16757,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -16965,9 +16975,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["me-wrap"]
   }, [_c('scroller', {
     staticClass: ["scroller"]
-  }, [_c('TopBar'), _c('HeadBlock'), _c('MyCard', {
-    staticClass: ["home-card"]
-  }), _c('div', {
+  }, [_c('div', {
     staticClass: ["info-front-card"]
   }, [_vm._m(0), _vm._l((_vm.messageList), function(item, index) {
     return _c('wxc-cell', {
@@ -17063,6 +17071,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["index-wrap"]
   }, [_c(_vm.viewComponent, {
     tag: "component"
+  }), _c('TopBar'), _c('HeadBlock'), _c('MyCard', {
+    staticClass: ["index-my-card"]
   }), _c('MyTabBar')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
@@ -17402,7 +17412,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(3);
+var _wxcButton = __webpack_require__(4);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -17921,7 +17931,7 @@ var _wxcGridSelect = __webpack_require__(104);
 
 var _wxcGridSelect2 = _interopRequireDefault(_wxcGridSelect);
 
-var _TopBar = __webpack_require__(1);
+var _TopBar = __webpack_require__(0);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 

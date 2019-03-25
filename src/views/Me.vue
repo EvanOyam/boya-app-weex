@@ -2,14 +2,11 @@
   <!-- 我的页面 -->
   <div class="me-wrap">
     <scroller class="scroller">
-      <TopBar></TopBar>
-      <HeadBlock></HeadBlock>
-      <MyCard class="home-card"></MyCard>
       <div class="info-front-card">
         <div class="bar">
           <text class="bar-title">消息列表</text>
         </div>
-        <wxc-cell :label="item.label"
+        <wxc-cell label="预约消息"
                   :title="item.title"
                   :desc="item.desc"
                   :cell-style="cellStyle"
@@ -19,35 +16,18 @@
                   :key="index"></wxc-cell>
       </div>
       <wxc-mask border-radius="30"
-                mask-bg-color='#e6efea'
+                mask-bg-color='#fff'
                 :show-close="true"
                 :show="show"
                 :has-animation="false"
                 @wxcMaskSetHidden="wxcMaskSetHidden">
-        <div class="content"
-             v-if="maskType === 'course'">
-          <text class="mask-title">{{maskInfo.title}}</text>
-          <wxc-cell label="时间"
-                    :title="maskInfo.time"
-                    :cell-style="cellStyle"></wxc-cell>
-          <wxc-cell label="老师"
-                    :title="maskInfo.teacher"
-                    :cell-style="cellStyle"></wxc-cell>
-          <wxc-cell label="课室"
-                    :title="maskInfo.classroom"
-                    :cell-style="cellStyle"></wxc-cell>
-          <wxc-cell label="当前课时"
-                    :title="`第${maskInfo.courseNum}节课`"
-                    :cell-style="cellStyle"></wxc-cell>
-        </div>
-        <div class="content"
-             v-if="maskType === 'practice'">
-          <text class="mask-title">{{maskInfo.title}}</text>
+        <div class="content">
+          <text class="mask-title">琴房预约消息</text>
           <wxc-cell label="开始时间"
-                    :title="maskInfo.time"
+                    :title="maskInfo.startTime"
                     :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="结束时间"
-                    :title="maskInfo.time"
+                    :title="maskInfo.endTime"
                     :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="琴房"
                     :title="maskInfo.classroom"
@@ -74,12 +54,9 @@ export default {
   data() {
     return {
       show: false,
-      maskType: 'course',
       maskInfo: {
-        title: '吉他大班课程',
-        time: new Date().toLocaleString(),
-        teacher: 'Evan',
-        courseNum: 6,
+        startTime: new Date().toLocaleString(),
+        endTime: new Date().toLocaleString(),
         classroom: '207'
       },
       cellStyle: {
@@ -88,38 +65,31 @@ export default {
       },
       messageList: [
         {
-          label: '课程信息',
-          title: '吉他大班课程',
+          title: '207琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '预约消息',
-          title: '琴房预约消息',
+          title: '210琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '课程信息',
-          title: '尤克里里一对一课程',
+          title: '207琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '课程信息',
-          title: '尤克里里一对一课程',
+          title: '222琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '课程信息',
-          title: '尤克里里一对一课程',
+          title: '207琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '课程信息',
-          title: '尤克里里一对一课程',
+          title: '201琴房预约消息',
           desc: new Date().toLocaleDateString()
         },
         {
-          label: '预约消息',
-          title: '琴房预约消息',
+          title: '202琴房预约消息',
           desc: new Date().toLocaleDateString()
         }
       ]
@@ -138,14 +108,11 @@ export default {
 <style scoped>
 .me-wrap {
   position: absolute;
-  top: 0;
+  top: 466px;
   bottom: 0;
   right: 0;
   left: 0;
   background-color: #e6efea;
-}
-.home-card {
-  margin-top: -100px;
 }
 .scroller {
   position: absolute;
@@ -159,7 +126,6 @@ export default {
 }
 .info-front-card {
   width: 680px;
-  margin-top: 30px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
