@@ -18,7 +18,9 @@
 </template>
 <script>
 import Bus from '@/mixins/bus.js'
+const modal = weex.requireModule('modal')
 const storage = weex.requireModule('storage')
+const stream = weex.requireModule('stream')
 export default {
   name: 'MyCard',
   created() {
@@ -44,14 +46,73 @@ export default {
   },
   methods: {
     login() {
+      const _this = this
       storage.getItem('userInfo', event => {
         let userInfo = event.data
         if (userInfo === 'undefined' || userInfo === undefined) {
           Bus.$emit('handleLogin')
         } else {
-          console.log(userInfo)
+          modal.prompt(
+            {
+              message: '修改自我介绍',
+              duration: 0.3,
+              okTitle: '确认',
+              cancelTitle: '取消'
+            },
+            function(res) {
+              if (res.result === '确认') {
+                _this.editIntroduction(res.data)
+              } else {
+                console.log(res.result)
+              }
+            }
+          )
         }
       })
+    },
+    editIntroduction(introduction) {
+      const _this = this
+      const rawBody = {
+        username: this.userInfo.username,
+        introduction
+      }
+      const body = JSON.stringify(rawBody)
+      if (introduction !== '') {
+        let token
+        storage.getItem('token', event => {
+          token = event.data
+        })
+        console.log('token', token)
+        console.log('body', body)
+        stream.fetch(
+          {
+            method: 'POST',
+            url: 'http://192.168.31.250:9091/editIntroduction',
+            type: 'json',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + token
+            },
+            body: body
+          },
+          function(res) {
+            console.log(res)
+            if (res.data.code === 1) {
+              _this.userInfo.introduction = res.data.introduction
+            } else {
+              modal.alert(
+                {
+                  message: '登录过期，请重新登录！',
+                  okTitle: '重新登录'
+                },
+                function() {
+                  _this.$router.push('/login')
+                }
+              )
+            }
+          }
+        )
+      }
     }
   }
 }

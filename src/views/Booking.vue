@@ -51,6 +51,8 @@ import TopBar from '../components/TopBar'
 import HeadBlock from '../components/HeadBlock'
 import { WxcGridSelect, WxcCell } from 'weex-ui'
 import { XPicker } from 'weex-x-picker'
+const modal = weex.requireModule('modal')
+const stream = weex.requireModule('stream')
 export default {
   name: 'Booking',
   components: {
@@ -86,6 +88,7 @@ export default {
         backgroundColor: '#ffffff',
         checkedBackgroundColor: '#54AD7B'
       },
+      instrument: '吉他',
       roomTypeList: [
         {
           title: '吉他',
@@ -107,41 +110,13 @@ export default {
           title: '小提琴'
         }
       ],
-      roomList: [
-        {
-          room: '201',
-          time: '9:00-10:00'
-        },
-        {
-          room: '207',
-          time: '9:00-10:00'
-        },
-        {
-          room: '210',
-          time: '13:00-14:00'
-        },
-        {
-          room: '201',
-          time: '13:00-14:00'
-        },
-        {
-          room: '210',
-          time: '10:00-11:00'
-        },
-        {
-          room: '207',
-          time: '19:00-20:00'
-        },
-        {
-          room: '201',
-          time: '15:00-16:00'
-        }
-      ]
+      roomList: []
     }
   },
   methods: {
-    selectRoom() {
-      console.log('select room')
+    selectRoom(res) {
+      const title = res.checkedList[0].title
+      this.instrument = title
     },
     openPicker() {
       const _this = this
@@ -156,8 +131,9 @@ export default {
     },
     // 日期选择事件
     change(e) {
-      console.log(e)
-      let date = new Date(e.titles.join('-')).toLocaleDateString()
+      const rawDate = e.titles.join('-')
+      let date = new Date(rawDate).toLocaleDateString()
+      this.time = new Date(rawDate).valueOf()
       this.selectDate = date
     },
     // 预约点击事件
@@ -166,7 +142,107 @@ export default {
     },
     // 搜索琴房
     search() {
-      console.log('search')
+      if (!this.time) {
+        modal.toast({
+          message: '请选择日期',
+          duration: 1
+        })
+      } else {
+        const searchData = {
+          instrument: this.instrument,
+          date: this.time
+        }
+        console.log(searchData)
+        this.getRoomList(searchData)
+      }
+    },
+    initRoom(room) {
+      let roomList = []
+      for (let i in room) {
+        for (let j = 1; j < 13; j++) {
+          const time = `${j + 8}:00-${j + 9}:00`
+          const item = {
+            room: String(room[i]),
+            time: time
+          }
+          roomList.push(item)
+        }
+      }
+      return roomList
+    },
+    roomHandler(period) {
+      switch (period) {
+        case '1':
+          return '9:00-10:00'
+        case '2':
+          return '10:00-11:00'
+        case '3':
+          return '11:00-12:00'
+        case '4':
+          return '12:00-13:00'
+        case '5':
+          return '13:00-14:00'
+        case '6':
+          return '14:00-15:00'
+        case '7':
+          return '15:00-16:00'
+        case '8':
+          return '16:00-17:00'
+        case '9':
+          return '17:00-18:00'
+        case '10':
+          return '18:00-19:00'
+        case '11':
+          return '19:00-20:00'
+        case '12':
+          return '20:00-21:00'
+        default:
+          break
+      }
+    },
+    getRoomList(searchData) {
+      const { instrument, date } = searchData
+      const _this = this
+      stream.fetch(
+        {
+          method: 'GET',
+          url: `http://192.168.31.250:9091/getroominfo?instrument=${instrument}&date=${date}`,
+          type: 'json'
+        },
+        function(res) {
+          if (!res.ok) {
+            modal.toast({
+              message: '服务器繁忙',
+              duration: 2
+            })
+          } else {
+            const instrumentRoom = res.data.data.roomList
+            const roomData = res.data.data.roomData.map(item => {
+              const time = _this.roomHandler(item.period)
+              const newItem = {
+                room: item.roomId,
+                time
+              }
+              return newItem
+            })
+            let initRoomList = _this.initRoom(instrumentRoom)
+            let newRoomList = initRoomList.filter(item => {
+              let isMatch = true
+              for (let i in roomData) {
+                if (
+                  roomData[i].room === item.room &&
+                  roomData[i].time === item.time
+                ) {
+                  isMatch = false
+                }
+              }
+              return isMatch
+            })
+            _this.roomList = newRoomList
+            console.log('newRoomList', newRoomList)
+          }
+        }
+      )
     }
   }
 }

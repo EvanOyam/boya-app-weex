@@ -112,8 +112,7 @@ export default {
       stream.fetch(
         {
           method: 'POST',
-          url:
-            'https://www.easy-mock.com/mock/5c8e1696c12de836b263653b/weexapi/login',
+          url: 'http://192.168.31.250:9091/login',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -121,14 +120,16 @@ export default {
           body: body
         },
         function(res) {
-          console.log(res.data)
-          let strData = JSON.stringify(res.data.data)
+          console.log(res)
+          let strData = JSON.stringify(res.data.userinfo)
+          let token = res.data.token
           modal.toast({
             message: res.data.msg,
             duration: 1
           })
           if (res.data.code === 1) {
             storage.setItem('userInfo', strData)
+            storage.setItem('token', token)
             setTimeout(() => {
               _this.$router.push('/index')
             }, 1000)
@@ -140,10 +141,49 @@ export default {
       console.log('username', this.userName)
       console.log('password', this.password)
       console.log('comfirmPassword', this.comfirmPassword)
-      modal.toast({
-        message: 'register',
-        duration: 1
-      })
+      if (this.password !== this.comfirmPassword) {
+        modal.toast({
+          message: '两次密码不匹配！',
+          duration: 1
+        })
+      } else if (
+        this.password === '' ||
+        this.comfirmPassword === '' ||
+        this.username === ''
+      ) {
+        modal.toast({
+          message: '请完善注册信息！',
+          duration: 1
+        })
+      } else {
+        const _this = this
+        const rawbody = {
+          username: this.userName,
+          password: this.password
+        }
+        const body = JSON.stringify(rawbody)
+        stream.fetch(
+          {
+            method: 'POST',
+            url: 'http://192.168.31.250:9091/register',
+            type: 'json',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: body
+          },
+          function(res) {
+            console.log(res)
+            modal.toast({
+              message: res.data.msg,
+              duration: 1
+            })
+            if (res.data.code === 1) {
+              _this.changeForm()
+            }
+          }
+        )
+      }
     },
     onInputUsername(e) {
       this.userName = e.value

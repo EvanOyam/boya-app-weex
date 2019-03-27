@@ -27196,7 +27196,7 @@ var _bus2 = _interopRequireDefault(_bus);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var storage = weex.requireModule('storage'); //
+var modal = weex.requireModule('modal'); //
 //
 //
 //
@@ -27215,21 +27215,23 @@ var storage = weex.requireModule('storage'); //
 //
 //
 
+var storage = weex.requireModule('storage');
+var stream = weex.requireModule('stream');
 exports.default = {
   name: 'MyCard',
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     storage.getItem('userInfo', function (event) {
       var userInfo = event.data;
       if (userInfo === 'undefined' || userInfo === undefined) {
-        _this.userInfo = {
+        _this2.userInfo = {
           username: '尚未登录'
         };
         console.log('unlogin');
       } else {
-        _this.userInfo = JSON.parse(userInfo);
-        _this.isLogin = true;
+        _this2.userInfo = JSON.parse(userInfo);
+        _this2.isLogin = true;
       }
     });
   },
@@ -27243,14 +27245,64 @@ exports.default = {
 
   methods: {
     login: function login() {
+      var _this = this;
       storage.getItem('userInfo', function (event) {
         var userInfo = event.data;
         if (userInfo === 'undefined' || userInfo === undefined) {
           _bus2.default.$emit('handleLogin');
         } else {
-          console.log(userInfo);
+          modal.prompt({
+            message: '修改自我介绍',
+            duration: 0.3,
+            okTitle: '确认',
+            cancelTitle: '取消'
+          }, function (res) {
+            if (res.result === '确认') {
+              _this.editIntroduction(res.data);
+            } else {
+              console.log(res.result);
+            }
+          });
         }
       });
+    },
+    editIntroduction: function editIntroduction(introduction) {
+      var _this = this;
+      var rawBody = {
+        username: this.userInfo.username,
+        introduction: introduction
+      };
+      var body = JSON.stringify(rawBody);
+      if (introduction !== '') {
+        var token = void 0;
+        storage.getItem('token', function (event) {
+          token = event.data;
+        });
+        console.log('token', token);
+        console.log('body', body);
+        stream.fetch({
+          method: 'POST',
+          url: 'http://192.168.31.250:9091/editIntroduction',
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: body
+        }, function (res) {
+          console.log(res);
+          if (res.data.code === 1) {
+            _this.userInfo.introduction = res.data.introduction;
+          } else {
+            modal.alert({
+              message: '登录过期，请重新登录！',
+              okTitle: '重新登录'
+            }, function () {
+              _this.$router.push('/login');
+            });
+          }
+        });
+      }
     }
   }
 };
@@ -28115,7 +28167,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\r\n  margin-bottom: 2.666667rem;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.666667rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  /* margin-top: 60px; */\r\n  /* margin-bottom: 20px; */\n}\r\n", ""]);
+exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\r\n  margin-bottom: 2.666667rem;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.533333rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -28166,6 +28218,9 @@ exports.default = {
     return {
       show: false,
       maskInfo: {
+        trueName: '欧阳智聪',
+        phoneNum: 17612020299,
+        instrumentType: '吉他',
         startTime: new Date().toLocaleString(),
         endTime: new Date().toLocaleString(),
         classroom: '207'
@@ -28208,6 +28263,15 @@ exports.default = {
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29065,6 +29129,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("琴房预约消息")]), _vm._v(" "), _c('wxc-cell', {
     attrs: {
+      "label": "预约人",
+      "title": _vm.maskInfo.trueName,
+      "cell-style": _vm.cellStyle
+    }
+  }), _vm._v(" "), _c('wxc-cell', {
+    attrs: {
+      "label": "琴房",
+      "title": _vm.maskInfo.classroom,
+      "cell-style": _vm.cellStyle
+    }
+  }), _vm._v(" "), _c('wxc-cell', {
+    attrs: {
+      "label": "预约类型",
+      "title": _vm.maskInfo.instrumentType,
+      "cell-style": _vm.cellStyle
+    }
+  }), _vm._v(" "), _c('wxc-cell', {
+    attrs: {
+      "label": "预留号码",
+      "title": _vm.maskInfo.phoneNum,
+      "cell-style": _vm.cellStyle
+    }
+  }), _vm._v(" "), _c('wxc-cell', {
+    attrs: {
       "label": "开始时间",
       "title": _vm.maskInfo.startTime,
       "cell-style": _vm.cellStyle
@@ -29073,12 +29161,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "label": "结束时间",
       "title": _vm.maskInfo.endTime,
-      "cell-style": _vm.cellStyle
-    }
-  }), _vm._v(" "), _c('wxc-cell', {
-    attrs: {
-      "label": "琴房",
-      "title": _vm.maskInfo.classroom,
       "cell-style": _vm.cellStyle
     }
   })], 1)])], 1)], 1)
@@ -29568,21 +29650,23 @@ exports.default = {
       var body = JSON.stringify(rawbody);
       stream.fetch({
         method: 'POST',
-        url: 'https://www.easy-mock.com/mock/5c8e1696c12de836b263653b/weexapi/login',
+        url: 'http://192.168.31.250:9091/login',
         type: 'json',
         headers: {
           'Content-Type': 'application/json'
         },
         body: body
       }, function (res) {
-        console.log(res.data);
-        var strData = JSON.stringify(res.data.data);
+        console.log(res);
+        var strData = JSON.stringify(res.data.userinfo);
+        var token = res.data.token;
         modal.toast({
           message: res.data.msg,
           duration: 1
         });
         if (res.data.code === 1) {
           storage.setItem('userInfo', strData);
+          storage.setItem('token', token);
           setTimeout(function () {
             _this.$router.push('/index');
           }, 1000);
@@ -29593,10 +29677,42 @@ exports.default = {
       console.log('username', this.userName);
       console.log('password', this.password);
       console.log('comfirmPassword', this.comfirmPassword);
-      modal.toast({
-        message: 'register',
-        duration: 1
-      });
+      if (this.password !== this.comfirmPassword) {
+        modal.toast({
+          message: '两次密码不匹配！',
+          duration: 1
+        });
+      } else if (this.password === '' || this.comfirmPassword === '' || this.username === '') {
+        modal.toast({
+          message: '请完善注册信息！',
+          duration: 1
+        });
+      } else {
+        var _this = this;
+        var rawbody = {
+          username: this.userName,
+          password: this.password
+        };
+        var body = JSON.stringify(rawbody);
+        stream.fetch({
+          method: 'POST',
+          url: 'http://192.168.31.250:9091/register',
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: body
+        }, function (res) {
+          console.log(res);
+          modal.toast({
+            message: res.data.msg,
+            duration: 1
+          });
+          if (res.data.code === 1) {
+            _this.changeForm();
+          }
+        });
+      }
     },
     onInputUsername: function onInputUsername(e) {
       this.userName = e.value;
@@ -29985,6 +30101,56 @@ var _weexXPicker = __webpack_require__(146);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var modal = weex.requireModule('modal'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var stream = weex.requireModule('stream');
 exports.default = {
   name: 'Booking',
   components: {
@@ -30020,6 +30186,7 @@ exports.default = {
         backgroundColor: '#ffffff',
         checkedBackgroundColor: '#54AD7B'
       },
+      instrument: '吉他',
       roomTypeList: [{
         title: '吉他',
         checked: true
@@ -30034,34 +30201,14 @@ exports.default = {
       }, {
         title: '小提琴'
       }],
-      roomList: [{
-        room: '201',
-        time: '9:00-10:00'
-      }, {
-        room: '207',
-        time: '9:00-10:00'
-      }, {
-        room: '210',
-        time: '13:00-14:00'
-      }, {
-        room: '201',
-        time: '13:00-14:00'
-      }, {
-        room: '210',
-        time: '10:00-11:00'
-      }, {
-        room: '207',
-        time: '19:00-20:00'
-      }, {
-        room: '201',
-        time: '15:00-16:00'
-      }]
+      roomList: []
     };
   },
 
   methods: {
-    selectRoom: function selectRoom() {
-      console.log('select room');
+    selectRoom: function selectRoom(res) {
+      var title = res.checkedList[0].title;
+      this.instrument = title;
     },
     openPicker: function openPicker() {
       var _this = this;
@@ -30077,8 +30224,9 @@ exports.default = {
 
     // 日期选择事件
     change: function change(e) {
-      console.log(e);
-      var date = new Date(e.titles.join('-')).toLocaleDateString();
+      var rawDate = e.titles.join('-');
+      var date = new Date(rawDate).toLocaleDateString();
+      this.time = new Date(rawDate).valueOf();
       this.selectDate = date;
     },
 
@@ -30089,57 +30237,106 @@ exports.default = {
 
     // 搜索琴房
     search: function search() {
-      console.log('search');
+      if (!this.time) {
+        modal.toast({
+          message: '请选择日期',
+          duration: 1
+        });
+      } else {
+        var searchData = {
+          instrument: this.instrument,
+          date: this.time
+        };
+        console.log(searchData);
+        this.getRoomList(searchData);
+      }
+    },
+    initRoom: function initRoom(room) {
+      var roomList = [];
+      for (var i in room) {
+        for (var j = 1; j < 13; j++) {
+          var time = j + 8 + ':00-' + (j + 9) + ':00';
+          var item = {
+            room: String(room[i]),
+            time: time
+          };
+          roomList.push(item);
+        }
+      }
+      return roomList;
+    },
+    roomHandler: function roomHandler(period) {
+      switch (period) {
+        case '1':
+          return '9:00-10:00';
+        case '2':
+          return '10:00-11:00';
+        case '3':
+          return '11:00-12:00';
+        case '4':
+          return '12:00-13:00';
+        case '5':
+          return '13:00-14:00';
+        case '6':
+          return '14:00-15:00';
+        case '7':
+          return '15:00-16:00';
+        case '8':
+          return '16:00-17:00';
+        case '9':
+          return '17:00-18:00';
+        case '10':
+          return '18:00-19:00';
+        case '11':
+          return '19:00-20:00';
+        case '12':
+          return '20:00-21:00';
+        default:
+          break;
+      }
+    },
+    getRoomList: function getRoomList(searchData) {
+      var instrument = searchData.instrument,
+          date = searchData.date;
+
+      var _this = this;
+      stream.fetch({
+        method: 'GET',
+        url: 'http://192.168.31.250:9091/getroominfo?instrument=' + instrument + '&date=' + date,
+        type: 'json'
+      }, function (res) {
+        if (!res.ok) {
+          modal.toast({
+            message: '服务器繁忙',
+            duration: 2
+          });
+        } else {
+          var instrumentRoom = res.data.data.roomList;
+          var roomData = res.data.data.roomData.map(function (item) {
+            var time = _this.roomHandler(item.period);
+            var newItem = {
+              room: item.roomId,
+              time: time
+            };
+            return newItem;
+          });
+          var initRoomList = _this.initRoom(instrumentRoom);
+          var newRoomList = initRoomList.filter(function (item) {
+            var isMatch = true;
+            for (var i in roomData) {
+              if (roomData[i].room === item.room && roomData[i].time === item.time) {
+                isMatch = false;
+              }
+            }
+            return isMatch;
+          });
+          _this.roomList = newRoomList;
+          console.log('newRoomList', newRoomList);
+        }
+      });
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 135 */

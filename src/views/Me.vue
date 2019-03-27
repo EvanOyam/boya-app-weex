@@ -23,14 +23,23 @@
                 @wxcMaskSetHidden="wxcMaskSetHidden">
         <div class="content">
           <text class="mask-title">琴房预约消息</text>
+          <wxc-cell label="预约人"
+                    :title="maskInfo.trueName"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="琴房"
+                    :title="maskInfo.classroom"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="预约类型"
+                    :title="maskInfo.instrumentType"
+                    :cell-style="cellStyle"></wxc-cell>
+          <wxc-cell label="预留号码"
+                    :title="maskInfo.phoneNum"
+                    :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="开始时间"
                     :title="maskInfo.startTime"
                     :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="结束时间"
                     :title="maskInfo.endTime"
-                    :cell-style="cellStyle"></wxc-cell>
-          <wxc-cell label="琴房"
-                    :title="maskInfo.classroom"
                     :cell-style="cellStyle"></wxc-cell>
         </div>
       </wxc-mask>
@@ -55,6 +64,9 @@ export default {
     return {
       show: false,
       maskInfo: {
+        trueName: '欧阳智聪',
+        phoneNum: 17612020299,
+        instrumentType: '吉他',
         startTime: new Date().toLocaleString(),
         endTime: new Date().toLocaleString(),
         classroom: '207'
@@ -154,11 +166,9 @@ export default {
   /* align-items: center; */
 }
 .mask-title {
-  font-size: 50px;
+  font-size: 40px;
   color: #666;
   font-weight: bold;
   text-align: center;
-  /* margin-top: 60px; */
-  /* margin-bottom: 20px; */
 }
 </style>
