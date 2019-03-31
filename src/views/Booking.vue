@@ -51,7 +51,6 @@ import TopBar from '../components/TopBar'
 import HeadBlock from '../components/HeadBlock'
 import { WxcGridSelect, WxcCell } from 'weex-ui'
 import { XPicker } from 'weex-x-picker'
-import { setTimeout } from 'timers'
 import { roomToPeriod, periodToRoom } from '../mixins/roomHandler.js'
 const modal = weex.requireModule('modal')
 const stream = weex.requireModule('stream')
@@ -127,6 +126,10 @@ export default {
         this.userInfo = userInfo
       }
     })
+    storage.getItem('token', event => {
+      let token = event.data
+      this.token = token
+    })
   },
   methods: {
     selectRoom(res) {
@@ -175,32 +178,40 @@ export default {
               }
               console.log(rawBody)
               const body = JSON.stringify(rawBody)
-              let token
-              storage.getItem('token', event => {
-                token = event.data
-              })
               stream.fetch(
                 {
                   method: 'POST',
-                  url: 'http://172.22.15.76:9091/roombooking',
+                  url: 'http://192.168.31.250:9091/roombooking',
                   type: 'json',
                   headers: {
                     'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Authorization: 'Bearer ' + _this.token
                   },
                   body: body
                 },
                 function(res) {
-                  modal.toast({
-                    message: res.data.msg,
-                    duration: 1
-                  })
-                  if (res.data.code === 1) {
-                    const searchData = {
-                      instrument: _this.instrument,
-                      date: _this.time
+                  if (res.status === 401) {
+                    modal.alert(
+                      {
+                        message: '登录过期，请重新登录！',
+                        okTitle: '重新登录'
+                      },
+                      function() {
+                        _this.$router.push('/login')
+                      }
+                    )
+                  } else {
+                    modal.toast({
+                      message: res.data.msg,
+                      duration: 1
+                    })
+                    if (res.data.code === 1) {
+                      const searchData = {
+                        instrument: _this.instrument,
+                        date: _this.time
+                      }
+                      _this.getRoomList(searchData)
                     }
-                    _this.getRoomList(searchData)
                   }
                 }
               )
@@ -258,7 +269,7 @@ export default {
       stream.fetch(
         {
           method: 'GET',
-          url: `http://172.22.15.76:9091/getroominfo?instrument=${instrument}&date=${date}`,
+          url: `http://192.168.31.250:9091/getroominfo?instrument=${instrument}&date=${date}`,
           type: 'json'
         },
         function(res) {

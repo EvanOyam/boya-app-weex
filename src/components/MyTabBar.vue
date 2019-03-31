@@ -43,6 +43,10 @@ export default {
     Bus.$on('topBarLeftClick', () => {
       this.gotoHome()
     })
+    storage.getItem('userInfo', event => {
+      let userInfo = event.data
+      this.userInfo = userInfo
+    })
   },
   methods: {
     gotoHome() {
@@ -50,15 +54,13 @@ export default {
       Bus.$emit('handleView', 0)
     },
     gotoMe() {
-      storage.getItem('userInfo', event => {
-        let userInfo = event.data
-        if (userInfo === 'undefined' || userInfo === undefined) {
-          Bus.$emit('handleLogin')
-        } else {
-          this.isActived = 1
-          Bus.$emit('handleView', 1)
-        }
-      })
+      if (this.userInfo === 'undefined' || this.userInfo === undefined) {
+        Bus.$emit('handleLogin')
+      } else {
+        this.isActived = 1
+        Bus.$emit('handleView', 1)
+      }
+
       // if (this.isLogin) {
       // } else if (!this.isLogin) {
       //   Bus.$emit('handleLogin')

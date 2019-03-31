@@ -55,7 +55,6 @@
 </template>
 <script>
 import { WxcButton } from 'weex-ui'
-import { setTimeout } from 'timers'
 const modal = weex.requireModule('modal')
 const stream = weex.requireModule('stream')
 const storage = weex.requireModule('storage')
@@ -63,6 +62,16 @@ export default {
   name: 'Update',
   components: {
     WxcButton
+  },
+  created() {
+    storage.getItem('userInfo', event => {
+      const userInfo = JSON.parse(event.data)
+      this.userInfo = userInfo
+    })
+    storage.getItem('token', event => {
+      let token = event.data
+      this.token = token
+    })
   },
   data() {
     return {
@@ -72,15 +81,6 @@ export default {
   methods: {
     update() {
       const _this = this
-      let token
-      let username
-      storage.getItem('token', event => {
-        token = event.data
-      })
-      storage.getItem('userInfo', event => {
-        const userInfo = JSON.parse(event.data)
-        username = userInfo.username
-      })
       const truename = this.truename
       const phoneNum = this.phoneNum
       const code = this.code
@@ -88,16 +88,28 @@ export default {
         stream.fetch(
           {
             method: 'GET',
-            url: `http://172.22.15.76:9091/getmsg?username=${username}&phoneNum=${phoneNum}&truename=${truename}&code=${code}`,
+            url: `http://192.168.31.250:9091/getmsg?username=${
+              _this.userInfo.username
+            }&phoneNum=${phoneNum}&truename=${truename}&code=${code}`,
             type: 'json',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + token
+              Authorization: 'Bearer ' + _this.token
             }
           },
           function(res) {
             console.log(res)
-            if (res.data.code) {
+            if (res.status === 401) {
+              modal.alert(
+                {
+                  message: '登录过期，请重新登录！',
+                  okTitle: '重新登录'
+                },
+                function() {
+                  _this.$router.push('/login')
+                }
+              )
+            } else if (res.data.code) {
               modal.toast({
                 message: res.data.msg,
                 duration: 1
@@ -109,16 +121,6 @@ export default {
                   _this.$router.push('index')
                 }, 1000)
               }
-            } else {
-              modal.alert(
-                {
-                  message: '登录过期，请重新登录！',
-                  okTitle: '重新登录'
-                },
-                function() {
-                  _this.$router.push('/login')
-                }
-              )
             }
           }
         )
@@ -141,34 +143,22 @@ export default {
     getCode() {
       if (this.phoneNum) {
         const _this = this
-        let token
-        let username
         let phoneNum = this.phoneNum
-        storage.getItem('token', event => {
-          token = event.data
-        })
-        storage.getItem('userInfo', event => {
-          const userInfo = JSON.parse(event.data)
-          username = userInfo.username
-        })
         stream.fetch(
           {
             method: 'GET',
-            url: `http://172.22.15.76:9091/sendmsg?username=${username}&phoneNum=${phoneNum}`,
+            url: `http://192.168.31.250:9091/sendmsg?username=${
+              _this.userInfo.username
+            }&phoneNum=${phoneNum}`,
             type: 'json',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + token
+              Authorization: 'Bearer ' + _this.token
             }
           },
           function(res) {
             console.log(res)
-            if (res.data.code === 1) {
-              modal.toast({
-                message: res.data.msg,
-                duration: 1
-              })
-            } else {
+            if (res.status === 401) {
               modal.alert(
                 {
                   message: '登录过期，请重新登录！',
@@ -178,6 +168,11 @@ export default {
                   _this.$router.push('/login')
                 }
               )
+            } else if (res.data.code === 1) {
+              modal.toast({
+                message: res.data.msg,
+                duration: 1
+              })
             }
           }
         )

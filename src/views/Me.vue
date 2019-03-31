@@ -1,6 +1,18 @@
 <template>
   <!-- 我的页面 -->
   <div class="me-wrap">
+    <div class="btn-group">
+      <wxc-button text="切换用户"
+                  @wxcButtonClicked="changeUser"
+                  type='blue'
+                  size='big'
+                  class="sign-out-btn"></wxc-button>
+      <wxc-button text="退出登录"
+                  @wxcButtonClicked="signOut"
+                  type='red'
+                  size='big'
+                  class="sign-out-btn"></wxc-button>
+    </div>
     <scroller class="scroller">
       <div class="info-front-card">
         <div class="bar">
@@ -12,7 +24,7 @@
                   :cell-style="cellStyle"
                   :has-arrow="true"
                   v-for="(item,index) in messageList"
-                  @wxcCellClicked="openMask"
+                  @wxcCellClicked="openMask(index)"
                   :key="index"></wxc-cell>
       </div>
       <wxc-mask border-radius="30"
@@ -50,7 +62,11 @@
 import TopBar from '@/components/TopBar'
 import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
-import { WxcCell, WxcMask } from 'weex-ui'
+import { WxcCell, WxcMask, WxcButton } from 'weex-ui'
+import { periodToRoom } from '../mixins/roomHandler.js'
+const stream = weex.requireModule('stream')
+const storage = weex.requireModule('storage')
+const modal = weex.requireModule('modal')
 export default {
   name: 'Me',
   components: {
@@ -58,61 +74,169 @@ export default {
     HeadBlock,
     MyCard,
     WxcCell,
-    WxcMask
+    WxcMask,
+    WxcButton
+  },
+  created() {
+    storage.getItem('token', event => {
+      let token = event.data
+      this.token = token
+    })
+    storage.getItem('userInfo', event => {
+      const userInfo = JSON.parse(event.data)
+      this.userInfo = userInfo
+      this.getBookingInfo()
+    })
   },
   data() {
     return {
       show: false,
-      maskInfo: {
-        trueName: '欧阳智聪',
-        phoneNum: 17612020299,
-        instrumentType: '吉他',
-        startTime: new Date().toLocaleString(),
-        endTime: new Date().toLocaleString(),
-        classroom: '207'
-      },
+      maskInfo: {},
       cellStyle: {
         marginLeft: '20px',
         marginRight: '20px'
       },
-      messageList: [
-        {
-          title: '207琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '210琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '207琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '222琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '207琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '201琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        },
-        {
-          title: '202琴房预约消息',
-          desc: new Date().toLocaleDateString()
-        }
-      ]
+      messageList: []
     }
   },
   methods: {
-    openMask(e) {
+    openMask(i) {
+      const _this = this
+      const index = this.messageList[i].id
+      stream.fetch(
+        {
+          method: 'GET',
+          url: `http://192.168.31.250:9091/getBookingInfo/${index}`,
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + _this.token
+          }
+        },
+        function(res) {
+          if (res.status === 401) {
+            modal.alert(
+              {
+                message: '登录过期，请重新登录！',
+                okTitle: '重新登录'
+              },
+              function() {
+                _this.$router.push('/login')
+              }
+            )
+          } else if (res.data.code === 1) {
+            const bookingTime = periodToRoom(res.data.info.period)
+            const bookingDate = new Date(
+              Number(res.data.info.reservationDate)
+            ).toLocaleDateString()
+            const startTime = bookingTime.split('-')[0]
+            const endTime = bookingTime.split('-')[1]
+            const bookingInfo = {
+              trueName: res.data.info.truename,
+              phoneNum: res.data.info.phoneNum,
+              instrumentType: res.data.info.instrumentType,
+              startTime: `${bookingDate} ${startTime}`,
+              endTime: `${bookingDate} ${endTime}`,
+              classroom: res.data.info.roomId
+            }
+            _this.maskInfo = bookingInfo
+          }
+        }
+      )
+
       this.show = true
     },
     wxcMaskSetHidden() {
       this.show = false
+    },
+    getBookingInfo() {
+      const _this = this
+
+      stream.fetch(
+        {
+          method: 'GET',
+          url: `http://192.168.31.250:9091/getBookingInfo?username=${
+            _this.userInfo.username
+          }`,
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + _this.token
+          }
+        },
+        function(res) {
+          console.log(res)
+          if (res.status === 401 || !res.data.code) {
+            modal.alert(
+              {
+                message: '登录过期，请重新登录！',
+                okTitle: '重新登录'
+              },
+              function() {
+                _this.$router.push('/login')
+              }
+            )
+          } else if (res.data.code === 1) {
+            let rawData = res.data.data.sort(
+              _this.sortBookingInfo('reservationDate')
+            )
+            const data = rawData.map(item => {
+              const bookingTime = periodToRoom(item.period)
+              const bookingDate = new Date(
+                Number(item.reservationDate)
+              ).toLocaleDateString()
+              return {
+                id: item.reservationId,
+                title: `${item.roomId}琴房预约消息`,
+                desc: `${bookingDate} ${bookingTime}`
+              }
+            })
+            _this.messageList = data
+            console.log(data)
+          }
+        }
+      )
+    },
+    sortBookingInfo(property) {
+      return function(obj1, obj2) {
+        const value1 = obj1[property]
+        const value2 = obj2[property]
+        return value1 - value2
+      }
+    },
+    signOut() {
+      const _this = this
+      modal.confirm(
+        {
+          message: '确认登出？',
+          okTitle: '确认',
+          cancelTitle: '取消'
+        },
+        function(value) {
+          if (value === '确认') {
+            storage.removeItem('userInfo')
+            storage.removeItem('token')
+            _this.$router.push('/welcome')
+          }
+        }
+      )
+    },
+    changeUser() {
+      const _this = this
+      modal.confirm(
+        {
+          message: '确认登出？',
+          okTitle: '确认',
+          cancelTitle: '取消'
+        },
+        function(value) {
+          if (value === '确认') {
+            storage.removeItem('userInfo')
+            storage.removeItem('token')
+            _this.$router.push('/login')
+          }
+        }
+      )
     }
   }
 }
@@ -120,15 +244,16 @@ export default {
 <style scoped>
 .me-wrap {
   position: absolute;
-  top: 466px;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   background-color: #e6efea;
+  align-items: center;
 }
 .scroller {
   position: absolute;
-  top: 0;
+  top: 566px;
   left: 0;
   bottom: 0;
   right: 0;
@@ -142,7 +267,6 @@ export default {
   border-radius: 10px;
   overflow: hidden;
   align-items: stretch;
-  margin-bottom: 200px;
 }
 .bar {
   height: 80px;
@@ -170,5 +294,12 @@ export default {
   color: #666;
   font-weight: bold;
   text-align: center;
+}
+.btn-group {
+  position: absolute;
+  top: 466px;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 700px;
 }
 </style>

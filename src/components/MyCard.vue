@@ -11,7 +11,7 @@
       </div>
       <div class="unlogin-text-box"
            v-if="isLogin === false">
-        <text class="unlogin-username">{{userInfo.username}}</text>
+        <text class="unlogin-username">尚未登录</text>
       </div>
     </div>
   </div>
@@ -27,9 +27,6 @@ export default {
     storage.getItem('userInfo', event => {
       let userInfo = event.data
       if (userInfo === 'undefined' || userInfo === undefined) {
-        this.userInfo = {
-          username: '尚未登录'
-        }
         console.log('unlogin')
       } else {
         this.userInfo = JSON.parse(userInfo)
@@ -37,39 +34,40 @@ export default {
         console.log(this.userInfo)
       }
     })
+    storage.getItem('token', event => {
+      let token = event.data
+      this.token = token
+    })
   },
   data() {
     return {
       isLogin: false,
-      userInfo: {},
-      cardPortraitSrc: this.$getImg('portrait.jpg')
+      cardPortraitSrc: this.$getImg('portrait.jpg'),
+      userInfo: undefined
     }
   },
   methods: {
     login() {
       const _this = this
-      storage.getItem('userInfo', event => {
-        let userInfo = event.data
-        if (userInfo === 'undefined' || userInfo === undefined) {
-          Bus.$emit('handleLogin')
-        } else {
-          modal.prompt(
-            {
-              message: '修改自我介绍',
-              duration: 0.3,
-              okTitle: '确认',
-              cancelTitle: '取消'
-            },
-            function(res) {
-              if (res.result === '确认') {
-                _this.editIntroduction(res.data)
-              } else {
-                console.log(res.result)
-              }
+      if (_this.userInfo === 'undefined' || _this.userInfo === undefined) {
+        Bus.$emit('handleLogin')
+      } else {
+        modal.prompt(
+          {
+            message: '修改自我介绍',
+            duration: 0.3,
+            okTitle: '确认',
+            cancelTitle: '取消'
+          },
+          function(res) {
+            if (res.result === '确认') {
+              _this.editIntroduction(res.data)
+            } else {
+              console.log(res.result)
             }
-          )
-        }
-      })
+          }
+        )
+      }
     },
     editIntroduction(introduction) {
       const _this = this
@@ -79,28 +77,22 @@ export default {
       }
       const body = JSON.stringify(rawBody)
       if (introduction !== '') {
-        let token
-        storage.getItem('token', event => {
-          token = event.data
-        })
+        let token = `Bearer ${_this.token}`
         console.log('token', token)
         console.log('body', body)
         stream.fetch(
           {
             method: 'POST',
-            url: 'http://172.22.15.76:9091/editIntroduction',
+            url: 'http://192.168.31.250:9091/editIntroduction',
             type: 'json',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + token
+              Authorization: token
             },
             body: body
           },
           function(res) {
-            console.log(res)
-            if (res.data.code === 1) {
-              _this.userInfo.introduction = res.data.introduction
-            } else {
+            if (res.status === 401) {
               modal.alert(
                 {
                   message: '登录过期，请重新登录！',
@@ -110,6 +102,11 @@ export default {
                   _this.$router.push('/login')
                 }
               )
+            } else if (res.data.code === 1) {
+              console.log(res.data)
+              let strData = JSON.stringify(res.data.userInfo)
+              _this.userInfo = res.data.userInfo
+              storage.setItem('userInfo', strData)
             }
           }
         )
