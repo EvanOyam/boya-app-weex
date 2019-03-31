@@ -92,7 +92,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7a7ab78e"
@@ -155,7 +155,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-35d0962d"
@@ -174,6 +174,28 @@ module.exports = __vue_exports__
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _index = __webpack_require__(17);
+
+Object.defineProperty(exports, 'default', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -199,7 +221,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-4ea34e28"
@@ -215,28 +237,6 @@ if (typeof __register_static_styles__ === "function") {
 
 module.exports = __vue_exports__
 
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _index = __webpack_require__(17);
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_index).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 /* 5 */
@@ -685,7 +685,7 @@ Vue.prototype.$getIcon = _getIcon2.default;
 var _require = __webpack_require__(12),
     router = _require.router;
 
-var App = __webpack_require__(131);
+var App = __webpack_require__(135);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -806,11 +806,13 @@ var _Booking = __webpack_require__(101);
 
 var _Booking2 = _interopRequireDefault(_Booking);
 
+var _Update = __webpack_require__(131);
+
+var _Update2 = _interopRequireDefault(_Update);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global Vue */
-Vue.use(_vueRouter2.default);
-
+Vue.use(_vueRouter2.default); /* global Vue */
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
@@ -843,6 +845,10 @@ var router = exports.router = new _vueRouter2.default({
     path: '/booking',
     name: 'Booking',
     component: _Booking2.default
+  }, {
+    path: '/update',
+    name: 'Update',
+    component: _Update2.default
   }]
 });
 
@@ -3499,7 +3505,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-75a5423e"
@@ -3576,7 +3582,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(4);
+var _wxcButton = __webpack_require__(3);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -3651,7 +3657,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-77c133fc"
@@ -3972,7 +3978,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5543f671"
@@ -4104,7 +4110,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-9b19c5a6"
@@ -5041,7 +5047,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-28fda526"
@@ -5263,7 +5269,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-8a3dcea4"
@@ -5326,7 +5332,7 @@ var _bus = __webpack_require__(1);
 
 var _bus2 = _interopRequireDefault(_bus);
 
-var _MyCard = __webpack_require__(3);
+var _MyCard = __webpack_require__(4);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -5427,7 +5433,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5e265133"
@@ -5592,7 +5598,7 @@ var _HeadBlock = __webpack_require__(2);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(3);
+var _MyCard = __webpack_require__(4);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -5770,7 +5776,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ef24f190"
@@ -6074,7 +6080,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5dc5d348"
@@ -6401,7 +6407,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-e026d130"
@@ -15324,6 +15330,7 @@ exports.default = {
       } else {
         _this2.userInfo = JSON.parse(userInfo);
         _this2.isLogin = true;
+        console.log(_this2.userInfo);
       }
     });
   },
@@ -15374,7 +15381,7 @@ exports.default = {
         console.log('body', body);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/editIntroduction',
+          url: 'http://172.22.15.76:9091/editIntroduction',
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -15457,7 +15464,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-496bdf52"
@@ -15806,7 +15813,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7164761a"
@@ -16080,7 +16087,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1228f728"
@@ -16189,7 +16196,7 @@ var _HeadBlock = __webpack_require__(2);
 
 var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
-var _MyCard = __webpack_require__(3);
+var _MyCard = __webpack_require__(4);
 
 var _MyCard2 = _interopRequireDefault(_MyCard);
 
@@ -16328,7 +16335,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1d536dbc"
@@ -16704,7 +16711,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-63bed4b2"
@@ -17132,7 +17139,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-36c68f66"
@@ -17319,7 +17326,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-f6ee8876"
@@ -17440,7 +17447,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _wxcButton = __webpack_require__(4);
+var _wxcButton = __webpack_require__(3);
 
 var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
@@ -17558,7 +17565,7 @@ exports.default = {
       var body = JSON.stringify(rawbody);
       stream.fetch({
         method: 'POST',
-        url: 'http://192.168.31.250:9091/login',
+        url: 'http://172.22.15.76:9091/login',
         type: 'json',
         headers: {
           'Content-Type': 'application/json'
@@ -17604,7 +17611,7 @@ exports.default = {
         var body = JSON.stringify(rawbody);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/register',
+          url: 'http://172.22.15.76:9091/register',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -17832,7 +17839,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Booking.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Booking.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ebf94896"
@@ -18003,6 +18010,10 @@ var _HeadBlock2 = _interopRequireDefault(_HeadBlock);
 
 var _weexXPicker = __webpack_require__(113);
 
+var _timers = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"timers\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _roomHandler = __webpack_require__(139);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var modal = weex.requireModule('modal'); //
@@ -18055,6 +18066,7 @@ var modal = weex.requireModule('modal'); //
 //
 
 var stream = weex.requireModule('stream');
+var storage = weex.requireModule('storage');
 exports.default = {
   name: 'Booking',
   components: {
@@ -18105,8 +18117,22 @@ exports.default = {
       }, {
         title: '小提琴'
       }],
-      roomList: []
+      roomList: [],
+      bookingInfo: {}
     };
+  },
+  created: function created() {
+    var _this2 = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        console.log('unlogin');
+      } else {
+        userInfo = JSON.parse(userInfo);
+        _this2.userInfo = userInfo;
+      }
+    });
   },
 
   methods: {
@@ -18117,7 +18143,7 @@ exports.default = {
     openPicker: function openPicker() {
       var _this = this;
       this.showPicker = true;
-      setTimeout(function () {
+      (0, _timers.setTimeout)(function () {
         _this.isShow = true;
       }, 60);
     },
@@ -18135,8 +18161,69 @@ exports.default = {
     },
 
     // 预约点击事件
-    wxcCellClicked: function wxcCellClicked(e) {
-      console.log(e);
+    wxcCellClicked: function wxcCellClicked(i) {
+      var _this = this;
+      modal.confirm({
+        message: '确认预约当前琴房？',
+        okTitle: '确认',
+        cancelTitle: '取消'
+      }, function (value) {
+        if (value === '确认') {
+          if (_this.userInfo.truename && _this.userInfo.phoneNum) {
+            var period = (0, _roomHandler.roomToPeriod)(_this.roomList[i].time);
+            var rawBody = {
+              username: _this.userInfo.username,
+              truename: _this.userInfo.truename,
+              phoneNum: _this.userInfo.phoneNum,
+              roomId: _this.roomList[i].room,
+              instrumentType: _this.instrument,
+              reservationDate: _this.time,
+              period: period
+            };
+            console.log(rawBody);
+            var body = JSON.stringify(rawBody);
+            var token = void 0;
+            storage.getItem('token', function (event) {
+              token = event.data;
+            });
+            stream.fetch({
+              method: 'POST',
+              url: 'http://172.22.15.76:9091/roombooking',
+              type: 'json',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + token
+              },
+              body: body
+            }, function (res) {
+              modal.toast({
+                message: res.data.msg,
+                duration: 1
+              });
+              if (res.data.code === 1) {
+                var searchData = {
+                  instrument: _this.instrument,
+                  date: _this.time
+                };
+                _this.getRoomList(searchData);
+              }
+            });
+          } else {
+            modal.toast({
+              message: '请先完成身份认证',
+              duration: 1
+            });
+            (0, _timers.setTimeout)(function () {
+              _this.$router.push('/update');
+            }, 1000);
+          }
+        } else {
+          modal.toast({
+            message: '已取消',
+            duration: 1
+          });
+        }
+      });
     },
 
     // 搜索琴房
@@ -18169,36 +18256,6 @@ exports.default = {
       }
       return roomList;
     },
-    roomHandler: function roomHandler(period) {
-      switch (period) {
-        case '1':
-          return '9:00-10:00';
-        case '2':
-          return '10:00-11:00';
-        case '3':
-          return '11:00-12:00';
-        case '4':
-          return '12:00-13:00';
-        case '5':
-          return '13:00-14:00';
-        case '6':
-          return '14:00-15:00';
-        case '7':
-          return '15:00-16:00';
-        case '8':
-          return '16:00-17:00';
-        case '9':
-          return '17:00-18:00';
-        case '10':
-          return '18:00-19:00';
-        case '11':
-          return '19:00-20:00';
-        case '12':
-          return '20:00-21:00';
-        default:
-          break;
-      }
-    },
     getRoomList: function getRoomList(searchData) {
       var instrument = searchData.instrument,
           date = searchData.date;
@@ -18206,7 +18263,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getroominfo?instrument=' + instrument + '&date=' + date,
+        url: 'http://172.22.15.76:9091/getroominfo?instrument=' + instrument + '&date=' + date,
         type: 'json'
       }, function (res) {
         if (!res.ok) {
@@ -18217,7 +18274,7 @@ exports.default = {
         } else {
           var instrumentRoom = res.data.data.roomList;
           var roomData = res.data.data.roomData.map(function (item) {
-            var time = _this.roomHandler(item.period);
+            var time = (0, _roomHandler.periodToRoom)(item.period);
             var newItem = {
               room: item.roomId,
               time: time
@@ -18291,7 +18348,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-39973ea2"
@@ -18504,7 +18561,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\option.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\option.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-a962fa30"
@@ -18807,7 +18864,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-59f0a001"
@@ -19724,7 +19781,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-popup\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-popup\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-6a6749e6"
@@ -20049,7 +20106,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-overlay\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-overlay\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1bb0e58a"
@@ -20561,7 +20618,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "hasArrow": true
       },
       on: {
-        "wxcCellClicked": _vm.wxcCellClicked
+        "wxcCellClicked": function($event) {
+          _vm.wxcCellClicked(index)
+        }
       }
     })
   })), _c('div', {
@@ -20630,10 +20689,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Update.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-1a4d8e3c"
+__vue_options__._scopeId = "data-v-65b6311d"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -20652,13 +20711,450 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "update-wrapper": {
+    "position": "absolute",
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "flexDirection": "column",
+    "alignItems": "stretch"
+  },
+  "update-wrapper-top": {
+    "backgroundImage": "linear-gradient(to bottom, #126d40, #116f77)",
+    "height": "460",
+    "flexDirection": "column",
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+  "update-wrapper-bottom": {
+    "backgroundColor": "#e6efea",
+    "flex": 1,
+    "flexDirection": "column",
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+  "update-title-zh": {
+    "fontWeight": "bold",
+    "color": "#e6efea",
+    "fontSize": "96"
+  },
+  "update-title-en": {
+    "color": "#e6efea",
+    "fontSize": "72",
+    "marginBottom": "80"
+  },
+  "update-logo": {
+    "position": "absolute",
+    "width": "260",
+    "height": "260",
+    "left": "375",
+    "marginLeft": "-130",
+    "top": "460",
+    "marginTop": "-130"
+  },
+  "input": {
+    "height": "110",
+    "width": "702",
+    "paddingTop": "10",
+    "paddingRight": "20",
+    "paddingBottom": "10",
+    "paddingLeft": "86",
+    "borderTopLeftRadius": "6",
+    "borderTopRightRadius": "6",
+    "borderBottomRightRadius": "6",
+    "borderBottomLeftRadius": "6"
+  },
+  "input-box": {
+    "height": "110",
+    "width": "702",
+    "marginBottom": "20",
+    "position": "relative",
+    "overflow": "hidden"
+  },
+  "input-icon": {
+    "width": "70",
+    "height": "70",
+    "position": "absolute",
+    "left": "12",
+    "top": "55",
+    "marginTop": "-35",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "iconfont": {
+    "fontFamily": "iconfont"
+  },
+  "icon": {
+    "fontSize": "50",
+    "textAlign": "center",
+    "color": "#666666"
+  },
+  "btn-group": {
+    "flexDirection": "row",
+    "width": "702",
+    "justifyContent": "space-between"
+  }
+}
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _wxcButton = __webpack_require__(3);
+
+var _wxcButton2 = _interopRequireDefault(_wxcButton);
+
+var _timers = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"timers\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var modal = weex.requireModule('modal');
+var stream = weex.requireModule('stream');
+var storage = weex.requireModule('storage');
+exports.default = {
+  name: 'Update',
+  components: {
+    WxcButton: _wxcButton2.default
+  },
+  data: function data() {
+    return {
+      logoSrc: this.$getImg('logo2.png')
+    };
+  },
+
+  methods: {
+    update: function update() {
+      var _this = this;
+      var token = void 0;
+      var username = void 0;
+      storage.getItem('token', function (event) {
+        token = event.data;
+      });
+      storage.getItem('userInfo', function (event) {
+        var userInfo = JSON.parse(event.data);
+        username = userInfo.username;
+      });
+      var truename = this.truename;
+      var phoneNum = this.phoneNum;
+      var code = this.code;
+      if (truename && phoneNum && code) {
+        stream.fetch({
+          method: 'GET',
+          url: 'http://172.22.15.76:9091/getmsg?username=' + username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          }
+        }, function (res) {
+          console.log(res);
+          if (res.data.code) {
+            modal.toast({
+              message: res.data.msg,
+              duration: 1
+            });
+            if (res.data.code === 1) {
+              var strData = JSON.stringify(res.data.userinfo);
+              storage.setItem('userInfo', strData);
+              (0, _timers.setTimeout)(function () {
+                _this.$router.push('index');
+              }, 1000);
+            }
+          } else {
+            modal.alert({
+              message: '登录过期，请重新登录！',
+              okTitle: '重新登录'
+            }, function () {
+              _this.$router.push('/login');
+            });
+          }
+        });
+      } else {
+        modal.toast({
+          message: '请完善信息',
+          duration: 1
+        });
+      }
+    },
+    onInputTruename: function onInputTruename(e) {
+      this.truename = e.value;
+    },
+    onInputPhoneNum: function onInputPhoneNum(e) {
+      this.phoneNum = e.value;
+    },
+    onInputCode: function onInputCode(e) {
+      this.code = e.value;
+    },
+    getCode: function getCode() {
+      if (this.phoneNum) {
+        var _this = this;
+        var token = void 0;
+        var username = void 0;
+        var phoneNum = this.phoneNum;
+        storage.getItem('token', function (event) {
+          token = event.data;
+        });
+        storage.getItem('userInfo', function (event) {
+          var userInfo = JSON.parse(event.data);
+          username = userInfo.username;
+        });
+        stream.fetch({
+          method: 'GET',
+          url: 'http://172.22.15.76:9091/sendmsg?username=' + username + '&phoneNum=' + phoneNum,
+          type: 'json',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          }
+        }, function (res) {
+          console.log(res);
+          if (res.data.code === 1) {
+            modal.toast({
+              message: res.data.msg,
+              duration: 1
+            });
+          } else {
+            modal.alert({
+              message: '登录过期，请重新登录！',
+              okTitle: '重新登录'
+            }, function () {
+              _this.$router.push('/login');
+            });
+          }
+        });
+      } else {
+        modal.toast({
+          message: '请输入手机号',
+          duration: 1
+        });
+      }
+    }
+  }
+};
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["update-wrapper"]
+  }, [_vm._m(0), _c('div', {
+    staticClass: ["update-wrapper-bottom"]
+  }, [_c('div', {
+    staticClass: ["input-box"]
+  }, [_c('input', {
+    staticClass: ["input"],
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入真实姓名",
+      "autocomplete": "off",
+      "returnKeyType": "next"
+    },
+    on: {
+      "input": _vm.onInputTruename
+    }
+  }), _vm._m(1)]), _c('div', {
+    staticClass: ["input-box"]
+  }, [_c('input', {
+    staticClass: ["input"],
+    attrs: {
+      "type": "password",
+      "placeholder": "请输入手机号",
+      "autocomplete": "off",
+      "returnKeyType": "next"
+    },
+    on: {
+      "input": _vm.onInputPhoneNum
+    }
+  }), _vm._m(2)]), _c('div', {
+    staticClass: ["input-box"]
+  }, [_c('input', {
+    staticClass: ["input"],
+    attrs: {
+      "type": "password",
+      "placeholder": "请输入验证码",
+      "autocomplete": "off",
+      "returnKeyType": "done"
+    },
+    on: {
+      "input": _vm.onInputCode
+    }
+  }), _vm._m(3)]), _c('div', {
+    staticClass: ["btn-group"]
+  }, [_c('wxc-button', {
+    attrs: {
+      "text": "发送短信",
+      "type": "green",
+      "size": "big"
+    },
+    on: {
+      "wxcButtonClicked": _vm.getCode
+    }
+  }), _c('wxc-button', {
+    attrs: {
+      "text": "绑定手机",
+      "type": "yellow",
+      "size": "big"
+    },
+    on: {
+      "wxcButtonClicked": _vm.update
+    }
+  })], 1)]), _c('image', {
+    staticClass: ["update-logo"],
+    attrs: {
+      "src": _vm.logoSrc
+    }
+  })])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["update-wrapper-top"]
+  }, [_c('text', {
+    staticClass: ["update-title-zh"]
+  }, [_vm._v("伯雅音乐")]), _c('text', {
+    staticClass: ["update-title-en"]
+  }, [_vm._v("Boya Music")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["input-icon"]
+  }, [_c('text', {
+    staticClass: ["iconfont", "icon"]
+  }, [_vm._v("")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["input-icon"]
+  }, [_c('text', {
+    staticClass: ["iconfont", "icon"]
+  }, [_vm._v("")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["input-icon"]
+  }, [_c('text', {
+    staticClass: ["iconfont", "icon"]
+  }, [_vm._v("")])])
+}]}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(136)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(137)
+
+/* template */
+var __vue_template__ = __webpack_require__(138)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-1a4d8e3c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports) {
+
+module.exports = {
   "iconfont": {
     "fontFamily": "iconfont"
   }
 }
 
 /***/ }),
-/* 133 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20696,7 +21192,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 134 */
+/* 138 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -20705,6 +21201,78 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var roomToPeriod = exports.roomToPeriod = function roomToPeriod(room) {
+  switch (room) {
+    case '9:00-10:00':
+      return '1';
+    case '10:00-11:00':
+      return '2';
+    case '11:00-12:00':
+      return '3';
+    case '12:00-13:00':
+      return '4';
+    case '13:00-14:00':
+      return '5';
+    case '14:00-15:00':
+      return '6';
+    case '15:00-16:00':
+      return '7';
+    case '16:00-17:00':
+      return '8';
+    case '17:00-18:00':
+      return '9';
+    case '18:00-19:00':
+      return '10';
+    case '19:00-20:00':
+      return '11';
+    case '20:00-21:00':
+      return '12';
+    default:
+      break;
+  }
+};
+
+var periodToRoom = exports.periodToRoom = function periodToRoom(period) {
+  switch (period) {
+    case '1':
+      return '9:00-10:00';
+    case '2':
+      return '10:00-11:00';
+    case '3':
+      return '11:00-12:00';
+    case '4':
+      return '12:00-13:00';
+    case '5':
+      return '13:00-14:00';
+    case '6':
+      return '14:00-15:00';
+    case '7':
+      return '15:00-16:00';
+    case '8':
+      return '16:00-17:00';
+    case '9':
+      return '17:00-18:00';
+    case '10':
+      return '18:00-19:00';
+    case '11':
+      return '19:00-20:00';
+    case '12':
+      return '20:00-21:00';
+    default:
+      break;
+  }
+};
 
 /***/ })
 /******/ ]);

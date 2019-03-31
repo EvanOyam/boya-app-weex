@@ -7,7 +7,8 @@ import AdPage from '@/views/AdPage'
 import Index from '@/views/Index'
 import Test from '@/views/Test'
 import Login from '@/views/Login'
-import Booking from '@/views/Booking';
+import Booking from '@/views/Booking'
+import Update from '@/views/Update'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ export const router = new Router({
       path: '/booking',
       name: 'Booking',
       component: Booking
+    },
+    {
+      path: '/update',
+      name: 'Update',
+      component: Update
     }
   ]
 })

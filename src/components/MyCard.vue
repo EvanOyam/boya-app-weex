@@ -34,6 +34,7 @@ export default {
       } else {
         this.userInfo = JSON.parse(userInfo)
         this.isLogin = true
+        console.log(this.userInfo)
       }
     })
   },
@@ -87,7 +88,7 @@ export default {
         stream.fetch(
           {
             method: 'POST',
-            url: 'http://192.168.31.250:9091/editIntroduction',
+            url: 'http://172.22.15.76:9091/editIntroduction',
             type: 'json',
             headers: {
               'Content-Type': 'application/json',

@@ -29,7 +29,7 @@
         <wxc-cell :label="item.room"
                   :title="item.time"
                   :has-arrow="true"
-                  @wxcCellClicked="wxcCellClicked"
+                  @wxcCellClicked="wxcCellClicked(index)"
                   v-for="(item,index) in roomList"
                   :key="index"></wxc-cell>
       </div>
@@ -51,8 +51,11 @@ import TopBar from '../components/TopBar'
 import HeadBlock from '../components/HeadBlock'
 import { WxcGridSelect, WxcCell } from 'weex-ui'
 import { XPicker } from 'weex-x-picker'
+import { setTimeout } from 'timers'
+import { roomToPeriod, periodToRoom } from '../mixins/roomHandler.js'
 const modal = weex.requireModule('modal')
 const stream = weex.requireModule('stream')
+const storage = weex.requireModule('storage')
 export default {
   name: 'Booking',
   components: {
@@ -110,8 +113,20 @@ export default {
           title: '小提琴'
         }
       ],
-      roomList: []
+      roomList: [],
+      bookingInfo: {}
     }
+  },
+  created() {
+    storage.getItem('userInfo', event => {
+      let userInfo = event.data
+      if (userInfo === 'undefined' || userInfo === undefined) {
+        console.log('unlogin')
+      } else {
+        userInfo = JSON.parse(userInfo)
+        this.userInfo = userInfo
+      }
+    })
   },
   methods: {
     selectRoom(res) {
@@ -137,8 +152,75 @@ export default {
       this.selectDate = date
     },
     // 预约点击事件
-    wxcCellClicked(e) {
-      console.log(e)
+    wxcCellClicked(i) {
+      const _this = this
+      modal.confirm(
+        {
+          message: '确认预约当前琴房？',
+          okTitle: '确认',
+          cancelTitle: '取消'
+        },
+        function(value) {
+          if (value === '确认') {
+            if (_this.userInfo.truename && _this.userInfo.phoneNum) {
+              const period = roomToPeriod(_this.roomList[i].time)
+              const rawBody = {
+                username: _this.userInfo.username,
+                truename: _this.userInfo.truename,
+                phoneNum: _this.userInfo.phoneNum,
+                roomId: _this.roomList[i].room,
+                instrumentType: _this.instrument,
+                reservationDate: _this.time,
+                period: period
+              }
+              console.log(rawBody)
+              const body = JSON.stringify(rawBody)
+              let token
+              storage.getItem('token', event => {
+                token = event.data
+              })
+              stream.fetch(
+                {
+                  method: 'POST',
+                  url: 'http://172.22.15.76:9091/roombooking',
+                  type: 'json',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token
+                  },
+                  body: body
+                },
+                function(res) {
+                  modal.toast({
+                    message: res.data.msg,
+                    duration: 1
+                  })
+                  if (res.data.code === 1) {
+                    const searchData = {
+                      instrument: _this.instrument,
+                      date: _this.time
+                    }
+                    _this.getRoomList(searchData)
+                  }
+                }
+              )
+            } else {
+              modal.toast({
+                message: '请先完成身份认证',
+                duration: 1
+              })
+              setTimeout(function() {
+                _this.$router.push('/update')
+              }, 1000)
+            }
+          } else {
+            modal.toast({
+              message: '已取消',
+              duration: 1
+            })
+          }
+        }
+      )
     },
     // 搜索琴房
     search() {
@@ -170,43 +252,13 @@ export default {
       }
       return roomList
     },
-    roomHandler(period) {
-      switch (period) {
-        case '1':
-          return '9:00-10:00'
-        case '2':
-          return '10:00-11:00'
-        case '3':
-          return '11:00-12:00'
-        case '4':
-          return '12:00-13:00'
-        case '5':
-          return '13:00-14:00'
-        case '6':
-          return '14:00-15:00'
-        case '7':
-          return '15:00-16:00'
-        case '8':
-          return '16:00-17:00'
-        case '9':
-          return '17:00-18:00'
-        case '10':
-          return '18:00-19:00'
-        case '11':
-          return '19:00-20:00'
-        case '12':
-          return '20:00-21:00'
-        default:
-          break
-      }
-    },
     getRoomList(searchData) {
       const { instrument, date } = searchData
       const _this = this
       stream.fetch(
         {
           method: 'GET',
-          url: `http://192.168.31.250:9091/getroominfo?instrument=${instrument}&date=${date}`,
+          url: `http://172.22.15.76:9091/getroominfo?instrument=${instrument}&date=${date}`,
           type: 'json'
         },
         function(res) {
@@ -218,7 +270,7 @@ export default {
           } else {
             const instrumentRoom = res.data.data.roomList
             const roomData = res.data.data.roomData.map(item => {
-              const time = _this.roomHandler(item.period)
+              const time = periodToRoom(item.period)
               const newItem = {
                 room: item.roomId,
                 time

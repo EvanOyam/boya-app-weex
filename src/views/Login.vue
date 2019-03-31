@@ -112,7 +112,7 @@ export default {
       stream.fetch(
         {
           method: 'POST',
-          url: 'http://192.168.31.250:9091/login',
+          url: 'http://172.22.15.76:9091/login',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -165,7 +165,7 @@ export default {
         stream.fetch(
           {
             method: 'POST',
-            url: 'http://192.168.31.250:9091/register',
+            url: 'http://172.22.15.76:9091/register',
             type: 'json',
             headers: {
               'Content-Type': 'application/json'
