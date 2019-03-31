@@ -801,7 +801,7 @@ var getIcon = function getIcon() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')";
   } else {
-    url = "url('//at.alicdn.com/t/font_1068180_zc7lw2l7jma.ttf')";
+    url = "url('//at.alicdn.com/t/font_1068180_8m054jjcv0d.ttf')";
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
@@ -15373,9 +15373,6 @@ exports.default = {
     storage.getItem('userInfo', function (event) {
       var userInfo = event.data;
       if (userInfo === 'undefined' || userInfo === undefined) {
-        _this2.userInfo = {
-          username: '尚未登录'
-        };
         console.log('unlogin');
       } else {
         _this2.userInfo = JSON.parse(userInfo);
@@ -15383,37 +15380,38 @@ exports.default = {
         console.log(_this2.userInfo);
       }
     });
+    storage.getItem('token', function (event) {
+      var token = event.data;
+      _this2.token = token;
+    });
   },
   data: function data() {
     return {
       isLogin: false,
-      userInfo: {},
-      cardPortraitSrc: this.$getImg('portrait.jpg')
+      cardPortraitSrc: this.$getImg('portrait.jpg'),
+      userInfo: undefined
     };
   },
 
   methods: {
     login: function login() {
       var _this = this;
-      storage.getItem('userInfo', function (event) {
-        var userInfo = event.data;
-        if (userInfo === 'undefined' || userInfo === undefined) {
-          _bus2.default.$emit('handleLogin');
-        } else {
-          modal.prompt({
-            message: '修改自我介绍',
-            duration: 0.3,
-            okTitle: '确认',
-            cancelTitle: '取消'
-          }, function (res) {
-            if (res.result === '确认') {
-              _this.editIntroduction(res.data);
-            } else {
-              console.log(res.result);
-            }
-          });
-        }
-      });
+      if (_this.userInfo === 'undefined' || _this.userInfo === undefined) {
+        _bus2.default.$emit('handleLogin');
+      } else {
+        modal.prompt({
+          message: '修改自我介绍',
+          duration: 0.3,
+          okTitle: '确认',
+          cancelTitle: '取消'
+        }, function (res) {
+          if (res.result === '确认') {
+            _this.editIntroduction(res.data);
+          } else {
+            console.log(res.result);
+          }
+        });
+      }
     },
     editIntroduction: function editIntroduction(introduction) {
       var _this = this;
@@ -15423,10 +15421,7 @@ exports.default = {
       };
       var body = JSON.stringify(rawBody);
       if (introduction !== '') {
-        var token = void 0;
-        storage.getItem('token', function (event) {
-          token = 'Bearer ' + event.data;
-        });
+        var token = 'Bearer ' + _this.token;
         console.log('token', token);
         console.log('body', body);
         stream.fetch({
@@ -15447,7 +15442,10 @@ exports.default = {
               _this.$router.push('/login');
             });
           } else if (res.data.code === 1) {
-            _this.userInfo.introduction = res.data.introduction;
+            console.log(res.data);
+            var strData = JSON.stringify(res.data.userInfo);
+            _this.userInfo = res.data.userInfo;
+            storage.setItem('userInfo', strData);
           }
         });
       }
@@ -15482,7 +15480,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["unlogin-text-box"]
   }, [_c('text', {
     staticClass: ["unlogin-username"]
-  }, [_vm._v(_vm._s(_vm.userInfo.username))])]) : _vm._e()])])
+  }, [_vm._v("尚未登录")])]) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -16017,6 +16015,10 @@ exports.default = {
     _bus2.default.$on('topBarLeftClick', function () {
       _this.gotoHome();
     });
+    storage.getItem('userInfo', function (event) {
+      var userInfo = event.data;
+      _this.userInfo = userInfo;
+    });
   },
 
   methods: {
@@ -16025,6 +16027,19 @@ exports.default = {
       _bus2.default.$emit('handleView', 0);
     },
     gotoMe: function gotoMe() {
+      if (this.userInfo === 'undefined' || this.userInfo === undefined) {
+        _bus2.default.$emit('handleLogin');
+      } else {
+        this.isActived = 1;
+        _bus2.default.$emit('handleView', 1);
+      }
+
+      // if (this.isLogin) {
+      // } else if (!this.isLogin) {
+      //   Bus.$emit('handleLogin')
+      // }
+    },
+    booking: function booking() {
       var _this2 = this;
 
       storage.getItem('userInfo', function (event) {
@@ -16032,24 +16047,7 @@ exports.default = {
         if (userInfo === 'undefined' || userInfo === undefined) {
           _bus2.default.$emit('handleLogin');
         } else {
-          _this2.isActived = 1;
-          _bus2.default.$emit('handleView', 1);
-        }
-      });
-      // if (this.isLogin) {
-      // } else if (!this.isLogin) {
-      //   Bus.$emit('handleLogin')
-      // }
-    },
-    booking: function booking() {
-      var _this3 = this;
-
-      storage.getItem('userInfo', function (event) {
-        var userInfo = event.data;
-        if (userInfo === 'undefined' || userInfo === undefined) {
-          _bus2.default.$emit('handleLogin');
-        } else {
-          _this3.$router.push('/booking');
+          _this2.$router.push('/booking');
         }
       });
       // if (!this.isLogin) {
@@ -16169,11 +16167,10 @@ module.exports = {
   },
   "scroller": {
     "position": "absolute",
-    "top": "466",
+    "top": "566",
     "left": 0,
-    "bottom": 0,
+    "bottom": "200",
     "right": 0,
-    "height": "480",
     "backgroundColor": "#e6efea",
     "flexDirection": "column",
     "alignItems": "center"
@@ -16219,7 +16216,7 @@ module.exports = {
   },
   "btn-group": {
     "position": "absolute",
-    "bottom": "200",
+    "top": "466",
     "flexDirection": "row",
     "justifyContent": "space-around",
     "width": "700"
@@ -16340,7 +16337,17 @@ exports.default = {
     WxcButton: _wxcButton2.default
   },
   created: function created() {
-    this.getBookingInfo();
+    var _this2 = this;
+
+    storage.getItem('token', function (event) {
+      var token = event.data;
+      _this2.token = token;
+    });
+    storage.getItem('userInfo', function (event) {
+      var userInfo = JSON.parse(event.data);
+      _this2.userInfo = userInfo;
+      _this2.getBookingInfo();
+    });
   },
   data: function data() {
     return {
@@ -16356,19 +16363,15 @@ exports.default = {
 
   methods: {
     openMask: function openMask(i) {
-      var index = this.messageList[i].id;
-      var token = void 0;
       var _this = this;
-      storage.getItem('token', function (event) {
-        token = event.data;
-      });
+      var index = this.messageList[i].id;
       stream.fetch({
         method: 'GET',
         url: 'http://192.168.31.250:9091/getBookingInfo/' + index,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
+          Authorization: 'Bearer ' + _this.token
         }
       }, function (res) {
         if (res.status === 401) {
@@ -16402,26 +16405,17 @@ exports.default = {
     },
     getBookingInfo: function getBookingInfo() {
       var _this = this;
-      var username = void 0;
-      var token = void 0;
-      storage.getItem('token', function (event) {
-        token = event.data;
-      });
-      storage.getItem('userInfo', function (event) {
-        var userInfo = JSON.parse(event.data);
-        username = userInfo.username;
-      });
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getBookingInfo?username=' + username,
+        url: 'http://192.168.31.250:9091/getBookingInfo?username=' + _this.userInfo.username,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + token
+          Authorization: 'Bearer ' + _this.token
         }
       }, function (res) {
         console.log(res);
-        if (res.status === 401) {
+        if (res.status === 401 || !res.data.code) {
           modal.alert({
             message: '登录过期，请重新登录！',
             okTitle: '重新登录'
@@ -16432,7 +16426,10 @@ exports.default = {
           var rawData = res.data.data.sort(_this.sortBookingInfo('reservationDate'));
           var data = rawData.map(function (item) {
             var bookingTime = (0, _roomHandler.periodToRoom)(item.period);
-            var bookingDate = new Date(Number(item.reservationDate)).toLocaleDateString();
+            var year = new Date(Number(item.reservationDate)).getFullYear();
+            var month = new Date(Number(item.reservationDate)).getMonth();
+            var date = new Date(Number(item.reservationDate)).getDate();
+            var bookingDate = year + '-' + (month + 1) + '-' + date;
             return {
               id: item.reservationId,
               title: item.roomId + '\u7434\u623F\u9884\u7EA6\u6D88\u606F',
@@ -16452,28 +16449,32 @@ exports.default = {
       };
     },
     signOut: function signOut() {
-      // const _this = this
+      var _this = this;
       modal.confirm({
         message: '确认登出？',
         okTitle: '确认',
         cancelTitle: '取消'
       }, function (value) {
         if (value === '确认') {
-          storage.removeItem('userInfo', function (event) {
-            if (event.result === 'success') {
-              // _this.$router('/login')
-            } else {
-              modal.toast({
-                message: '操作失败，请稍后重试',
-                duration: 1
-              });
-            }
-          });
+          storage.removeItem('userInfo');
+          storage.removeItem('token');
+          _this.$router.push('/welcome');
         }
       });
     },
     changeUser: function changeUser() {
-      console.log('changeUser');
+      var _this = this;
+      modal.confirm({
+        message: '确认登出？',
+        okTitle: '确认',
+        cancelTitle: '取消'
+      }, function (value) {
+        if (value === '确认') {
+          storage.removeItem('userInfo');
+          storage.removeItem('token');
+          _this.$router.push('/login');
+        }
+      });
     }
   }
 };
@@ -18278,6 +18279,10 @@ exports.default = {
         _this2.userInfo = userInfo;
       }
     });
+    storage.getItem('token', function (event) {
+      var token = event.data;
+      _this2.token = token;
+    });
   },
 
   methods: {
@@ -18300,9 +18305,9 @@ exports.default = {
     // 日期选择事件
     change: function change(e) {
       var rawDate = e.titles.join('-');
-      var date = new Date(rawDate).toLocaleDateString();
-      this.time = new Date(rawDate).valueOf();
-      this.selectDate = date;
+      var time = new Date(rawDate).valueOf();
+      this.time = time;
+      this.selectDate = rawDate;
     },
 
     // 预约点击事件
@@ -18327,17 +18332,13 @@ exports.default = {
             };
             console.log(rawBody);
             var body = JSON.stringify(rawBody);
-            var token = void 0;
-            storage.getItem('token', function (event) {
-              token = event.data;
-            });
             stream.fetch({
               method: 'POST',
               url: 'http://192.168.31.250:9091/roombooking',
               type: 'json',
               headers: {
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
+                Authorization: 'Bearer ' + _this.token
               },
               body: body
             }, function (res) {
@@ -21031,6 +21032,18 @@ exports.default = {
   components: {
     WxcButton: _wxcButton2.default
   },
+  created: function created() {
+    var _this2 = this;
+
+    storage.getItem('userInfo', function (event) {
+      var userInfo = JSON.parse(event.data);
+      _this2.userInfo = userInfo;
+    });
+    storage.getItem('token', function (event) {
+      var token = event.data;
+      _this2.token = token;
+    });
+  },
   data: function data() {
     return {
       logoSrc: this.$getImg('logo2.png')
@@ -21040,26 +21053,17 @@ exports.default = {
   methods: {
     update: function update() {
       var _this = this;
-      var token = void 0;
-      var username = void 0;
-      storage.getItem('token', function (event) {
-        token = event.data;
-      });
-      storage.getItem('userInfo', function (event) {
-        var userInfo = JSON.parse(event.data);
-        username = userInfo.username;
-      });
       var truename = this.truename;
       var phoneNum = this.phoneNum;
       var code = this.code;
       if (truename && phoneNum && code) {
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/getmsg?username=' + username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
+          url: 'http://192.168.31.250:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + token
+            Authorization: 'Bearer ' + _this.token
           }
         }, function (res) {
           console.log(res);
@@ -21103,23 +21107,14 @@ exports.default = {
     getCode: function getCode() {
       if (this.phoneNum) {
         var _this = this;
-        var token = void 0;
-        var username = void 0;
         var phoneNum = this.phoneNum;
-        storage.getItem('token', function (event) {
-          token = event.data;
-        });
-        storage.getItem('userInfo', function (event) {
-          var userInfo = JSON.parse(event.data);
-          username = userInfo.username;
-        });
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/sendmsg?username=' + username + '&phoneNum=' + phoneNum,
+          url: 'http://192.168.31.250:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + token
+            Authorization: 'Bearer ' + _this.token
           }
         }, function (res) {
           console.log(res);
@@ -21240,13 +21235,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["input-icon"]
   }, [_c('text', {
     staticClass: ["iconfont", "icon"]
-  }, [_vm._v("")])])
+  }, [_vm._v("")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["input-icon"]
   }, [_c('text', {
     staticClass: ["iconfont", "icon"]
-  }, [_vm._v("")])])
+  }, [_vm._v("")])])
 }]}
 module.exports.render._withStripped = true
 

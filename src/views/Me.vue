@@ -151,7 +151,6 @@ export default {
     },
     getBookingInfo() {
       const _this = this
-
       stream.fetch(
         {
           method: 'GET',
@@ -182,9 +181,10 @@ export default {
             )
             const data = rawData.map(item => {
               const bookingTime = periodToRoom(item.period)
-              const bookingDate = new Date(
-                Number(item.reservationDate)
-              ).toLocaleDateString()
+              const year = new Date(Number(item.reservationDate)).getFullYear()
+              const month = new Date(Number(item.reservationDate)).getMonth()
+              const date = new Date(Number(item.reservationDate)).getDate()
+              const bookingDate = `${year}-${month + 1}-${date}`
               return {
                 id: item.reservationId,
                 title: `${item.roomId}琴房预约消息`,
@@ -255,7 +255,7 @@ export default {
   position: absolute;
   top: 566px;
   left: 0;
-  bottom: 0;
+  bottom: 200px;
   right: 0;
   background-color: #e6efea;
   flex-direction: column;

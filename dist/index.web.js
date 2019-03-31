@@ -20854,7 +20854,7 @@ var getIcon = function getIcon() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')";
   } else {
-    url = "url('//at.alicdn.com/t/font_1068180_zc7lw2l7jma.ttf')";
+    url = "url('//at.alicdn.com/t/font_1068180_8m054jjcv0d.ttf')";
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
@@ -28222,7 +28222,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\r\n  align-items: center;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 7.546667rem;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.533333rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\n}\n.btn-group[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  width: 9.333333rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.me-wrap[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  left: 0;\r\n  background-color: #e6efea;\r\n  align-items: center;\n}\n.scroller[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 7.546667rem;\r\n  left: 0;\r\n  bottom: 2.666667rem;\r\n  right: 0;\r\n  background-color: #e6efea;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.info-front-card[data-v-1c16d688] {\r\n  width: 9.066667rem;\r\n  background-color: #fff;\r\n  border-radius: 0.133333rem;\r\n  overflow: hidden;\r\n  align-items: stretch;\n}\n.bar[data-v-1c16d688] {\r\n  height: 1.066667rem;\r\n  background-color: yellowgreen;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.bar-title[data-v-1c16d688] {\r\n  font-size: 0.426667rem;\r\n  color: #fff;\n}\n.content[data-v-1c16d688] {\r\n  height: 9.333333rem;\r\n  width: 8.533333rem;\r\n  border-radius: 0.16rem;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  margin-left: 0.413333rem;\r\n  margin-top: 0.666667rem;\r\n  justify-content: space-around;\r\n  /* align-items: center; */\n}\n.mask-title[data-v-1c16d688] {\r\n  font-size: 0.533333rem;\r\n  color: #666;\r\n  font-weight: bold;\r\n  text-align: center;\n}\n.btn-group[data-v-1c16d688] {\r\n  position: absolute;\r\n  top: 6.213333rem;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  width: 9.333333rem;\n}\r\n", ""]);
 
 // exports
 
@@ -28409,7 +28409,6 @@ exports.default = {
     },
     getBookingInfo: function getBookingInfo() {
       var _this = this;
-
       stream.fetch({
         method: 'GET',
         url: 'http://192.168.31.250:9091/getBookingInfo?username=' + _this.userInfo.username,
@@ -28431,7 +28430,10 @@ exports.default = {
           var rawData = res.data.data.sort(_this.sortBookingInfo('reservationDate'));
           var data = rawData.map(function (item) {
             var bookingTime = (0, _roomHandler.periodToRoom)(item.period);
-            var bookingDate = new Date(Number(item.reservationDate)).toLocaleDateString();
+            var year = new Date(Number(item.reservationDate)).getFullYear();
+            var month = new Date(Number(item.reservationDate)).getMonth();
+            var date = new Date(Number(item.reservationDate)).getDate();
+            var bookingDate = year + '-' + (month + 1) + '-' + date;
             return {
               id: item.reservationId,
               title: item.roomId + '\u7434\u623F\u9884\u7EA6\u6D88\u606F',
@@ -30382,9 +30384,9 @@ exports.default = {
     // 日期选择事件
     change: function change(e) {
       var rawDate = e.titles.join('-');
-      var date = new Date(rawDate).toLocaleDateString();
-      this.time = new Date(rawDate).valueOf();
-      this.selectDate = date;
+      var time = new Date(rawDate).valueOf();
+      this.time = time;
+      this.selectDate = rawDate;
     },
 
     // 预约点击事件
@@ -33680,7 +33682,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
     staticClass: "input-box weex-ct weex-div",
     attrs: {
       "weex-type": "div"
@@ -33710,7 +33712,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("")])])]), _vm._v(" "), _c('div', {
     staticClass: "btn-group weex-ct weex-div",
     attrs: {
       "weex-type": "div"

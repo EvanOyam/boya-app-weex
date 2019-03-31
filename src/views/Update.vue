@@ -24,7 +24,7 @@
                return-key-type="next"
                @input="onInputPhoneNum" />
         <div class="input-icon">
-          <text class="iconfont icon">&#xe618;</text>
+          <text class="iconfont icon">&#xe696;</text>
         </div>
       </div>
       <div class="input-box">
@@ -35,7 +35,7 @@
                return-key-type="done"
                @input="onInputCode" />
         <div class="input-icon">
-          <text class="iconfont icon">&#xe618;</text>
+          <text class="iconfont icon">&#xe615;</text>
         </div>
       </div>
       <div class="btn-group">

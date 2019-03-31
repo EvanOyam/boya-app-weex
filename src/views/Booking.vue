@@ -150,9 +150,9 @@ export default {
     // 日期选择事件
     change(e) {
       const rawDate = e.titles.join('-')
-      let date = new Date(rawDate).toLocaleDateString()
-      this.time = new Date(rawDate).valueOf()
-      this.selectDate = date
+      let time = new Date(rawDate).valueOf()
+      this.time = time
+      this.selectDate = rawDate
     },
     // 预约点击事件
     wxcCellClicked(i) {
