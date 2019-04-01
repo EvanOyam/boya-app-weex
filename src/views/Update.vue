@@ -88,7 +88,7 @@ export default {
         stream.fetch(
           {
             method: 'GET',
-            url: `http://192.168.31.250:9091/getmsg?username=${
+            url: `http://39.108.112.153:9091/getmsg?username=${
               _this.userInfo.username
             }&phoneNum=${phoneNum}&truename=${truename}&code=${code}`,
             type: 'json',
@@ -147,7 +147,7 @@ export default {
         stream.fetch(
           {
             method: 'GET',
-            url: `http://192.168.31.250:9091/sendmsg?username=${
+            url: `http://39.108.112.153:9091/sendmsg?username=${
               _this.userInfo.username
             }&phoneNum=${phoneNum}`,
             type: 'json',

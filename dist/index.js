@@ -133,7 +133,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\TopBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7a7ab78e"
@@ -177,7 +177,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\HeadBlock.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-35d0962d"
@@ -221,7 +221,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-4ea34e28"
@@ -3555,7 +3555,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Welcome.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-75a5423e"
@@ -3707,7 +3707,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-button\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-77c133fc"
@@ -4028,7 +4028,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Result.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5543f671"
@@ -4160,7 +4160,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-result\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-9b19c5a6"
@@ -5097,7 +5097,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\AdPage.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-28fda526"
@@ -5319,7 +5319,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-8a3dcea4"
@@ -5483,7 +5483,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5e265133"
@@ -5826,7 +5826,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-popup\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ef24f190"
@@ -6130,7 +6130,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-overlay\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5dc5d348"
@@ -6457,7 +6457,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-minibar\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-e026d130"
@@ -15426,7 +15426,7 @@ exports.default = {
         console.log('body', body);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/editIntroduction',
+          url: 'http://39.108.112.153:9091/editIntroduction',
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -15511,7 +15511,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MessageCard.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-496bdf52"
@@ -15860,7 +15860,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\components\\MyTabBar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-7164761a"
@@ -16134,7 +16134,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Me.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1228f728"
@@ -16367,7 +16367,7 @@ exports.default = {
       var index = this.messageList[i].id;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getBookingInfo/' + index,
+        url: 'http://39.108.112.153:9091/getBookingInfo/' + index,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -16407,7 +16407,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getBookingInfo?username=' + _this.userInfo.username,
+        url: 'http://39.108.112.153:9091/getBookingInfo?username=' + _this.userInfo.username,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -16528,7 +16528,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-mask\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1d536dbc"
@@ -16904,7 +16904,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-cell\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-63bed4b2"
@@ -17356,7 +17356,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Test.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-36c68f66"
@@ -17473,7 +17473,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Login.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-f6ee8876"
@@ -17600,6 +17600,8 @@ var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var modal = weex.requireModule('modal'); //
 //
 //
@@ -17712,7 +17714,7 @@ exports.default = {
       var body = JSON.stringify(rawbody);
       stream.fetch({
         method: 'POST',
-        url: 'http://192.168.31.250:9091/login',
+        url: 'http://39.108.112.153:9091/login',
         type: 'json',
         headers: {
           'Content-Type': 'application/json'
@@ -17739,6 +17741,8 @@ exports.default = {
       console.log('username', this.userName);
       console.log('password', this.password);
       console.log('comfirmPassword', this.comfirmPassword);
+      var usernameLen = [].concat(_toConsumableArray(String(this.userName))).length;
+      var passwordLen = [].concat(_toConsumableArray(String(this.password))).length;
       if (this.password !== this.comfirmPassword) {
         modal.toast({
           message: '两次密码不匹配！',
@@ -17747,6 +17751,11 @@ exports.default = {
       } else if (this.password === '' || this.comfirmPassword === '' || this.username === '') {
         modal.toast({
           message: '请完善注册信息！',
+          duration: 1
+        });
+      } else if (usernameLen < 6 || passwordLen < 6) {
+        modal.toast({
+          message: '用户名和密码的长度都不可小于6',
           duration: 1
         });
       } else {
@@ -17758,7 +17767,7 @@ exports.default = {
         var body = JSON.stringify(rawbody);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/register',
+          url: 'http://39.108.112.153:9091/register',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -17986,7 +17995,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Booking.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Booking.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-ebf94896"
@@ -18334,7 +18343,7 @@ exports.default = {
             var body = JSON.stringify(rawBody);
             stream.fetch({
               method: 'POST',
-              url: 'http://192.168.31.250:9091/roombooking',
+              url: 'http://39.108.112.153:9091/roombooking',
               type: 'json',
               headers: {
                 'Content-Type': 'application/json',
@@ -18418,7 +18427,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getroominfo?instrument=' + instrument + '&date=' + date,
+        url: 'http://39.108.112.153:9091/getroominfo?instrument=' + instrument + '&date=' + date,
         type: 'json'
       }, function (res) {
         if (!res.ok) {
@@ -18503,7 +18512,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-39973ea2"
@@ -18716,7 +18725,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\option.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-ui\\packages\\wxc-grid-select\\option.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-a962fa30"
@@ -19019,7 +19028,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-59f0a001"
@@ -19936,7 +19945,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-popup\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-popup\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-6a6749e6"
@@ -20261,7 +20270,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-overlay\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\node_modules\\weex-x-picker\\wxc-overlay\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1bb0e58a"
@@ -20844,7 +20853,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Update.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\views\\Update.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-65b6311d"
@@ -21059,7 +21068,7 @@ exports.default = {
       if (truename && phoneNum && code) {
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
+          url: 'http://39.108.112.153:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -21110,7 +21119,7 @@ exports.default = {
         var phoneNum = this.phoneNum;
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
+          url: 'http://39.108.112.153:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -21272,7 +21281,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "d:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
+__vue_options__.__file = "D:\\project\\GraduationProject\\boya-app-weex\\src\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-1a4d8e3c"

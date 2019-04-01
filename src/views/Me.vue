@@ -106,7 +106,7 @@ export default {
       stream.fetch(
         {
           method: 'GET',
-          url: `http://192.168.31.250:9091/getBookingInfo/${index}`,
+          url: `http://39.108.112.153:9091/getBookingInfo/${index}`,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export default {
       stream.fetch(
         {
           method: 'GET',
-          url: `http://192.168.31.250:9091/getBookingInfo?username=${
+          url: `http://39.108.112.153:9091/getBookingInfo?username=${
             _this.userInfo.username
           }`,
           type: 'json',

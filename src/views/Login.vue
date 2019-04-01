@@ -112,7 +112,7 @@ export default {
       stream.fetch(
         {
           method: 'POST',
-          url: 'http://192.168.31.250:9091/login',
+          url: 'http://39.108.112.153:9091/login',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -141,6 +141,8 @@ export default {
       console.log('username', this.userName)
       console.log('password', this.password)
       console.log('comfirmPassword', this.comfirmPassword)
+      let usernameLen = [...String(this.userName)].length
+      let passwordLen = [...String(this.password)].length
       if (this.password !== this.comfirmPassword) {
         modal.toast({
           message: '两次密码不匹配！',
@@ -155,6 +157,11 @@ export default {
           message: '请完善注册信息！',
           duration: 1
         })
+      } else if (usernameLen < 6 || passwordLen < 6) {
+        modal.toast({
+          message: '用户名和密码的长度都不可小于6',
+          duration: 1
+        })
       } else {
         const _this = this
         const rawbody = {
@@ -165,7 +172,7 @@ export default {
         stream.fetch(
           {
             method: 'POST',
-            url: 'http://192.168.31.250:9091/register',
+            url: 'http://39.108.112.153:9091/register',
             type: 'json',
             headers: {
               'Content-Type': 'application/json'
