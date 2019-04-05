@@ -727,7 +727,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* global Vue */
 
-//全局引入图片路径处理方法
+// 移动端控制台
+// import Vconsole from 'vconsole'
+// const vConsole = new Vconsole()
+
+// 全局引入图片路径处理方法
 Vue.prototype.$getImg = _getImg2.default;
 Vue.prototype.$getIcon = _getIcon2.default;
 /* weex initialized here, please do not move this line */
@@ -801,7 +805,7 @@ var getIcon = function getIcon() {
     // ios未测试
     url = "url('local:///font/iconfont.ttf')";
   } else {
-    url = "url('//at.alicdn.com/t/font_1068180_8m054jjcv0d.ttf')";
+    url = "url('http://at.alicdn.com/t/font_1068180_8m054jjcv0d.ttf')";
   }
   dom.addRule('fontFace', {
     fontFamily: 'iconfont',
@@ -21305,6 +21309,9 @@ module.exports = __vue_exports__
 module.exports = {
   "iconfont": {
     "fontFamily": "iconfont"
+  },
+  "input-box": {
+    "zIndex": 9999
   }
 }
 

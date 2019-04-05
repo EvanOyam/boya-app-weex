@@ -30,4 +30,7 @@ export default {
 .iconfont {
   font-family: iconfont;
 }
+.input-box {
+  z-index: 9999 !important;
+}
 </style>

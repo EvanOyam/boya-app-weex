@@ -15426,7 +15426,7 @@ exports.default = {
         console.log('body', body);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/editIntroduction',
+          url: 'http://39.108.112.153:9091/editIntroduction',
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -16367,7 +16367,7 @@ exports.default = {
       var index = this.messageList[i].id;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getBookingInfo/' + index,
+        url: 'http://39.108.112.153:9091/getBookingInfo/' + index,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -16407,7 +16407,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getBookingInfo?username=' + _this.userInfo.username,
+        url: 'http://39.108.112.153:9091/getBookingInfo?username=' + _this.userInfo.username,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -17600,6 +17600,8 @@ var _wxcButton2 = _interopRequireDefault(_wxcButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var modal = weex.requireModule('modal'); //
 //
 //
@@ -17712,7 +17714,7 @@ exports.default = {
       var body = JSON.stringify(rawbody);
       stream.fetch({
         method: 'POST',
-        url: 'http://192.168.31.250:9091/login',
+        url: 'http://39.108.112.153:9091/login',
         type: 'json',
         headers: {
           'Content-Type': 'application/json'
@@ -17739,6 +17741,8 @@ exports.default = {
       console.log('username', this.userName);
       console.log('password', this.password);
       console.log('comfirmPassword', this.comfirmPassword);
+      var usernameLen = [].concat(_toConsumableArray(String(this.userName))).length;
+      var passwordLen = [].concat(_toConsumableArray(String(this.password))).length;
       if (this.password !== this.comfirmPassword) {
         modal.toast({
           message: '两次密码不匹配！',
@@ -17747,6 +17751,11 @@ exports.default = {
       } else if (this.password === '' || this.comfirmPassword === '' || this.username === '') {
         modal.toast({
           message: '请完善注册信息！',
+          duration: 1
+        });
+      } else if (usernameLen < 6 || passwordLen < 6) {
+        modal.toast({
+          message: '用户名和密码的长度都不可小于6',
           duration: 1
         });
       } else {
@@ -17758,7 +17767,7 @@ exports.default = {
         var body = JSON.stringify(rawbody);
         stream.fetch({
           method: 'POST',
-          url: 'http://192.168.31.250:9091/register',
+          url: 'http://39.108.112.153:9091/register',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -18334,7 +18343,7 @@ exports.default = {
             var body = JSON.stringify(rawBody);
             stream.fetch({
               method: 'POST',
-              url: 'http://192.168.31.250:9091/roombooking',
+              url: 'http://39.108.112.153:9091/roombooking',
               type: 'json',
               headers: {
                 'Content-Type': 'application/json',
@@ -18418,7 +18427,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://192.168.31.250:9091/getroominfo?instrument=' + instrument + '&date=' + date,
+        url: 'http://39.108.112.153:9091/getroominfo?instrument=' + instrument + '&date=' + date,
         type: 'json'
       }, function (res) {
         if (!res.ok) {
@@ -21059,7 +21068,7 @@ exports.default = {
       if (truename && phoneNum && code) {
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
+          url: 'http://39.108.112.153:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -21110,7 +21119,7 @@ exports.default = {
         var phoneNum = this.phoneNum;
         stream.fetch({
           method: 'GET',
-          url: 'http://192.168.31.250:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
+          url: 'http://39.108.112.153:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
