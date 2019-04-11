@@ -181,7 +181,7 @@ export default {
               stream.fetch(
                 {
                   method: 'POST',
-                  url: 'http://39.108.112.153:9091/roombooking',
+                  url: 'http://127.0.0.1:9091/roombooking',
                   type: 'json',
                   headers: {
                     'Content-Type': 'application/json',
@@ -269,7 +269,7 @@ export default {
       stream.fetch(
         {
           method: 'GET',
-          url: `http://39.108.112.153:9091/getroominfo?instrument=${instrument}&date=${date}`,
+          url: `http://127.0.0.1:9091/getroominfo?instrument=${instrument}&date=${date}`,
           type: 'json'
         },
         function(res) {
