@@ -27,6 +27,7 @@ import com.taobao.weex.ui.component.NestedContainer;
 import com.taobao.weex.utils.WXLogUtils;
 import com.taobao.weex.utils.WXSoInstallMgrSdk;
 import com.taobao.weex.common.WXErrorCode;
+import com.taobao.weex.bridge.JSCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,6 +46,11 @@ public class WXPageActivity extends AbsWeexActivity implements
   private TextView mTipView;
   private boolean mFromSplash = false;
   private HotReloadManager mHotReloadManager;
+  private JSCallback onScanFinishCallback=null;
+
+  public void setOnScanFinishCallback(JSCallback callback){
+    this.onScanFinishCallback=callback;
+  }
 
   @Override
   public void onCreateNestInstance(WXSDKInstance instance, NestedContainer container) {
@@ -237,15 +243,29 @@ public class WXPageActivity extends AbsWeexActivity implements
 				finish();
 				return;
 			} else {
-				JSONObject data = new JSONObject();
-        try {
-          data.put("WeexBundle", Uri.parse(code).toString());
-          Intent intent = new Intent(WXPageActivity.this, WXPageActivity.class);
-          intent.setData(Uri.parse(data.toString()));
-          startActivity(intent);
-        } catch (JSONException e) {
-          e.printStackTrace();
-        }
+                //新增自定义处理代码
+                if (this.onScanFinishCallback != null) {
+                    Map data2 = new HashMap();
+                    data2.put("result", true);
+                    data2.put("data", code);
+                    this.onScanFinishCallback.invokeAndKeepAlive(data2);
+                }else {
+                    Toast.makeText(this, code, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Constants.ACTION_OPEN_URL);
+                    intent.setPackage(getPackageName());
+                    intent.setData(Uri.parse(code));
+                    startActivity(intent);
+                }
+//				JSONObject data = new JSONObject();
+//                try {
+//                  data.put("WeexBundle", Uri.parse(code).toString());
+//                  Intent intent = new Intent(WXPageActivity.this, WXPageActivity.class);
+//                  intent.setData(Uri.parse(data.toString()));
+//                  startActivity(intent);
+//
+//                } catch (JSONException e) {
+//                  e.printStackTrace();
+//                }
 			}
 		}
   }

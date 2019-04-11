@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.weex.app.extend.ImageAdapter;
 import com.weex.app.extend.WXEventModule;
+import com.weex.app.ScanModule;
+import com.weex.app.MyModule;
 import com.alibaba.weex.plugin.loader.WeexPluginContainer;
 import com.weex.app.util.AppConfig;
 import com.taobao.weex.InitConfig;
@@ -22,6 +24,8 @@ public class WXApplication extends Application {
     );
     try {
       WXSDKEngine.registerModule("event", WXEventModule.class);
+      WXSDKEngine.registerModule("scanQR", ScanModule.class);
+      WXSDKEngine.registerModule("MyModule", MyModule.class);
     } catch (WXException e) {
       e.printStackTrace();
     }

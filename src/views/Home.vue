@@ -53,6 +53,7 @@ import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
 import MessageCard from '@/components/MessageCard'
 import { WxcPopup } from 'weex-ui'
+const modal = weex.requireModule('modal')
 export default {
   name: 'HomePage',
   components: {
@@ -120,8 +121,24 @@ export default {
   },
   methods: {
     gotoTest() {
+      // const _this = this
+      if (weex.config.env.platform === 'Web') {
+        modal.toast({
+          message: 'H5暂不支持扫码功能',
+          duration: 1
+        })
+      } else {
+        const scan = weex.requireModule('scanQR')
+        scan.scanCode(res => {
+          // _this.$router.push('/index')
+          // res 即为返回的数据
+          modal.toast({
+            message: res.data,
+            duration: 1
+          })
+        })
+      }
       // this.$router.push('/test')
-      console.log('gotoTest')
     },
     showPopup(i) {
       this.popupTitle = this.messageList[i].cardTextTitle

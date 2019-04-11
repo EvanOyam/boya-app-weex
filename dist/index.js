@@ -5712,6 +5712,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
+var modal = weex.requireModule('modal');
 exports.default = {
   name: 'HomePage',
   components: {
@@ -5764,8 +5765,24 @@ exports.default = {
 
   methods: {
     gotoTest: function gotoTest() {
+      // const _this = this
+      if (weex.config.env.platform === 'Web') {
+        modal.toast({
+          message: 'H5暂不支持扫码功能',
+          duration: 1
+        });
+      } else {
+        var scan = weex.requireModule('scanQR');
+        scan.scanCode(function (res) {
+          // _this.$router.push('/index')
+          // res 即为返回的数据
+          modal.toast({
+            message: res.data,
+            duration: 1
+          });
+        });
+      }
       // this.$router.push('/test')
-      console.log('gotoTest');
     },
     showPopup: function showPopup(i) {
       this.popupTitle = this.messageList[i].cardTextTitle;

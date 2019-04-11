@@ -5712,6 +5712,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
+var modal = weex.requireModule('modal');
 exports.default = {
   name: 'HomePage',
   components: {
@@ -5764,8 +5765,24 @@ exports.default = {
 
   methods: {
     gotoTest: function gotoTest() {
+      // const _this = this
+      if (weex.config.env.platform === 'Web') {
+        modal.toast({
+          message: 'H5暂不支持扫码功能',
+          duration: 1
+        });
+      } else {
+        var scan = weex.requireModule('scanQR');
+        scan.scanCode(function (res) {
+          // _this.$router.push('/index')
+          // res 即为返回的数据
+          modal.toast({
+            message: res.data,
+            duration: 1
+          });
+        });
+      }
       // this.$router.push('/test')
-      console.log('gotoTest');
     },
     showPopup: function showPopup(i) {
       this.popupTitle = this.messageList[i].cardTextTitle;
@@ -15430,7 +15447,7 @@ exports.default = {
         console.log('body', body);
         stream.fetch({
           method: 'POST',
-          url: 'http://127.0.0.1:9091/editIntroduction',
+          url: 'http://39.108.112.153:9091/editIntroduction',
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -16371,7 +16388,7 @@ exports.default = {
       var index = this.messageList[i].id;
       stream.fetch({
         method: 'GET',
-        url: 'http://127.0.0.1:9091/getBookingInfo/' + index,
+        url: 'http://39.108.112.153:9091/getBookingInfo/' + index,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -16411,7 +16428,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://127.0.0.1:9091/getBookingInfo?username=' + _this.userInfo.username,
+        url: 'http://39.108.112.153:9091/getBookingInfo?username=' + _this.userInfo.username,
         type: 'json',
         headers: {
           'Content-Type': 'application/json',
@@ -17718,7 +17735,7 @@ exports.default = {
       var body = JSON.stringify(rawbody);
       stream.fetch({
         method: 'POST',
-        url: 'http://127.0.0.1:9091/login',
+        url: 'http://39.108.112.153:9091/login',
         type: 'json',
         headers: {
           'Content-Type': 'application/json'
@@ -17771,7 +17788,7 @@ exports.default = {
         var body = JSON.stringify(rawbody);
         stream.fetch({
           method: 'POST',
-          url: 'http://127.0.0.1:9091/register',
+          url: 'http://39.108.112.153:9091/register',
           type: 'json',
           headers: {
             'Content-Type': 'application/json'
@@ -18347,7 +18364,7 @@ exports.default = {
             var body = JSON.stringify(rawBody);
             stream.fetch({
               method: 'POST',
-              url: 'http://127.0.0.1:9091/roombooking',
+              url: 'http://39.108.112.153:9091/roombooking',
               type: 'json',
               headers: {
                 'Content-Type': 'application/json',
@@ -18431,7 +18448,7 @@ exports.default = {
       var _this = this;
       stream.fetch({
         method: 'GET',
-        url: 'http://127.0.0.1:9091/getroominfo?instrument=' + instrument + '&date=' + date,
+        url: 'http://39.108.112.153:9091/getroominfo?instrument=' + instrument + '&date=' + date,
         type: 'json'
       }, function (res) {
         if (!res.ok) {
@@ -21072,7 +21089,7 @@ exports.default = {
       if (truename && phoneNum && code) {
         stream.fetch({
           method: 'GET',
-          url: 'http://127.0.0.1:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
+          url: 'http://39.108.112.153:9091/getmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum + '&truename=' + truename + '&code=' + code,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -21123,7 +21140,7 @@ exports.default = {
         var phoneNum = this.phoneNum;
         stream.fetch({
           method: 'GET',
-          url: 'http://127.0.0.1:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
+          url: 'http://39.108.112.153:9091/sendmsg?username=' + _this.userInfo.username + '&phoneNum=' + phoneNum,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
