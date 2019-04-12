@@ -32,9 +32,11 @@
                 :show-close="true"
                 :show="show"
                 :has-animation="false"
-                @wxcMaskSetHidden="wxcMaskSetHidden">
+                @wxcMaskSetHidden="wxcMaskSetHidden"
+                v-if="msgReady">
         <div class="content">
-          <text class="mask-title">琴房预约消息</text>
+          <text class="mask-title">{{maskInfo.classroom}}琴房二维码</text>
+          <!-- <text class="mask-title">琴房预约消息</text>
           <wxc-cell label="预约人"
                     :title="maskInfo.trueName"
                     :cell-style="cellStyle"></wxc-cell>
@@ -46,23 +48,26 @@
                     :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="预留号码"
                     :title="maskInfo.phoneNum"
-                    :cell-style="cellStyle"></wxc-cell>
+                    :cell-style="cellStyle"></wxc-cell> -->
           <wxc-cell label="开始时间"
                     :title="maskInfo.startTime"
                     :cell-style="cellStyle"></wxc-cell>
           <wxc-cell label="结束时间"
                     :title="maskInfo.endTime"
                     :cell-style="cellStyle"></wxc-cell>
+          <image :src="qrcodeUrl"
+                 style="width:450px;height:450px"></image>
         </div>
       </wxc-mask>
     </scroller>
+    <wxc-loading :show="showLoading"></wxc-loading>
   </div>
 </template>
 <script>
 import TopBar from '@/components/TopBar'
 import HeadBlock from '@/components/HeadBlock'
 import MyCard from '@/components/MyCard'
-import { WxcCell, WxcMask, WxcButton } from 'weex-ui'
+import { WxcCell, WxcMask, WxcButton, WxcLoading } from 'weex-ui'
 import { periodToRoom } from '../mixins/roomHandler.js'
 const stream = weex.requireModule('stream')
 const storage = weex.requireModule('storage')
@@ -75,7 +80,8 @@ export default {
     MyCard,
     WxcCell,
     WxcMask,
-    WxcButton
+    WxcButton,
+    WxcLoading
   },
   created() {
     storage.getItem('token', event => {
@@ -96,17 +102,21 @@ export default {
         marginLeft: '20px',
         marginRight: '20px'
       },
-      messageList: []
+      messageList: [],
+      msgReady: false,
+      showLoading: false
     }
   },
   methods: {
     openMask(i) {
       const _this = this
       const index = this.messageList[i].id
+      this.showLoading = true
+      this.msgReady = false
       stream.fetch(
         {
           method: 'GET',
-          url: `http://39.108.112.153:9091/getBookingInfo/${index}`,
+          url: `http://127.0.0.1:9092/getBookingInfo/${index}`,
           type: 'json',
           headers: {
             'Content-Type': 'application/json',
@@ -115,6 +125,8 @@ export default {
         },
         function(res) {
           if (res.status === 401) {
+            _this.showLoading = false
+            _this.msgReady = false
             modal.alert(
               {
                 message: '登录过期，请重新登录！',
@@ -140,6 +152,18 @@ export default {
               classroom: res.data.info.roomId
             }
             _this.maskInfo = bookingInfo
+            _this.qrcodeUrl = `http://127.0.0.1:9092/${index}.png`
+            setTimeout(function() {
+              _this.showLoading = false
+              _this.msgReady = true
+            }, 500)
+          } else {
+            _this.showLoading = false
+            _this.msgReady = false
+            modal.toast({
+              message: '服务器繁忙',
+              duration: 1
+            })
           }
         }
       )
@@ -154,7 +178,7 @@ export default {
       stream.fetch(
         {
           method: 'GET',
-          url: `http://39.108.112.153:9091/getBookingInfo?username=${
+          url: `http://127.0.0.1:9092/getBookingInfo?username=${
             _this.userInfo.username
           }`,
           type: 'json',
@@ -286,7 +310,8 @@ export default {
   overflow: hidden;
   margin-left: 31px;
   margin-top: 50px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   /* align-items: center; */
 }
 .mask-title {

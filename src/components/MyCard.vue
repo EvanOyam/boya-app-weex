@@ -83,7 +83,7 @@ export default {
         stream.fetch(
           {
             method: 'POST',
-            url: 'http://39.108.112.153:9091/editIntroduction',
+            url: 'http://127.0.0.1:9092/editIntroduction',
             type: 'json',
             headers: {
               'Content-Type': 'application/json',
