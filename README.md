@@ -1,27 +1,51 @@
-# Introduction
+# 基于Weex开发的琴房预约系统
 
-This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and `weex-loader`. 
+------
 
-## Quickstart
+本项目是基于Weex开发的**琴房预约系统**。用于毕业设计展示，项目源码仅供学习参考。
 
-To use this template, scaffold a project with [weexpack v1.1.1+](https://github.com/weexteam/weex-pack).
+> * 题目：基于Weex跨平台开发技术的琴房预约系统的实现
+> * 指导老师：付清波
+> * 项目时间：2019年4月10日
+> * 作者：[@欧阳智聪](https://www.evanweb.cn/)
+> * 联系方式：o953328679@gmail.com
 
+### 运行前必看！
+
+> 
+1、请自行配置git、node、Android、iOS、MongoDB环境，确保项目正常运行
+2、源码中连接数据库的部分请自行修改地址与端口
+3、本项目iOS端未经测试，不保证原生iOS应用能正常运行
+4、项目后端源码及涉及到SDK的部分不开源，有需要的小伙伴请邮件联系作者（开头附有联系方式）
+
+------
+
+### Web端运行指南
+
+1、拉取项目的git仓库源码后，安装依赖
+``` bash
+$ npm i
+```
+2、安装Weex脚手架工具
 ``` bash
 $ npm install -g weex-toolkit
-$ weex create my-project # default will create the webpack template
-$ cd my-project && npm start
 ```
-
-## How to use less/sass/pug
-
-Take `sass` for example:
-
+3、进入项目根目录，运行项目
+``` bash
+$ npm start
 ```
-$ npm i node-sass sass-loader --save
-```
+------
 
-Then, you just need to change the `style` tag as: `<style lang="sass"><style>`.
+### Android端运行指南
 
-## How to create your own template
+1、配置好安卓环境，JAVA环境，虚拟机环境
+2、用Android Studio打开：根目录->platforms目录下的android目录
+3、虚拟机运行安卓端应用
 
-See [How-to-create-your-own-template](https://github.com/weex-templates/How-to-create-your-own-template).
+------
+
+最后再一次感谢在设计与开发过程中对我提供帮助的人，感谢提供设计解决方案的Weex社区，特别感谢付清波教授，教授非常热心地提出选题、论文、设计上的不足，以及提出改进的建议。没有老师、同学、家人的帮助，我的毕业设计也不能顺利进行。
+
+作者 [@欧阳智聪](https://www.evanweb.cn/)
+2019 年 04月 19日    
+
